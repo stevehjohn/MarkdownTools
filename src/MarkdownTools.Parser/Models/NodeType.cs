@@ -1,0 +1,32 @@
+﻿namespace MarkdownTools.Parser.Models
+{
+    public enum NodeType
+    {
+        BlockQuote,
+        CodeBlock,
+        Heading1,
+        Heading2,
+        Heading3,
+        Heading4,
+        Heading5,
+        Heading6,
+        HorizontalRule,
+        Image,
+        InlineCode,
+        Italic,
+        Link,
+        OrderedList,
+        OrderedListItem,
+        RawHtml,
+        Root,
+        Strikethrough,
+        Strong,
+        Table,
+        TableCell,
+        TableCellHead,
+        TableRow,
+        Text,
+        UnorderedList,
+        UnorderedListItem
+    }
+}
