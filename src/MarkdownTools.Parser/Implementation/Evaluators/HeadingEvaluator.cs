@@ -1,4 +1,6 @@
-﻿namespace MarkdownTools.Parser.Implementation.Evaluators
+﻿using MarkdownTools.Parser.Extensions;
+
+namespace MarkdownTools.Parser.Implementation.Evaluators
 {
     public class HeadingEvaluator : IEvaluator
     {
@@ -8,7 +10,7 @@
             {
                 var level = 1;
 
-                while (source[level] == '#' && level < 7)
+                while (source.SafeGetChar(level) == '#' && level < 7)
                 {
                     level++;
                 }

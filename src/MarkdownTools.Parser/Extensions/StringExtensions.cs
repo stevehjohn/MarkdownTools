@@ -21,5 +21,15 @@
 
             return left.Substring(startIndex, length);
         }
+
+        public static char SafeGetChar(this string left, int index)
+        {
+            if (index < left.Length)
+            {
+                return left[index];
+            }
+
+            return '\0';
+        }
     }
 }

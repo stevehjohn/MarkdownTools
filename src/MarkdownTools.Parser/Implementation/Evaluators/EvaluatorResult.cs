@@ -5,12 +5,12 @@ namespace MarkdownTools.Parser.Implementation.Evaluators
     public class EvaluatorResult
     {
         public Node Node { get; }
-        public int SkipAhead { get; }
+        public string EvaluateNext { get; }
 
-        public EvaluatorResult(Node node, int skipAhead)
+        public EvaluatorResult(Node node, string evaluateNext)
         {
             Node = node;
-            SkipAhead = skipAhead;
+            EvaluateNext = evaluateNext;
         }
     }
 }
