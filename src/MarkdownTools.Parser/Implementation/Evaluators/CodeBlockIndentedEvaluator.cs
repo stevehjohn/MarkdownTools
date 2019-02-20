@@ -4,6 +4,7 @@ using MarkdownTools.Parser.Models;
 
 namespace MarkdownTools.Parser.Implementation.Evaluators
 {
+    [Precedence(1)]
     [ValidPreviousNodeSequence(NodeType.Newline)]
     public class CodeBlockIndentedEvaluator : BaseEvaluator
     {

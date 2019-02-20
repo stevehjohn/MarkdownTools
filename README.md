@@ -6,8 +6,9 @@ An attempt to propertly parse Markdown into an AST so it can be output to other 
 
 Will need to work out precedence as I go along. Figured out that this order matters so far:
 
-* CodeBlock
+* CodeBlockIndented
 * Heading
+* WhiteSpace
 
 ## WIP - Pseudocode
 

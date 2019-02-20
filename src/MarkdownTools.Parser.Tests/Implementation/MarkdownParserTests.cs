@@ -36,7 +36,7 @@ namespace MarkdownTools.Parser.Tests.Implementation
         {
             var attributes = ((MarkdownParser) _parser).Evaluators;
 
-            Assert.That(attributes[0], Is.AssignableTo(typeof(CodeBlockTickMarkEvaluator)));
+            Assert.That(attributes[0], Is.AssignableTo(typeof(CodeBlockIndentedEvaluator)));
             Assert.That(attributes[1], Is.AssignableTo(typeof(HeadingEvaluator)));
         }
     }
