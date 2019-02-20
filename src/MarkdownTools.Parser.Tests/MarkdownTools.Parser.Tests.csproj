@@ -61,6 +61,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Attributes\PrecedenceAttributeTests.cs" />
+    <Compile Include="Attributes\ValidParentNodeAttributeTests.cs" />
+    <Compile Include="Attributes\ValidPreviousNodeSequenceAttributeTests.cs" />
     <Compile Include="Extensions\StringExtensionsTests.cs" />
     <Compile Include="Implementation\Evaluators\CodeBlockIndentedEvaluatorTests.cs" />
     <Compile Include="Implementation\Evaluators\CodeBlockTickMarkEvaluatorTests.cs" />

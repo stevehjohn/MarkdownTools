@@ -23,9 +23,7 @@ namespace MarkdownTools.Parser.Implementation
                           {
                               var attribute = Attribute.GetCustomAttribute(e.GetType(), typeof(PrecedenceAttribute)) as PrecedenceAttribute;
 
-                              return attribute == null
-                                         ? int.MaxValue
-                                         : attribute.Precedence;
+                              return attribute?.Precedence ?? int.MaxValue;
                           }).ToList();
         }
 
