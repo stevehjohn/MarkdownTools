@@ -62,9 +62,15 @@
   <ItemGroup>
     <Compile Include="Extensions\StringExtensionsTests.cs" />
     <Compile Include="Implementation\Evaluators\HeadingEvaluatorTests.cs" />
+    <Compile Include="Implementation\Evaluators\WhitespaceEvaluatorTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\MarkdownTools.Parser\MarkdownTools.Parser.csproj">
+      <Project>{9b94cbd7-4068-4c93-b4ed-5586ef49dcc8}</Project>
+      <Name>MarkdownTools.Parser</Name>
+    </ProjectReference>
+  </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>

@@ -51,6 +51,7 @@
     <Compile Include="Implementation\Evaluators\EvaluatorException.cs" />
     <Compile Include="Implementation\Evaluators\EvaluatorResult.cs" />
     <Compile Include="Implementation\Evaluators\HeadingEvaluator.cs" />
+    <Compile Include="Implementation\Evaluators\WhitespaceEvaluator.cs" />
     <Compile Include="Models\Node.cs" />
     <Compile Include="Models\NodeType.cs" />
     <Compile Include="Implementation\Evaluators\IEvaluator.cs" />

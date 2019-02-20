@@ -3,7 +3,5 @@
     public interface IEvaluator
     {
         EvaluatorResult Evaluate(string source);
-
-        bool IsBlockParser { get; }
     }
 }

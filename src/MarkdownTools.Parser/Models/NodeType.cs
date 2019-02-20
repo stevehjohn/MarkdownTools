@@ -22,6 +22,7 @@
         TableRow,
         Text,
         UnorderedList,
-        UnorderedListItem
+        UnorderedListItem,
+        Whitespace
     }
 }

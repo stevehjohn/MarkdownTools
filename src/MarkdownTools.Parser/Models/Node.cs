@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Collections.ObjectModel;
 
 namespace MarkdownTools.Parser.Models
 {
@@ -10,10 +11,10 @@ namespace MarkdownTools.Parser.Models
         public IReadOnlyDictionary<string, string> MetaData { get; }
         public IReadOnlyList<Node> Children => _children.AsReadOnly();
 
-        public Node(NodeType type, IReadOnlyDictionary<string, string> metadata = null)
+        public Node(NodeType type, IDictionary<string, string> metadata = null)
         {
             Type = type;
-            MetaData = metadata;
+            MetaData = new ReadOnlyDictionary<string, string>(metadata);
 
             _children = new List<Node>();
         }

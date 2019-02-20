@@ -14,9 +14,14 @@
 
         public static string SafeSubstring(this string left, int startIndex, int length)
         {
-            if (startIndex > -left.Length || startIndex + length >= left.Length)
+            if (startIndex >= left.Length)
             {
                 return null;
+            }
+
+            if (startIndex + length > left.Length)
+            {
+                length = left.Length - startIndex;
             }
 
             return left.Substring(startIndex, length);
