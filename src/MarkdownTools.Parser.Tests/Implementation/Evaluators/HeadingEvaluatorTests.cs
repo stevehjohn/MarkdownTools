@@ -1,7 +1,7 @@
 ﻿using MarkdownTools.Parser.Implementation.Evaluators;
+using MarkdownTools.Parser.Implementation.Evaluators.Interface;
 using NUnit.Framework;
 using System;
-using MarkdownTools.Parser.Implementation.Evaluators.Interface;
 
 namespace MarkdownTools.Parser.Tests.Implementation.Evaluators
 {

@@ -61,6 +61,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Extensions\StringExtensionsTests.cs" />
+    <Compile Include="Implementation\Evaluators\CodeBlockEvaluatorTests.cs" />
     <Compile Include="Implementation\Evaluators\HeadingEvaluatorTests.cs" />
     <Compile Include="Implementation\Evaluators\NewlineEvaluatorTests.cs" />
     <Compile Include="Implementation\Evaluators\WhitespaceEvaluatorTests.cs" />
@@ -74,6 +75,10 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="TestFiles\Inputs\" />
+    <Folder Include="TestFiles\Outputs\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
