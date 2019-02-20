@@ -12,12 +12,12 @@ namespace MarkdownTools.Parser.Implementation
         {
             var instances = new List<IEvaluator>();
 
-            var evaluators = Assembly.GetAssembly(typeof(MarkdownParser))
+            var evaluators = Assembly.GetAssembly(typeof(IEvaluator))
                                      .GetTypes()
-                                     .Where(t => t.IsAssignableFrom(typeof(IEvaluator)) && !t.IsInterface)
+                                     .Where(t => t.GetInterfaces().Contains(typeof(IEvaluator)))
                                      .ToList();
 
-            evaluators.ForEach(e => instances.Add((IEvaluator)Activator.CreateInstance(e)));
+            evaluators.ForEach(e => instances.Add((IEvaluator) Activator.CreateInstance(e)));
 
             return new MarkdownParser(instances);
         }

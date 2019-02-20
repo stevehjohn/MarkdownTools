@@ -65,6 +65,7 @@
     <Compile Include="Implementation\Evaluators\HeadingEvaluatorTests.cs" />
     <Compile Include="Implementation\Evaluators\NewlineEvaluatorTests.cs" />
     <Compile Include="Implementation\Evaluators\WhitespaceEvaluatorTests.cs" />
+    <Compile Include="Implementation\MarkdownParserBuilderTests.cs" />
     <Compile Include="Implementation\MarkdownParserTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -76,9 +77,11 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+    <None Include="TestFiles\Inputs\TR Delta Sync Process Illustration.md">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="TestFiles\Inputs\" />
     <Folder Include="TestFiles\Outputs\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

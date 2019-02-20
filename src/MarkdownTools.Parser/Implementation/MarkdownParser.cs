@@ -1,6 +1,7 @@
 ﻿using MarkdownTools.Parser.Implementation.Evaluators.Interface;
 using MarkdownTools.Parser.Models;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 
 namespace MarkdownTools.Parser.Implementation
@@ -10,6 +11,8 @@ namespace MarkdownTools.Parser.Implementation
         private readonly IList<IEvaluator> _evaluators;
 
         private Node _root;
+
+        public IReadOnlyList<IEvaluator> Evaluators => new ReadOnlyCollection<IEvaluator>(_evaluators);
 
         public MarkdownParser(IEnumerable<IEvaluator> evaluators)
         {
