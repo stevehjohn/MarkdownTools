@@ -1,5 +1,5 @@
 ﻿using MarkdownTools.Parser.Implementation.Evaluators;
-using MarkdownTools.Parser.Implementation.Evaluators.Interface;
+using MarkdownTools.Parser.Implementation.Evaluators.Base;
 using NUnit.Framework;
 
 namespace MarkdownTools.Parser.Tests.Implementation.Evaluators
@@ -8,7 +8,7 @@ namespace MarkdownTools.Parser.Tests.Implementation.Evaluators
     [TestFixture]
     public class WhitespaceEvaluatorTests
     {
-        private IEvaluator _evaluator;
+        private BaseEvaluator _evaluator;
 
         [SetUp]
         public void SetUp()

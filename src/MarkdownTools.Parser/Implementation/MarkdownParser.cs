@@ -1,5 +1,5 @@
 ﻿using MarkdownTools.Parser.Attributes;
-using MarkdownTools.Parser.Implementation.Evaluators.Interface;
+using MarkdownTools.Parser.Implementation.Evaluators.Base;
 using MarkdownTools.Parser.Models;
 using System;
 using System.Collections.Generic;
@@ -10,13 +10,13 @@ namespace MarkdownTools.Parser.Implementation
 {
     public class MarkdownParser : IMarkdownParser
     {
-        private readonly IList<IEvaluator> _evaluators;
+        private readonly IList<BaseEvaluator> _evaluators;
 
         private Node _root;
 
-        public IReadOnlyList<IEvaluator> Evaluators => new ReadOnlyCollection<IEvaluator>(_evaluators);
+        public IReadOnlyList<BaseEvaluator> Evaluators => new ReadOnlyCollection<BaseEvaluator>(_evaluators);
 
-        public MarkdownParser(IEnumerable<IEvaluator> evaluators)
+        public MarkdownParser(IEnumerable<BaseEvaluator> evaluators)
         {
             _evaluators = evaluators
                           .OrderBy(e =>

@@ -1,6 +1,6 @@
 ﻿using MarkdownTools.Parser.Attributes;
 using MarkdownTools.Parser.Extensions;
-using MarkdownTools.Parser.Implementation.Evaluators.Interface;
+using MarkdownTools.Parser.Implementation.Evaluators.Base;
 using MarkdownTools.Parser.Models;
 using System;
 
@@ -8,9 +8,9 @@ namespace MarkdownTools.Parser.Implementation.Evaluators
 {
     [ValidPreviousNodeSequence(NodeType.Newline)]
     [ValidPreviousNodeSequence(NodeType.Newline, NodeType.Whitespace)]
-    public class HorizontalRuleEvaluator : IEvaluator
+    public class HorizontalRuleEvaluator : BaseEvaluator
     {
-        public EvaluatorResult Evaluate(string source)
+        public override EvaluatorResult Evaluate(string source)
         {
             if (source.StartsWith("---") || source.StartsWith("***") || source.StartsWith("___"))
             {

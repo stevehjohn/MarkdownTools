@@ -1,13 +1,13 @@
 ﻿using MarkdownTools.Parser.Extensions;
-using MarkdownTools.Parser.Implementation.Evaluators.Interface;
+using MarkdownTools.Parser.Implementation.Evaluators.Base;
 using MarkdownTools.Parser.Models;
 using System.Collections.Generic;
 
 namespace MarkdownTools.Parser.Implementation.Evaluators
 {
-    public class WhitespaceEvaluator : IEvaluator
+    public class WhitespaceEvaluator : BaseEvaluator
     {
-        public EvaluatorResult Evaluate(string source)
+        public override EvaluatorResult Evaluate(string source)
         {
             var length = 0;
 

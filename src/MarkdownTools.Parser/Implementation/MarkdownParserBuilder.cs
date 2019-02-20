@@ -1,4 +1,4 @@
-﻿using MarkdownTools.Parser.Implementation.Evaluators.Interface;
+﻿using MarkdownTools.Parser.Implementation.Evaluators.Base;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,14 +10,14 @@ namespace MarkdownTools.Parser.Implementation
     {
         public static IMarkdownParser GetParserWithAllEvaluators()
         {
-            var instances = new List<IEvaluator>();
+            var instances = new List<BaseEvaluator>();
 
-            var evaluators = Assembly.GetAssembly(typeof(IEvaluator))
+            var evaluators = Assembly.GetAssembly(typeof(BaseEvaluator))
                                      .GetTypes()
-                                     .Where(t => t.GetInterfaces().Contains(typeof(IEvaluator)))
+                                     .Where(t => t.BaseType == typeof(BaseEvaluator))
                                      .ToList();
 
-            evaluators.ForEach(e => instances.Add((IEvaluator) Activator.CreateInstance(e)));
+            evaluators.ForEach(e => instances.Add((BaseEvaluator) Activator.CreateInstance(e)));
 
             return new MarkdownParser(instances);
         }
