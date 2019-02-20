@@ -22,5 +22,10 @@ namespace MarkdownTools.Parser.Tests.Implementation
         {
             _parser.Parse(null);
         }
+
+        [Test]
+        public void Parser_invokes_evaluators_in_precedence_order()
+        {
+        }
     }
 }
