@@ -16,7 +16,7 @@ namespace MarkdownTools.Parser.Implementation
 
         public MarkdownParser(IEnumerable<IEvaluator> evaluators)
         {
-            _evaluators = evaluators.OrderBy(e => e.Precedence).ToList();
+            _evaluators = evaluators.ToList();
         }
 
         public Node Parse(string markdown)

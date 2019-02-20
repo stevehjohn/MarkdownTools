@@ -1,4 +1,5 @@
-﻿using MarkdownTools.Parser.Extensions;
+﻿using MarkdownTools.Parser.Attributes;
+using MarkdownTools.Parser.Extensions;
 using MarkdownTools.Parser.Implementation.Evaluators.Interface;
 using MarkdownTools.Parser.Models;
 using System;
@@ -6,10 +7,9 @@ using System.Collections.Generic;
 
 namespace MarkdownTools.Parser.Implementation.Evaluators
 {
+    [Precedence(1)]
     public class CodeBlockEvaluator : IEvaluator
     {
-        public int Precedence => 1;
-
         public EvaluatorResult Evaluate(string source)
         {
             if (! source.StartsWith("```"))

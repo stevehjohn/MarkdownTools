@@ -7,8 +7,6 @@ namespace MarkdownTools.Parser.Implementation.Evaluators
 {
     public class NewlineEvaluator : IEvaluator
     {
-        public int Precedence => 2;
-
         public EvaluatorResult Evaluate(string source)
         {
             if (source.StartsWith(Environment.NewLine))

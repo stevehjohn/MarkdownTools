@@ -47,9 +47,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Attributes\PrecedenceAttribute.cs" />
     <Compile Include="Attributes\ValidParentNodesAttribute.cs" />
     <Compile Include="Attributes\ValidPreviousNodeSequenceAttribute.cs" />
     <Compile Include="Extensions\StringExtensions.cs" />
+    <Compile Include="Implementation\Evaluators\BaseEvaluator.cs" />
     <Compile Include="Implementation\Evaluators\CodeBlockEvaluator.cs" />
     <Compile Include="Implementation\Evaluators\HorizontalRuleEvaluator.cs" />
     <Compile Include="Implementation\Evaluators\NewlineEvaluator.cs" />

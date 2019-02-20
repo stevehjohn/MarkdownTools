@@ -7,8 +7,6 @@ namespace MarkdownTools.Parser.Implementation.Evaluators
 {
     public class WhitespaceEvaluator : IEvaluator
     {
-        public int Precedence => 3;
-
         public EvaluatorResult Evaluate(string source)
         {
             var length = 0;
