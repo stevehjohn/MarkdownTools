@@ -1,6 +1,7 @@
 ﻿using MarkdownTools.Parser.Extensions;
 using MarkdownTools.Parser.Models;
 using System.Collections.Generic;
+using MarkdownTools.Parser.Implementation.Evaluators.Interface;
 
 namespace MarkdownTools.Parser.Implementation.Evaluators
 {

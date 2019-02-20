@@ -1,4 +1,5 @@
 ﻿using MarkdownTools.Parser.Implementation.Evaluators;
+using MarkdownTools.Parser.Implementation.Evaluators.Interface;
 using NUnit.Framework;
 
 namespace MarkdownTools.Parser.Tests.Implementation.Evaluators
@@ -15,6 +16,7 @@ namespace MarkdownTools.Parser.Tests.Implementation.Evaluators
             _evaluator = new WhitespaceEvaluator();
         }
 
+        [TestCase("", 0)]
         [TestCase(" ", 1)]
         [TestCase("    ", 4)]
         [TestCase("Not whitespace    ", 0)]

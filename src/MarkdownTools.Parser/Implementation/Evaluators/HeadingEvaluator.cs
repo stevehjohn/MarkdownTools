@@ -2,6 +2,7 @@
 using MarkdownTools.Parser.Models;
 using System;
 using System.Collections.Generic;
+using MarkdownTools.Parser.Implementation.Evaluators.Interface;
 
 namespace MarkdownTools.Parser.Implementation.Evaluators
 {

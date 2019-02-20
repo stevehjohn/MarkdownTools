@@ -1,6 +1,7 @@
 ﻿using MarkdownTools.Parser.Implementation.Evaluators;
 using NUnit.Framework;
 using System;
+using MarkdownTools.Parser.Implementation.Evaluators.Interface;
 
 namespace MarkdownTools.Parser.Tests.Implementation.Evaluators
 {
@@ -29,6 +30,7 @@ namespace MarkdownTools.Parser.Tests.Implementation.Evaluators
                         Is.EqualTo($" This is a heading {Environment.NewLine}Next Line"));
         }
 
+        [TestCase("", 0)]
         [TestCase("# H1", 1)]
         [TestCase("## H2", 2)]
         [TestCase("### H3", 3)]
