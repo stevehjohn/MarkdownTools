@@ -1,10 +1,12 @@
-﻿using MarkdownTools.Parser.Extensions;
+﻿using MarkdownTools.Parser.Attributes;
+using MarkdownTools.Parser.Extensions;
 using MarkdownTools.Parser.Implementation.Evaluators.Interface;
 using MarkdownTools.Parser.Models;
 using System;
 
 namespace MarkdownTools.Parser.Implementation.Evaluators
 {
+    [ValidParentNodes(NodeType.Root)]
     public class NewlineEvaluator : IEvaluator
     {
         public int Precedence => 2;

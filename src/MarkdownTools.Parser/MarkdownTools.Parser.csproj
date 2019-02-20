@@ -47,6 +47,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Attributes\ValidParentNodesAttribute.cs" />
+    <Compile Include="Attributes\ValidPreviousNodeSequenceAttribute.cs" />
     <Compile Include="Extensions\StringExtensions.cs" />
     <Compile Include="Implementation\Evaluators\CodeBlockEvaluator.cs" />
     <Compile Include="Implementation\Evaluators\HorizontalRuleEvaluator.cs" />
@@ -65,5 +67,6 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
