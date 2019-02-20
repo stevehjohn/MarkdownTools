@@ -6,7 +6,8 @@ using System;
 
 namespace MarkdownTools.Parser.Implementation.Evaluators
 {
-    [ValidParentNodes(NodeType.Root)]
+    [ValidPreviousNodeSequence(NodeType.Newline)]
+    [ValidPreviousNodeSequence(NodeType.Newline, NodeType.Whitespace)]
     public class HorizontalRuleEvaluator : IEvaluator
     {
         public int Precedence => 4;

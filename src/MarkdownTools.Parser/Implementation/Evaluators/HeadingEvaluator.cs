@@ -1,5 +1,4 @@
-﻿using MarkdownTools.Parser.Attributes;
-using MarkdownTools.Parser.Extensions;
+﻿using MarkdownTools.Parser.Extensions;
 using MarkdownTools.Parser.Implementation.Evaluators.Interface;
 using MarkdownTools.Parser.Models;
 using System;
@@ -7,7 +6,6 @@ using System.Collections.Generic;
 
 namespace MarkdownTools.Parser.Implementation.Evaluators
 {
-    [ValidParentNodes(NodeType.Root)]
     public class HeadingEvaluator : IEvaluator
     {
         public int Precedence => 0;

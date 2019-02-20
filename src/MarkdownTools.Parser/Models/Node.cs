@@ -10,6 +10,7 @@ namespace MarkdownTools.Parser.Models
         public string Content { get; }
         public Node PreviousNode { get; internal set; }
         public Node NextNode { get; internal set; }
+        public Node FirstChild { get; internal set; }
 
         public Node(NodeType type, IDictionary<string, string> metadata = null, string content = null)
         {
@@ -26,6 +27,11 @@ namespace MarkdownTools.Parser.Models
         internal void SetNextNode(Node node)
         {
             NextNode = node;
+        }
+
+        internal void SetFirstChild(Node node)
+        {
+            FirstChild = node;
         }
     }
 }
