@@ -8,6 +8,8 @@ namespace MarkdownTools.Parser.Implementation.Evaluators
 {
     public class HeadingEvaluator : IEvaluator
     {
+        public int Precedence => 0;
+
         public EvaluatorResult Evaluate(string source)
         {
             if (source.SafeGetChar(0) == '#')

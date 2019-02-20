@@ -8,6 +8,8 @@ namespace MarkdownTools.Parser.Implementation.Evaluators
 {
     public class CodeBlockEvaluator : IEvaluator
     {
+        public int Precedence => 1;
+
         public EvaluatorResult Evaluate(string source)
         {
             if (! source.StartsWith("```"))
