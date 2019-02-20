@@ -81,10 +81,9 @@
     <None Include="TestFiles\Inputs\TR Delta Sync Process Illustration.md">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Include="TestFiles\Outputs\TR Delta Sync Process Illustration.json" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="TestFiles\Outputs\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

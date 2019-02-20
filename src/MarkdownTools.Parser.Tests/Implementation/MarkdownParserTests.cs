@@ -1,7 +1,6 @@
 ﻿using MarkdownTools.Parser.Implementation;
-using MarkdownTools.Parser.Implementation.Evaluators.Interface;
+using MarkdownTools.Parser.Implementation.Evaluators;
 using NUnit.Framework;
-using System.Linq;
 
 namespace MarkdownTools.Parser.Tests.Implementation
 {
@@ -13,19 +12,23 @@ namespace MarkdownTools.Parser.Tests.Implementation
         [SetUp]
         public void SetUp()
         {
-            _parser = new MarkdownParser(Enumerable.Empty<IEvaluator>());
+            _parser = MarkdownParserBuilder.GetParserWithAllEvaluators();
         }
 
         // TODO: Proper tests
-        [Test]
-        public void Parse()
-        {
-            _parser.Parse(null);
-        }
+        //[Test]
+        //public void Parse()
+        //{
+        //    _parser.Parse(null);
+        //}
 
         [Test]
-        public void Parser_invokes_evaluators_in_precedence_order()
+        public void Parser_sorts_evaluators_in_precedence_order()
         {
+            var attributes = ((MarkdownParser) _parser).Evaluators;
+
+            Assert.That(attributes[0], Is.AssignableTo(typeof(CodeBlockEvaluator)));
+            Assert.That(attributes[1], Is.AssignableTo(typeof(HeadingEvaluator)));
         }
     }
 }
