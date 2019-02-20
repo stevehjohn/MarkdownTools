@@ -6,7 +6,7 @@ namespace MarkdownTools.Parser.Implementation.Evaluators
     {
         public EvaluatorResult Evaluate(string source)
         {
-            if (source.StartsWith("#"))
+            if (source.SafeGetChar(0) == '#')
             {
                 var level = 1;
 
