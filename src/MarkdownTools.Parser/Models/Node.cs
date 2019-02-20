@@ -14,7 +14,7 @@ namespace MarkdownTools.Parser.Models
         public Node(NodeType type, IDictionary<string, string> metadata = null)
         {
             Type = type;
-            MetaData = new ReadOnlyDictionary<string, string>(metadata);
+            MetaData = new ReadOnlyDictionary<string, string>(metadata ?? new Dictionary<string, string>());
 
             _children = new List<Node>();
         }

@@ -10,6 +10,7 @@
         InlineCode,
         Italic,
         Link,
+        Newline,
         OrderedList,
         OrderedListItem,
         RawHtml,

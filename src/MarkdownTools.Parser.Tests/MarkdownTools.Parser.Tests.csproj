@@ -62,6 +62,7 @@
   <ItemGroup>
     <Compile Include="Extensions\StringExtensionsTests.cs" />
     <Compile Include="Implementation\Evaluators\HeadingEvaluatorTests.cs" />
+    <Compile Include="Implementation\Evaluators\NewlineEvaluatorTests.cs" />
     <Compile Include="Implementation\Evaluators\WhitespaceEvaluatorTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
