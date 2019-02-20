@@ -57,7 +57,6 @@
     <Compile Include="Implementation\Evaluators\NewlineEvaluator.cs" />
     <Compile Include="Implementation\IMarkdownParser.cs" />
     <Compile Include="Implementation\MarkdownParserBuilder.cs" />
-    <Compile Include="Implementation\Evaluators\RootEvaluator.cs" />
     <Compile Include="Models\EvaluatorResult.cs" />
     <Compile Include="Implementation\Evaluators\HeadingEvaluator.cs" />
     <Compile Include="Implementation\Evaluators\WhitespaceEvaluator.cs" />

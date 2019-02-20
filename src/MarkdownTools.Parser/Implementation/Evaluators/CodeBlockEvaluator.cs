@@ -12,7 +12,12 @@ namespace MarkdownTools.Parser.Implementation.Evaluators
     {
         public override EvaluatorResult Evaluate(string source)
         {
-            if (! source.StartsWith("```"))
+            return CheckForTickMarksCodeBlock(source) ?? CheckForIndentedCodeBlock(source);
+        }
+
+        private EvaluatorResult CheckForTickMarksCodeBlock(string source)
+        {
+            if (!source.StartsWith("```"))
             {
                 return null;
             }
@@ -63,6 +68,11 @@ namespace MarkdownTools.Parser.Implementation.Evaluators
                     },
                     content),
                 source);
+        }
+
+        public EvaluatorResult CheckForIndentedCodeBlock(string source)
+        {
+            return null;
         }
     }
 }

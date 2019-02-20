@@ -35,25 +35,6 @@ namespace MarkdownTools.Parser.Implementation
 
             var previousNode = _root;
 
-            while (! string.IsNullOrEmpty(markdown))
-            {
-                foreach (var evaluator in _evaluators)
-                {
-                    var result = evaluator.Evaluate(markdown);
-
-                    if (result != null)
-                    {
-                        var node = result.Node;
-
-                        node.SetPreviousNode(previousNode);
-                        previousNode.SetNextNode(node);
-
-                        markdown = result.EvaluateNext;
-                        break;
-                    }
-                }
-            }
-
             return _root;
         }
     }

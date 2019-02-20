@@ -1,6 +1,8 @@
 ﻿using MarkdownTools.Parser.Implementation;
 using MarkdownTools.Parser.Implementation.Evaluators;
 using NUnit.Framework;
+using System.IO;
+using Newtonsoft.Json;
 
 namespace MarkdownTools.Parser.Tests.Implementation
 {
@@ -15,12 +17,17 @@ namespace MarkdownTools.Parser.Tests.Implementation
             _parser = MarkdownParserBuilder.GetParserWithAllEvaluators();
         }
 
-        // TODO: Proper tests
-        //[Test]
-        //public void Parse()
-        //{
-        //    _parser.Parse(null);
-        //}
+        [TestCase("TR Delta Sync Process Illustration")]
+        public void Parse(string sourceFile)
+        {
+            var markdown = File.ReadAllText($"TestFiles\\Inputs\\{sourceFile}.md");
+
+            var result = _parser.Parse(markdown);
+
+            var json = File.ReadAllText($"TestFiles\\Outputs\\{sourceFile}.json");
+
+            Assert.That(JsonConvert.SerializeObject(result), Is.EqualTo(json));
+        }
 
         [Test]
         public void Parser_sorts_evaluators_in_precedence_order()
