@@ -14,15 +14,6 @@ namespace MarkdownTools.Parser.Implementation
         public MarkdownParser(IEnumerable<IEvaluator> evaluators)
         {
             _evaluators = evaluators.ToList();
-
-            //_evaluators = new List<IEvaluator>();
-
-            //var evaluators = Assembly.GetAssembly(typeof(MarkdownParser))
-            //                         .GetTypes()
-            //                         .Where(t => t.IsAssignableFrom(typeof(IEvaluator)) && ! t.IsInterface)
-            //                         .ToList();
-
-            //evaluators.ForEach(e => _evaluators.Add((IEvaluator) Activator.CreateInstance(e)));
         }
 
         public Node Parse(string markdown)
