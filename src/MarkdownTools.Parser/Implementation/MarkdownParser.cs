@@ -29,6 +29,8 @@ namespace MarkdownTools.Parser.Implementation
         {
             _root = new Node(NodeType.Root);
 
+            var previousNode = _root;
+
             while (! string.IsNullOrEmpty(markdown))
             {
                 foreach (var evaluator in _evaluators)
@@ -37,6 +39,11 @@ namespace MarkdownTools.Parser.Implementation
 
                     if (result != null)
                     {
+                        var node = result.Node;
+
+                        node.SetPreviousNode(previousNode);
+                        previousNode.SetNextNode(node);
+
                         markdown = result.EvaluateNext;
                         break;
                     }
