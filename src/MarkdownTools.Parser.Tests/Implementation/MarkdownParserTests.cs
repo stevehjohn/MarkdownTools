@@ -1,8 +1,8 @@
 ﻿using MarkdownTools.Parser.Implementation;
 using MarkdownTools.Parser.Implementation.Evaluators;
+using Newtonsoft.Json;
 using NUnit.Framework;
 using System.IO;
-using Newtonsoft.Json;
 
 namespace MarkdownTools.Parser.Tests.Implementation
 {
@@ -24,9 +24,11 @@ namespace MarkdownTools.Parser.Tests.Implementation
 
             var result = _parser.Parse(markdown);
 
-            var json = File.ReadAllText($"TestFiles\\Outputs\\{sourceFile}.json");
+            var resultJson = JsonConvert.SerializeObject(result, Formatting.Indented);
 
-            Assert.That(JsonConvert.SerializeObject(result), Is.EqualTo(json));
+            var expectedJson = File.ReadAllText($"TestFiles\\Outputs\\{sourceFile}.json");
+
+            Assert.That(resultJson, Is.EqualTo(expectedJson));
         }
 
         [Test]
@@ -34,7 +36,7 @@ namespace MarkdownTools.Parser.Tests.Implementation
         {
             var attributes = ((MarkdownParser) _parser).Evaluators;
 
-            Assert.That(attributes[0], Is.AssignableTo(typeof(CodeBlockEvaluator)));
+            Assert.That(attributes[0], Is.AssignableTo(typeof(CodeBlockTickMarkEvaluator)));
             Assert.That(attributes[1], Is.AssignableTo(typeof(HeadingEvaluator)));
         }
     }

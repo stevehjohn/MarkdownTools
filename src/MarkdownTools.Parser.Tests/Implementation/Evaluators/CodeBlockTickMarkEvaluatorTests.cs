@@ -6,14 +6,14 @@ using System;
 namespace MarkdownTools.Parser.Tests.Implementation.Evaluators
 {
     [TestFixture]
-    public class CodeBlockEvaluatorTests
+    public class CodeBlockTickMarkEvaluatorTests
     {
         private BaseEvaluator _evaluator;
 
         [SetUp]
         public void SetUp()
         {
-            _evaluator = new CodeBlockEvaluator();
+            _evaluator = new CodeBlockTickMarkEvaluator();
         }
 
         [TestCase("", false)]

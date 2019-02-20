@@ -8,14 +8,9 @@ using System.Collections.Generic;
 namespace MarkdownTools.Parser.Implementation.Evaluators
 {
     [Precedence(1)]
-    public class CodeBlockEvaluator : BaseEvaluator
+    public class CodeBlockTickMarkEvaluator : BaseEvaluator
     {
         public override EvaluatorResult Evaluate(string source)
-        {
-            return CheckForTickMarksCodeBlock(source) ?? CheckForIndentedCodeBlock(source);
-        }
-
-        private EvaluatorResult CheckForTickMarksCodeBlock(string source)
         {
             if (!source.StartsWith("```"))
             {
@@ -68,11 +63,6 @@ namespace MarkdownTools.Parser.Implementation.Evaluators
                     },
                     content),
                 source);
-        }
-
-        public EvaluatorResult CheckForIndentedCodeBlock(string source)
-        {
-            return null;
         }
     }
 }

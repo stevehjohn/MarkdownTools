@@ -51,8 +51,9 @@
     <Compile Include="Attributes\ValidParentNodesAttribute.cs" />
     <Compile Include="Attributes\ValidPreviousNodeSequenceAttribute.cs" />
     <Compile Include="Extensions\StringExtensions.cs" />
+    <Compile Include="Implementation\Evaluators\CodeBlockIndentedEvaluator.cs" />
     <Compile Include="Implementation\Evaluators\Base\BaseEvaluator.cs" />
-    <Compile Include="Implementation\Evaluators\CodeBlockEvaluator.cs" />
+    <Compile Include="Implementation\Evaluators\CodeBlockTickMarkEvaluator.cs" />
     <Compile Include="Implementation\Evaluators\HorizontalRuleEvaluator.cs" />
     <Compile Include="Implementation\Evaluators\NewlineEvaluator.cs" />
     <Compile Include="Implementation\IMarkdownParser.cs" />
