@@ -1,9 +1,12 @@
-﻿using System.Collections.Generic;
+﻿using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
+using System.Collections.Generic;
 
-namespace MarkdownTools.Parser.Models
+namespace MarkdownTools.Models
 {
     public class Node
     {
+        [JsonConverter(typeof(StringEnumConverter))]
         public NodeType Type { get; set; }
         public IDictionary<string, string> MetaData { get; set; }
         public string Content { get; set; }

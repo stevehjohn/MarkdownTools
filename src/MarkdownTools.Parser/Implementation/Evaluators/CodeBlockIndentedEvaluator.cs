@@ -1,4 +1,5 @@
-﻿using MarkdownTools.Parser.Attributes;
+﻿using MarkdownTools.Models;
+using MarkdownTools.Parser.Attributes;
 using MarkdownTools.Parser.Implementation.Evaluators.Base;
 using MarkdownTools.Parser.Models;
 

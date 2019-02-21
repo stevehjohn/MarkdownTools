@@ -17,7 +17,6 @@ namespace MarkdownTools.Parser.Tests.Implementation
             _parser = MarkdownParserBuilder.GetParserWithAllEvaluators();
         }
 
-        [Explicit]
         [TestCase("WIP")]
         public void Parse(string sourceFile)
         {

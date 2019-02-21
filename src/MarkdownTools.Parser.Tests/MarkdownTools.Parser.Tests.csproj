@@ -77,6 +77,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\MarkdownTools.Models\MarkdownTools.Models.csproj">
+      <Project>{e3e1d9d9-37c9-4848-9415-fb3040bdda23}</Project>
+      <Name>MarkdownTools.Models</Name>
+    </ProjectReference>
     <ProjectReference Include="..\MarkdownTools.Parser\MarkdownTools.Parser.csproj">
       <Project>{9b94cbd7-4068-4c93-b4ed-5586ef49dcc8}</Project>
       <Name>MarkdownTools.Parser</Name>

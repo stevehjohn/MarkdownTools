@@ -1,4 +1,4 @@
-﻿using MarkdownTools.Parser.Models;
+﻿using MarkdownTools.Models;
 
 namespace MarkdownTools.Parser.Implementation
 {

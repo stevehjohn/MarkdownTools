@@ -1,5 +1,5 @@
-﻿using MarkdownTools.Parser.Attributes;
-using MarkdownTools.Parser.Models;
+﻿using MarkdownTools.Models;
+using MarkdownTools.Parser.Attributes;
 using NUnit.Framework;
 using System;
 

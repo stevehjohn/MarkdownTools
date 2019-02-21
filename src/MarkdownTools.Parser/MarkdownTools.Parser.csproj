@@ -31,6 +31,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.4.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
@@ -63,14 +64,17 @@
     <Compile Include="Models\EvaluatorResult.cs" />
     <Compile Include="Implementation\Evaluators\HeadingEvaluator.cs" />
     <Compile Include="Implementation\Evaluators\WhitespaceEvaluator.cs" />
-    <Compile Include="Models\Node.cs" />
-    <Compile Include="Models\NodeType.cs" />
     <Compile Include="Implementation\MarkdownParser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\MarkdownTools.Models\MarkdownTools.Models.csproj">
+      <Project>{e3e1d9d9-37c9-4848-9415-fb3040bdda23}</Project>
+      <Name>MarkdownTools.Models</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

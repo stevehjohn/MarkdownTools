@@ -18,6 +18,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MarkdownTools.Console", "Ma
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MarkdownTools.TreeToHtml.Tests", "MarkdownTools.TreeToHtml.Tests\MarkdownTools.TreeToHtml.Tests.csproj", "{D25014BA-21FC-4F15-92C1-B7FFDA9C0856}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MarkdownTools.Models", "MarkdownTools.Models\MarkdownTools.Models.csproj", "{E3E1D9D9-37C9-4848-9415-FB3040BDDA23}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -44,6 +46,10 @@ Global
 		{D25014BA-21FC-4F15-92C1-B7FFDA9C0856}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D25014BA-21FC-4F15-92C1-B7FFDA9C0856}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D25014BA-21FC-4F15-92C1-B7FFDA9C0856}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E3E1D9D9-37C9-4848-9415-FB3040BDDA23}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E3E1D9D9-37C9-4848-9415-FB3040BDDA23}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E3E1D9D9-37C9-4848-9415-FB3040BDDA23}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E3E1D9D9-37C9-4848-9415-FB3040BDDA23}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,4 +1,6 @@
-﻿namespace MarkdownTools.Parser.Models
+﻿using MarkdownTools.Models;
+
+namespace MarkdownTools.Parser.Models
 {
     public class EvaluatorResult
     {

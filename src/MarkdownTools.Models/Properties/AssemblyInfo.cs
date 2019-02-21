@@ -4,11 +4,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("MarkdownTools.TreeToHtml.Tests")]
+[assembly: AssemblyTitle("MarkdownTools.Models")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("MarkdownTools.TreeToHtml.Tests")]
+[assembly: AssemblyProduct("MarkdownTools.Models")]
 [assembly: AssemblyCopyright("Copyright ©  2019")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -19,7 +19,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("d25014ba-21fc-4f15-92c1-b7ffda9c0856")]
+[assembly: Guid("e3e1d9d9-37c9-4848-9415-fb3040bdda23")]
 
 // Version information for an assembly consists of the following four values:
 //

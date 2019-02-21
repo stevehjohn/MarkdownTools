@@ -1,8 +1,344 @@
 {
-  "Type": 12,
-  "MetaData": {},
+  "Type": "Root",
+  "MetaData": null,
   "Content": null,
-  "PreviousNode": null,
-  "NextNode": null,
-  "FirstChild": null
+  "Children": [
+    {
+      "Type": "Heading",
+      "MetaData": {
+        "Level": "1"
+      },
+      "Content": null,
+      "Children": []
+    },
+    {
+      "Type": "Whitespace",
+      "MetaData": {
+        "Length": "1"
+      },
+      "Content": null,
+      "Children": []
+    },
+    {
+      "Type": "Text",
+      "MetaData": null,
+      "Content": "This",
+      "Children": []
+    },
+    {
+      "Type": "Whitespace",
+      "MetaData": {
+        "Length": "1"
+      },
+      "Content": null,
+      "Children": []
+    },
+    {
+      "Type": "Text",
+      "MetaData": null,
+      "Content": "is",
+      "Children": []
+    },
+    {
+      "Type": "Whitespace",
+      "MetaData": {
+        "Length": "1"
+      },
+      "Content": null,
+      "Children": []
+    },
+    {
+      "Type": "Text",
+      "MetaData": null,
+      "Content": "the",
+      "Children": []
+    },
+    {
+      "Type": "Whitespace",
+      "MetaData": {
+        "Length": "1"
+      },
+      "Content": null,
+      "Children": []
+    },
+    {
+      "Type": "Text",
+      "MetaData": null,
+      "Content": "WIP",
+      "Children": []
+    },
+    {
+      "Type": "Whitespace",
+      "MetaData": {
+        "Length": "1"
+      },
+      "Content": null,
+      "Children": []
+    },
+    {
+      "Type": "Text",
+      "MetaData": null,
+      "Content": "test",
+      "Children": []
+    },
+    {
+      "Type": "Whitespace",
+      "MetaData": {
+        "Length": "1"
+      },
+      "Content": null,
+      "Children": []
+    },
+    {
+      "Type": "Text",
+      "MetaData": null,
+      "Content": "file",
+      "Children": []
+    },
+    {
+      "Type": "Whitespace",
+      "MetaData": {
+        "Length": "1"
+      },
+      "Content": null,
+      "Children": []
+    },
+    {
+      "Type": "Text",
+      "MetaData": null,
+      "Content": "for",
+      "Children": []
+    },
+    {
+      "Type": "Whitespace",
+      "MetaData": {
+        "Length": "1"
+      },
+      "Content": null,
+      "Children": []
+    },
+    {
+      "Type": "Text",
+      "MetaData": null,
+      "Content": "markdown",
+      "Children": []
+    },
+    {
+      "Type": "Whitespace",
+      "MetaData": {
+        "Length": "1"
+      },
+      "Content": null,
+      "Children": []
+    },
+    {
+      "Type": "Text",
+      "MetaData": null,
+      "Content": "tools",
+      "Children": []
+    },
+    {
+      "Type": "Newline",
+      "MetaData": null,
+      "Content": null,
+      "Children": []
+    },
+    {
+      "Type": "Newline",
+      "MetaData": null,
+      "Content": null,
+      "Children": []
+    },
+    {
+      "Type": "HorizontalRule",
+      "MetaData": null,
+      "Content": null,
+      "Children": []
+    },
+    {
+      "Type": "Newline",
+      "MetaData": null,
+      "Content": null,
+      "Children": []
+    },
+    {
+      "Type": "Newline",
+      "MetaData": null,
+      "Content": null,
+      "Children": []
+    },
+    {
+      "Type": "Text",
+      "MetaData": null,
+      "Content": "I",
+      "Children": []
+    },
+    {
+      "Type": "Whitespace",
+      "MetaData": {
+        "Length": "1"
+      },
+      "Content": null,
+      "Children": []
+    },
+    {
+      "Type": "Text",
+      "MetaData": null,
+      "Content": "will",
+      "Children": []
+    },
+    {
+      "Type": "Whitespace",
+      "MetaData": {
+        "Length": "1"
+      },
+      "Content": null,
+      "Children": []
+    },
+    {
+      "Type": "Text",
+      "MetaData": null,
+      "Content": "add",
+      "Children": []
+    },
+    {
+      "Type": "Whitespace",
+      "MetaData": {
+        "Length": "1"
+      },
+      "Content": null,
+      "Children": []
+    },
+    {
+      "Type": "Text",
+      "MetaData": null,
+      "Content": "types",
+      "Children": []
+    },
+    {
+      "Type": "Whitespace",
+      "MetaData": {
+        "Length": "1"
+      },
+      "Content": null,
+      "Children": []
+    },
+    {
+      "Type": "Text",
+      "MetaData": null,
+      "Content": "of",
+      "Children": []
+    },
+    {
+      "Type": "Whitespace",
+      "MetaData": {
+        "Length": "1"
+      },
+      "Content": null,
+      "Children": []
+    },
+    {
+      "Type": "Text",
+      "MetaData": null,
+      "Content": "markdown",
+      "Children": []
+    },
+    {
+      "Type": "Whitespace",
+      "MetaData": {
+        "Length": "1"
+      },
+      "Content": null,
+      "Children": []
+    },
+    {
+      "Type": "Text",
+      "MetaData": null,
+      "Content": "as",
+      "Children": []
+    },
+    {
+      "Type": "Whitespace",
+      "MetaData": {
+        "Length": "1"
+      },
+      "Content": null,
+      "Children": []
+    },
+    {
+      "Type": "Text",
+      "MetaData": null,
+      "Content": "each",
+      "Children": []
+    },
+    {
+      "Type": "Whitespace",
+      "MetaData": {
+        "Length": "1"
+      },
+      "Content": null,
+      "Children": []
+    },
+    {
+      "Type": "Text",
+      "MetaData": null,
+      "Content": "evaluator",
+      "Children": []
+    },
+    {
+      "Type": "Whitespace",
+      "MetaData": {
+        "Length": "1"
+      },
+      "Content": null,
+      "Children": []
+    },
+    {
+      "Type": "Text",
+      "MetaData": null,
+      "Content": "is",
+      "Children": []
+    },
+    {
+      "Type": "Whitespace",
+      "MetaData": {
+        "Length": "1"
+      },
+      "Content": null,
+      "Children": []
+    },
+    {
+      "Type": "Text",
+      "MetaData": null,
+      "Content": "implemented.",
+      "Children": []
+    },
+    {
+      "Type": "Newline",
+      "MetaData": null,
+      "Content": null,
+      "Children": []
+    },
+    {
+      "Type": "Newline",
+      "MetaData": null,
+      "Content": null,
+      "Children": []
+    },
+    {
+      "Type": "CodeBlock",
+      "MetaData": {
+        "Length": "3",
+        "Language": "CSharp"
+      },
+      "Content": "private void Main(string[] args)\r\n{\r\n    // Entrypoint to a C# console app\r\n}\r\n",
+      "Children": []
+    },
+    {
+      "Type": "Newline",
+      "MetaData": null,
+      "Content": null,
+      "Children": []
+    }
+  ]
 }

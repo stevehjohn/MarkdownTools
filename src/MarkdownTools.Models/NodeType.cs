@@ -1,4 +1,4 @@
-﻿namespace MarkdownTools.Parser.Models
+﻿namespace MarkdownTools.Models
 {
     public enum NodeType
     {
