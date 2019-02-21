@@ -25,29 +25,24 @@ namespace MarkdownTools.Parser.Implementation.Evaluators
 
                 var eol = source.IndexOf(Environment.NewLine, StringComparison.Ordinal);
 
-                if (eol < 0)
+                if (eol < 0 && string.IsNullOrWhiteSpace(source.SafeSubstring(length)))
                 {
-                    if (string.IsNullOrWhiteSpace(source.SafeSubstring(length)))
-                    {
-                        return new EvaluatorResult(
-                            new Node
-                            {
-                                Type = NodeType.HorizontalRule
-                            },
-                            null);
-                    }
+                    return new EvaluatorResult(
+                        new Node
+                        {
+                            Type = NodeType.HorizontalRule
+                        },
+                        null);
                 }
-                else
+
+                if (eol > -1 && string.IsNullOrWhiteSpace(source.SafeSubstring(length, eol - length)))
                 {
-                    if (string.IsNullOrWhiteSpace(source.SafeSubstring(length, eol - length)))
-                    {
-                        return new EvaluatorResult(
-                            new Node
-                            {
-                                Type = NodeType.HorizontalRule
-                            },
-                            source.Substring(eol));
-                    }
+                    return new EvaluatorResult(
+                        new Node
+                        {
+                            Type = NodeType.HorizontalRule
+                        },
+                        source.Substring(eol));
                 }
             }
 
