@@ -64,7 +64,7 @@ namespace MarkdownTools.Parser.Implementation
                         }
 
                         parent.Children.Add(node);
-                        if (result.ParseContent)
+                        if (Attribute.GetCustomAttribute(evaluator.GetType(), typeof(ParseContentAttribute)) != null)
                         {
                             Parse(node, node.Content);
                         }

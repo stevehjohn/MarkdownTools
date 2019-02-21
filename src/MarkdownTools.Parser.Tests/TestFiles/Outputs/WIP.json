@@ -328,8 +328,9 @@
     {
       "Type": "CodeBlock",
       "MetaData": {
-        "Length": "3",
-        "Language": "CSharp"
+        "TickMarkLength": "3",
+        "Language": "CSharp",
+        "SubType": "TickMarks"
       },
       "Content": "private void Main(string[] args)\r\n{\r\n    // Entrypoint to a C# console app\r\n}\r\n",
       "Children": []
@@ -338,6 +339,20 @@
       "Type": "Newline",
       "MetaData": null,
       "Content": null,
+      "Children": []
+    },
+    {
+      "Type": "Newline",
+      "MetaData": null,
+      "Content": null,
+      "Children": []
+    },
+    {
+      "Type": "CodeBlock",
+      "MetaData": {
+        "SubType": "Indented"
+      },
+      "Content": "private void Main(string[] args)\r\n{\r\n    // Entrypoint to a C# console app\r\n}\r\n",
       "Children": []
     }
   ]

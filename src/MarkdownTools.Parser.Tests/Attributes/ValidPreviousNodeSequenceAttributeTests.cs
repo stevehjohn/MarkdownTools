@@ -15,10 +15,9 @@ namespace MarkdownTools.Parser.Tests.Attributes
 
             var attributes = Attribute.GetCustomAttributes(instance.GetType(), typeof(ValidPreviousNodeSequenceAttribute)) as ValidPreviousNodeSequenceAttribute[];
 
-            Assert.NotNull(attributes);
             Assert.That(attributes[0].NodeTypeSequence[0], Is.EqualTo(NodeType.BlockQuote));
-            Assert.That(attributes[0].NodeTypeSequence[1], Is.EqualTo(NodeType.CodeBlock));
             Assert.That(attributes[1].NodeTypeSequence[0], Is.EqualTo(NodeType.BlockQuote));
+            Assert.That(attributes[1].NodeTypeSequence[1], Is.EqualTo(NodeType.CodeBlock));
         }
     }
 

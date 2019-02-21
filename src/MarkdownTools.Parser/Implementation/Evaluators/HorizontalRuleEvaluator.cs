@@ -2,7 +2,6 @@
 using MarkdownTools.Parser.Attributes;
 using MarkdownTools.Parser.Extensions;
 using MarkdownTools.Parser.Implementation.Evaluators.Base;
-using MarkdownTools.Parser.Models;
 using System;
 
 namespace MarkdownTools.Parser.Implementation.Evaluators

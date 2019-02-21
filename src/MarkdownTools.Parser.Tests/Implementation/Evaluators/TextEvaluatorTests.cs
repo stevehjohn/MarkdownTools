@@ -14,5 +14,13 @@ namespace MarkdownTools.Parser.Tests.Implementation.Evaluators
         {
             _evaluator = new TextEvaluator();
         }
+
+        [Test]
+        public void Evaluator_returns_character()
+        {
+            var result = _evaluator.Evaluate("Some text");
+
+            Assert.That(result.Node.Content, Is.EqualTo("S"));
+        }
     }
 }

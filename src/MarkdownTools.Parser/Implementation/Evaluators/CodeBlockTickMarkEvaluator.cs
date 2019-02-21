@@ -1,7 +1,6 @@
 ﻿using MarkdownTools.Models;
 using MarkdownTools.Parser.Extensions;
 using MarkdownTools.Parser.Implementation.Evaluators.Base;
-using MarkdownTools.Parser.Models;
 using System;
 using System.Collections.Generic;
 
@@ -58,8 +57,9 @@ namespace MarkdownTools.Parser.Implementation.Evaluators
                     Type = NodeType.CodeBlock,
                     MetaData = new Dictionary<string, string>
                                {
-                                   { "Length", $"{length}" },
-                                   { "Language", $"{language}" }
+                                   { "TickMarkLength", $"{length}" },
+                                   { "Language", $"{language}" },
+                                   { "SubType", "TickMarks" }
                                },
                     Content = content
                 },

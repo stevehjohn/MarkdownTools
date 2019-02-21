@@ -10,3 +10,8 @@ private void Main(string[] args)
     // Entrypoint to a C# console app
 }
 ```
+
+    private void Main(string[] args)
+    {
+        // Entrypoint to a C# console app
+    }
