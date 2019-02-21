@@ -8,7 +8,7 @@ namespace MarkdownTools.Parser.Tests.Implementation.Evaluators
     [TestFixture]
     public class HorizontalRuleEvaluatorTests
     {
-        private BaseEvaluator _evaluator;
+        private IEvaluator _evaluator;
 
         [SetUp]
         public void SetUp()

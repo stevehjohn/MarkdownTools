@@ -6,11 +6,11 @@ namespace MarkdownTools.Parser.Implementation.Evaluators
 {
     [Precedence(1)]
     [ValidPreviousNodeSequence(NodeType.Newline)]
-    public class CodeBlockIndentedEvaluator : BaseEvaluator
+    public class CodeBlockIndentedEvaluator : IEvaluator
     {
-        public override EvaluatorResult Evaluate(string source)
+        public EvaluatorResult Evaluate(string source)
         {
-            throw new System.NotImplementedException();
+            return null;
         }
     }
 }

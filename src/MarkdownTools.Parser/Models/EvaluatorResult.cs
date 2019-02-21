@@ -4,11 +4,13 @@
     {
         public Node Node { get; }
         public string EvaluateNext { get; }
+        public bool ParseContent { get; }
 
-        public EvaluatorResult(Node node, string evaluateNext)
+        public EvaluatorResult(Node node, string evaluateNext, bool parseContent = false)
         {
             Node = node;
             EvaluateNext = evaluateNext;
+            ParseContent = parseContent;
         }
     }
 }

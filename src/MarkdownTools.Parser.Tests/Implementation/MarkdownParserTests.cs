@@ -17,7 +17,7 @@ namespace MarkdownTools.Parser.Tests.Implementation
             _parser = MarkdownParserBuilder.GetParserWithAllEvaluators();
         }
 
-        [TestCase("TR Delta Sync Process Illustration")]
+        //[TestCase("TR Delta Sync Process Illustration")]
         public void Parse(string sourceFile)
         {
             var markdown = File.ReadAllText($"TestFiles\\Inputs\\{sourceFile}.md");
@@ -31,7 +31,7 @@ namespace MarkdownTools.Parser.Tests.Implementation
             Assert.That(resultJson, Is.EqualTo(expectedJson));
         }
 
-        [Test]
+        //[Test]
         public void Parser_sorts_evaluators_in_precedence_order()
         {
             var attributes = ((MarkdownParser) _parser).Evaluators;

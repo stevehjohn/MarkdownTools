@@ -5,9 +5,9 @@ using System;
 
 namespace MarkdownTools.Parser.Implementation.Evaluators
 {
-    public class NewlineEvaluator : BaseEvaluator
+    public class NewlineEvaluator : IEvaluator
     {
-        public override EvaluatorResult Evaluate(string source)
+        public EvaluatorResult Evaluate(string source)
         {
             if (source.StartsWith(Environment.NewLine))
             {

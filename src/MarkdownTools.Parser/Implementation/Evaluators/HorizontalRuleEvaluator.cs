@@ -8,9 +8,9 @@ namespace MarkdownTools.Parser.Implementation.Evaluators
 {
     [ValidPreviousNodeSequence(NodeType.Newline)]
     [ValidPreviousNodeSequence(NodeType.Newline, NodeType.Whitespace)]
-    public class HorizontalRuleEvaluator : BaseEvaluator
+    public class HorizontalRuleEvaluator : IEvaluator
     {
-        public override EvaluatorResult Evaluate(string source)
+        public EvaluatorResult Evaluate(string source)
         {
             if (source.StartsWith("---") || source.StartsWith("***") || source.StartsWith("___"))
             {

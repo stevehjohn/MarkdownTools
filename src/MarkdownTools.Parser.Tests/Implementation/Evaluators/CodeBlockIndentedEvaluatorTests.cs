@@ -7,7 +7,7 @@ namespace MarkdownTools.Parser.Tests.Implementation.Evaluators
     [TestFixture]
     public class CodeBlockIndentedEvaluatorTests
     {
-        private BaseEvaluator _evaluator;
+        private IEvaluator _evaluator;
 
         [SetUp]
         public void SetUp()

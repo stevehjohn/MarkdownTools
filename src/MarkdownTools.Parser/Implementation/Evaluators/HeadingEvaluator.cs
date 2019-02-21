@@ -8,9 +8,9 @@ using System.Collections.Generic;
 namespace MarkdownTools.Parser.Implementation.Evaluators
 {
     [Precedence(2)]
-    public class HeadingEvaluator : BaseEvaluator
+    public class HeadingEvaluator : IEvaluator
     {
-        public override EvaluatorResult Evaluate(string source)
+        public EvaluatorResult Evaluate(string source)
         {
             if (source.SafeGetChar(0) == '#')
             {

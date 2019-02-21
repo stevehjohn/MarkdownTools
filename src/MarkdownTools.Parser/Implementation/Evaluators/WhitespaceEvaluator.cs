@@ -5,9 +5,9 @@ using System.Collections.Generic;
 
 namespace MarkdownTools.Parser.Implementation.Evaluators
 {
-    public class WhitespaceEvaluator : BaseEvaluator
+    public class WhitespaceEvaluator : IEvaluator
     {
-        public override EvaluatorResult Evaluate(string source)
+        public EvaluatorResult Evaluate(string source)
         {
             var length = 0;
 

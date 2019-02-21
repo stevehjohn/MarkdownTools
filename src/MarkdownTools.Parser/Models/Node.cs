@@ -8,9 +8,9 @@ namespace MarkdownTools.Parser.Models
         public NodeType Type { get; }
         public IReadOnlyDictionary<string, string> MetaData { get; }
         public string Content { get; }
-        public Node PreviousNode { get; internal set; }
-        public Node NextNode { get; internal set; }
-        public Node FirstChild { get; internal set; }
+        public IReadOnlyList<Node> Children => new ReadOnlyCollection<Node>(_children);
+
+        private readonly IList<Node> _children = new List<Node>();
 
         public Node(NodeType type, IDictionary<string, string> metadata = null, string content = null)
         {
@@ -19,19 +19,9 @@ namespace MarkdownTools.Parser.Models
             Content = content;
         }
 
-        internal void SetPreviousNode(Node node)
+        internal void AddChild(Node node)
         {
-            NextNode = node;
-        }
-
-        internal void SetNextNode(Node node)
-        {
-            NextNode = node;
-        }
-
-        internal void SetFirstChild(Node node)
-        {
-            FirstChild = node;
+            _children.Add(node);
         }
     }
 }

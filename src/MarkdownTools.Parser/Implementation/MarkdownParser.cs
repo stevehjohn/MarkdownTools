@@ -10,13 +10,11 @@ namespace MarkdownTools.Parser.Implementation
 {
     public class MarkdownParser : IMarkdownParser
     {
-        private readonly IList<BaseEvaluator> _evaluators;
+        private readonly IList<IEvaluator> _evaluators;
 
-        private Node _root;
+        public IReadOnlyList<IEvaluator> Evaluators => new ReadOnlyCollection<IEvaluator>(_evaluators);
 
-        public IReadOnlyList<BaseEvaluator> Evaluators => new ReadOnlyCollection<BaseEvaluator>(_evaluators);
-
-        public MarkdownParser(IEnumerable<BaseEvaluator> evaluators)
+        public MarkdownParser(IEnumerable<IEvaluator> evaluators)
         {
             _evaluators = evaluators
                           .OrderBy(e =>
@@ -29,11 +27,38 @@ namespace MarkdownTools.Parser.Implementation
 
         public Node Parse(string markdown)
         {
-            _root = new Node(NodeType.Root);
+            var root = new Node(NodeType.Root);
 
-            var previousNode = _root;
+            Parse(root, markdown);
 
-            return _root;
+            return root;
+        }
+
+        private void Parse(Node parent, string content)
+        {
+            while (! string.IsNullOrWhiteSpace(content))
+            {
+                foreach (var evaluator in _evaluators)
+                {
+                    var result = evaluator.Evaluate(content);
+
+                    if (result != null)
+                    {
+                        var node = result.Node;
+
+                        parent.AddChild(node);
+                        content = result.EvaluateNext;
+                        if (result.ParseContent)
+                        {
+                            Parse(node, node.Content);
+                        }
+
+                        break;
+                    }
+                }
+
+                // TODO: Throw?
+            }
         }
     }
 }

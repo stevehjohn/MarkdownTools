@@ -6,9 +6,9 @@ using System.Collections.Generic;
 
 namespace MarkdownTools.Parser.Implementation.Evaluators
 {
-    public class CodeBlockTickMarkEvaluator : BaseEvaluator
+    public class CodeBlockTickMarkEvaluator : IEvaluator
     {
-        public override EvaluatorResult Evaluate(string source)
+        public EvaluatorResult Evaluate(string source)
         {
             if (!source.StartsWith("```"))
             {

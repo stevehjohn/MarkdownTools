@@ -52,7 +52,7 @@
     <Compile Include="Attributes\ValidPreviousNodeSequenceAttribute.cs" />
     <Compile Include="Extensions\StringExtensions.cs" />
     <Compile Include="Implementation\Evaluators\CodeBlockIndentedEvaluator.cs" />
-    <Compile Include="Implementation\Evaluators\Base\BaseEvaluator.cs" />
+    <Compile Include="Implementation\Evaluators\Base\IEvaluator.cs" />
     <Compile Include="Implementation\Evaluators\CodeBlockTickMarkEvaluator.cs" />
     <Compile Include="Implementation\Evaluators\HorizontalRuleEvaluator.cs" />
     <Compile Include="Implementation\Evaluators\NewlineEvaluator.cs" />
