@@ -23,4 +23,5 @@ private void Main(string[] args)
 
 >    private void Main()
 >    {
+>        // Handle stuff
 >    }

@@ -15,6 +15,7 @@ namespace MarkdownTools.Parser.Implementation.Evaluators
         public EvaluatorResult Evaluate(string source)
         {
             var quote = new StringBuilder();
+            var rawQuote = new StringBuilder();
 
             while (!string.IsNullOrEmpty(source) && (source.StartsWith(">") || source.StartsWith(" >") || source.StartsWith("  >") || source.StartsWith("   >")))
             {
@@ -25,11 +26,13 @@ namespace MarkdownTools.Parser.Implementation.Evaluators
                 if (eol > -1)
                 {
                     quote.Append($"{source.SafeSubstring(0, eol).Trim()} ");
+                    rawQuote.AppendLine($"{source.SafeSubstring(0, eol)} ");
                     source = source.SafeSubstring(eol + Environment.NewLine.Length);
                 }
                 else
                 {
                     quote.Append(source.Trim());
+                    rawQuote.AppendLine(source);
                     source = null;
                 }
             }
@@ -42,7 +45,8 @@ namespace MarkdownTools.Parser.Implementation.Evaluators
                     new Node
                     {
                         Type = NodeType.BlockQuote,
-                        Content = blockquote
+                        Content = blockquote,
+                        RawContent = rawQuote.ToString()
                     },
                     source);
             }

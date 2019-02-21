@@ -66,7 +66,7 @@ namespace MarkdownTools.Parser.Implementation
                         parent.Children.Add(node);
                         if (Attribute.GetCustomAttribute(evaluator.GetType(), typeof(ParseContentAttribute)) != null)
                         {
-                            Parse(node, node.Content);
+                            Parse(node, node.RawContent);
                         }
 
                         previousNode = node;

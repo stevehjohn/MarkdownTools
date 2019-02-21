@@ -302,7 +302,15 @@
     {
       "Type": "BlockQuote",
       "Content": "This is a single blockquote",
+      "RawContent": " This is a single blockquote \r\n",
       "Children": [
+        {
+          "Type": "Whitespace",
+          "MetaData": {
+            "Length": "1"
+          },
+          "Children": []
+        },
         {
           "Type": "Text",
           "Content": "This",
@@ -355,6 +363,17 @@
           "Type": "Text",
           "Content": "blockquote",
           "Children": []
+        },
+        {
+          "Type": "Whitespace",
+          "MetaData": {
+            "Length": "1"
+          },
+          "Children": []
+        },
+        {
+          "Type": "Newline",
+          "Children": []
         }
       ]
     },
@@ -365,7 +384,15 @@
     {
       "Type": "BlockQuote",
       "Content": "Multiline Blockquote",
+      "RawContent": " Multiline \r\n Blockquote \r\n",
       "Children": [
+        {
+          "Type": "Whitespace",
+          "MetaData": {
+            "Length": "1"
+          },
+          "Children": []
+        },
         {
           "Type": "Text",
           "Content": "Multiline",
@@ -379,8 +406,30 @@
           "Children": []
         },
         {
+          "Type": "Newline",
+          "Children": []
+        },
+        {
+          "Type": "Whitespace",
+          "MetaData": {
+            "Length": "1"
+          },
+          "Children": []
+        },
+        {
           "Type": "Text",
           "Content": "Blockquote",
+          "Children": []
+        },
+        {
+          "Type": "Whitespace",
+          "MetaData": {
+            "Length": "1"
+          },
+          "Children": []
+        },
+        {
+          "Type": "Newline",
           "Children": []
         }
       ]
@@ -391,8 +440,16 @@
     },
     {
       "Type": "BlockQuote",
-      "Content": "private void Main() { }",
+      "Content": "private void Main() { // Handle stuff }",
+      "RawContent": "    private void Main() \r\n    { \r\n        // Handle stuff \r\n    } \r\n",
       "Children": [
+        {
+          "Type": "Whitespace",
+          "MetaData": {
+            "Length": "4"
+          },
+          "Children": []
+        },
         {
           "Type": "Text",
           "Content": "private",
@@ -430,20 +487,15 @@
           "Children": []
         },
         {
-          "Type": "Text",
-          "Content": "{",
+          "Type": "Newline",
           "Children": []
         },
         {
-          "Type": "Whitespace",
+          "Type": "CodeBlock",
           "MetaData": {
-            "Length": "1"
+            "SubType": "Indented"
           },
-          "Children": []
-        },
-        {
-          "Type": "Text",
-          "Content": "}",
+          "Content": "{ \r\n    // Handle stuff \r\n} \r\n",
           "Children": []
         }
       ]

@@ -10,7 +10,7 @@ namespace MarkdownTools.Models
         public NodeType Type { get; set; }
         public IDictionary<string, string> MetaData { get; set; }
         public string Content { get; set; }
-        public string UnparsedContent { get; set; }
+        public string RawContent { get; set; }
         public IList<Node> Children { get; }
 
         public Node()
