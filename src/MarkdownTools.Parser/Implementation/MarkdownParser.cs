@@ -21,7 +21,7 @@ namespace MarkdownTools.Parser.Implementation
                           {
                               var attribute = Attribute.GetCustomAttribute(e.GetType(), typeof(PrecedenceAttribute)) as PrecedenceAttribute;
 
-                              return attribute?.Precedence ?? int.MaxValue;
+                              return attribute?.Precedence ?? int.MaxValue - 2;
                           }).ToList();
         }
 
@@ -30,14 +30,16 @@ namespace MarkdownTools.Parser.Implementation
             var root = new Node(NodeType.Root);
 
             Parse(root, markdown);
-
+            
             return root;
         }
 
         private void Parse(Node parent, string content)
         {
-            while (! string.IsNullOrWhiteSpace(content))
+            while (! string.IsNullOrEmpty(content))
             {
+                var parsed = false;
+
                 foreach (var evaluator in _evaluators)
                 {
                     var result = evaluator.Evaluate(content);
@@ -53,11 +55,15 @@ namespace MarkdownTools.Parser.Implementation
                             Parse(node, node.Content);
                         }
 
+                        parsed = true;
                         break;
                     }
                 }
 
-                // TODO: Throw?
+                if (! parsed)
+                {
+                    throw new ParserException("Unable to find evaluator to handle content", content);
+                }
             }
         }
     }

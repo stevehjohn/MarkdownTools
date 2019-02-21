@@ -70,6 +70,7 @@
     <Compile Include="Implementation\Evaluators\HeadingEvaluatorTests.cs" />
     <Compile Include="Implementation\Evaluators\HorizontalRuleEvaluatorTests.cs" />
     <Compile Include="Implementation\Evaluators\NewlineEvaluatorTests.cs" />
+    <Compile Include="Implementation\Evaluators\TextEvaluatorTests.cs" />
     <Compile Include="Implementation\Evaluators\WhitespaceEvaluatorTests.cs" />
     <Compile Include="Implementation\MarkdownParserBuilderTests.cs" />
     <Compile Include="Implementation\MarkdownParserTests.cs" />

@@ -17,7 +17,8 @@ namespace MarkdownTools.Parser.Tests.Implementation
             _parser = MarkdownParserBuilder.GetParserWithAllEvaluators();
         }
 
-        //[TestCase("TR Delta Sync Process Illustration")]
+        [Explicit]
+        [TestCase("WIP")]
         public void Parse(string sourceFile)
         {
             var markdown = File.ReadAllText($"TestFiles\\Inputs\\{sourceFile}.md");
@@ -31,13 +32,16 @@ namespace MarkdownTools.Parser.Tests.Implementation
             Assert.That(resultJson, Is.EqualTo(expectedJson));
         }
 
-        //[Test]
+        [Test]
         public void Parser_sorts_evaluators_in_precedence_order()
         {
             var attributes = ((MarkdownParser) _parser).Evaluators;
 
             Assert.That(attributes[0], Is.AssignableTo(typeof(CodeBlockIndentedEvaluator)));
             Assert.That(attributes[1], Is.AssignableTo(typeof(HeadingEvaluator)));
+
+            Assert.That(attributes[attributes.Count - 2], Is.AssignableTo(typeof(WhitespaceEvaluator)));
+            Assert.That(attributes[attributes.Count - 1], Is.AssignableTo(typeof(TextEvaluator)));
         }
     }
 }
