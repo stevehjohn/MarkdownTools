@@ -52,14 +52,16 @@ namespace MarkdownTools.Parser.Implementation.Evaluators
             }
 
             return new EvaluatorResult(
-                new Node(
-                    NodeType.CodeBlock,
-                    new Dictionary<string, string>
-                    {
-                        { "Length", $"{length}" },
-                        { "Language", $"{language}" }
-                    },
-                    content),
+                new Node
+                {
+                    Type = NodeType.CodeBlock,
+                    MetaData = new Dictionary<string, string>
+                               {
+                                   { "Length", $"{length}" },
+                                   { "Language", $"{language}" }
+                               },
+                    Content = content
+                },
                 source);
         }
     }

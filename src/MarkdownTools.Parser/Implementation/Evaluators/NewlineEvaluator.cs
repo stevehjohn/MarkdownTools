@@ -12,7 +12,10 @@ namespace MarkdownTools.Parser.Implementation.Evaluators
             if (source.StartsWith(Environment.NewLine))
             {
                 return new EvaluatorResult(
-                    new Node(NodeType.Newline),
+                    new Node
+                    {
+                        Type = NodeType.Newline
+                    },
                     source.SafeSubstring(Environment.NewLine.Length));
             }
 

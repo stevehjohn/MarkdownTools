@@ -49,10 +49,14 @@ namespace MarkdownTools.Parser.Implementation.Evaluators
                     source = source.SafeSubstring(level);
 
                     return new EvaluatorResult(
-                        new Node(NodeType.Heading, new Dictionary<string, string>
-                                                   {
-                                                       { "Level", $"{level}" }
-                                                   }),
+                        new Node
+                        {
+                            Type = NodeType.Heading,
+                            MetaData = new Dictionary<string, string>
+                                       {
+                                           { "Level", $"{level}" }
+                                       }
+                        },
                         source);
                 }
             }

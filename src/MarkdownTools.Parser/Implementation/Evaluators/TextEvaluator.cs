@@ -11,7 +11,11 @@ namespace MarkdownTools.Parser.Implementation.Evaluators
         public EvaluatorResult Evaluate(string source)
         {
             return new EvaluatorResult(
-                new Node(NodeType.Text, null, source[0].ToString()), 
+                new Node
+                {
+                    Type = NodeType.Text,
+                    Content = source[0].ToString()
+                },
                 source.SafeSubstring(1));
         }
     }

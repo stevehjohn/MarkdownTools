@@ -21,10 +21,14 @@ namespace MarkdownTools.Parser.Implementation.Evaluators
             if (length > 0)
             {
                 return new EvaluatorResult(
-                    new Node(NodeType.Whitespace, new Dictionary<string, string>
-                                                  {
-                                                      { "Length", $"{length}" }
-                                                  }),
+                    new Node
+                    {
+                        Type = NodeType.Whitespace,
+                        MetaData = new Dictionary<string, string>
+                                   {
+                                       { "Length", $"{length}" }
+                                   }
+                    },
                     source.SafeSubstring(length));
             }
 

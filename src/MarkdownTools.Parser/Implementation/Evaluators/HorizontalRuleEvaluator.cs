@@ -30,7 +30,10 @@ namespace MarkdownTools.Parser.Implementation.Evaluators
                     if (string.IsNullOrWhiteSpace(source.SafeSubstring(length)))
                     {
                         return new EvaluatorResult(
-                            new Node(NodeType.HorizontalRule), 
+                            new Node
+                            {
+                                Type = NodeType.HorizontalRule
+                            },
                             null);
                     }
                 }
@@ -39,7 +42,10 @@ namespace MarkdownTools.Parser.Implementation.Evaluators
                     if (string.IsNullOrWhiteSpace(source.SafeSubstring(length, eol - length)))
                     {
                         return new EvaluatorResult(
-                            new Node(NodeType.HorizontalRule),
+                            new Node
+                            {
+                                Type = NodeType.HorizontalRule
+                            },
                             source.Substring(eol));
                     }
                 }

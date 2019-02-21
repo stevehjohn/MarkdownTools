@@ -27,7 +27,10 @@ namespace MarkdownTools.Parser.Implementation
 
         public Node Parse(string markdown)
         {
-            var root = new Node(NodeType.Root);
+            var root = new Node
+                       {
+                           Type = NodeType.Root
+                       };
 
             Parse(root, markdown);
             
@@ -36,6 +39,8 @@ namespace MarkdownTools.Parser.Implementation
 
         private void Parse(Node parent, string content)
         {
+            Node previousNode = null;
+
             while (! string.IsNullOrEmpty(content))
             {
                 var parsed = false;
@@ -46,16 +51,23 @@ namespace MarkdownTools.Parser.Implementation
 
                     if (result != null)
                     {
-                        var node = result.Node;
-
-                        parent.AddChild(node);
+                        parsed = true;
                         content = result.EvaluateNext;
+
+                        var node = result.Node;
+                        if (node.Type == NodeType.Text && previousNode != null && previousNode.Type == NodeType.Text)
+                        {
+                            previousNode.Content = $"{previousNode.Content}{node.Content}";
+                            break;
+                        }
+
+                        parent.Children.Add(node);
                         if (result.ParseContent)
                         {
                             Parse(node, node.Content);
                         }
 
-                        parsed = true;
+                        previousNode = node;
                         break;
                     }
                 }
