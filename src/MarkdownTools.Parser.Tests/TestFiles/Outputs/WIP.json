@@ -300,7 +300,7 @@
       "Children": []
     },
     {
-      "Type": "BlockQuote",
+      "Type": "Blockquote",
       "Content": "This is a single blockquote",
       "RawContent": " This is a single blockquote\r\n",
       "Children": [
@@ -375,7 +375,7 @@
       "Children": []
     },
     {
-      "Type": "BlockQuote",
+      "Type": "Blockquote",
       "Content": "Multiline Blockquote",
       "RawContent": " Multiline\r\n Blockquote\r\n",
       "Children": [
@@ -418,7 +418,7 @@
       "Children": []
     },
     {
-      "Type": "BlockQuote",
+      "Type": "Blockquote",
       "Content": "private void Main() { // Handle stuff }",
       "RawContent": "    private void Main()\r\n    {\r\n        // Handle stuff\r\n    }\r\n",
       "Children": [

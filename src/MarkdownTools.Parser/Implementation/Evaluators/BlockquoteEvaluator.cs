@@ -44,7 +44,7 @@ namespace MarkdownTools.Parser.Implementation.Evaluators
                 return new EvaluatorResult(
                     new Node
                     {
-                        Type = NodeType.BlockQuote,
+                        Type = NodeType.Blockquote,
                         Content = blockquote,
                         RawContent = rawQuote.ToString()
                     },

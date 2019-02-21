@@ -9,7 +9,7 @@ using System.Text;
 namespace MarkdownTools.Parser.Implementation.Evaluators
 {
     [Precedence(1)]
-    [ValidPreviousNodeSequence(NodeType.Newline)]
+    //[ValidPreviousNodeSequence(NodeType.Newline)]
     public class CodeBlockIndentedEvaluator : IEvaluator
     {
         public EvaluatorResult Evaluate(string source)

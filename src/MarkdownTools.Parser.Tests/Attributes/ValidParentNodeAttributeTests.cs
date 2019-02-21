@@ -16,13 +16,13 @@ namespace MarkdownTools.Parser.Tests.Attributes
             var attribute = Attribute.GetCustomAttribute(instance.GetType(), typeof(ValidParentNodesAttribute)) as ValidParentNodesAttribute;
 
             Assert.NotNull(attribute);
-            Assert.That(attribute.NodeTypes, Contains.Item(NodeType.BlockQuote));
+            Assert.That(attribute.NodeTypes, Contains.Item(NodeType.Blockquote));
             Assert.That(attribute.NodeTypes, Contains.Item(NodeType.CodeBlock));
             Assert.That(attribute.NodeTypes, ! Contains.Item(NodeType.Heading));
         }
     }
     
-    [ValidParentNodes(NodeType.BlockQuote, NodeType.CodeBlock)]
+    [ValidParentNodes(NodeType.Blockquote, NodeType.CodeBlock)]
     internal class DecoratedWithValidParentNodeAttribute
     {
     }

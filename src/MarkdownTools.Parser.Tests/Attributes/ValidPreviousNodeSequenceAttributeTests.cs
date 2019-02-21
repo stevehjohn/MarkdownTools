@@ -20,14 +20,14 @@ namespace MarkdownTools.Parser.Tests.Attributes
                 .ToList();
 
             Assert.NotNull(attributes);
-            Assert.That(attributes[0].NodeTypeSequence[0], Is.EqualTo(NodeType.BlockQuote));
-            Assert.That(attributes[1].NodeTypeSequence[0], Is.EqualTo(NodeType.BlockQuote));
+            Assert.That(attributes[0].NodeTypeSequence[0], Is.EqualTo(NodeType.Blockquote));
+            Assert.That(attributes[1].NodeTypeSequence[0], Is.EqualTo(NodeType.Blockquote));
             Assert.That(attributes[1].NodeTypeSequence[1], Is.EqualTo(NodeType.CodeBlock));
         }
     }
 
-    [ValidPreviousNodeSequence(NodeType.BlockQuote)]
-    [ValidPreviousNodeSequence(NodeType.BlockQuote, NodeType.CodeBlock)]
+    [ValidPreviousNodeSequence(NodeType.Blockquote)]
+    [ValidPreviousNodeSequence(NodeType.Blockquote, NodeType.CodeBlock)]
     internal class DecoratedWithValidPreviousNodeSequenceAttribute
     {
     }

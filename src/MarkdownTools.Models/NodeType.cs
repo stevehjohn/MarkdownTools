@@ -2,7 +2,7 @@
 {
     public enum NodeType
     {
-        BlockQuote,
+        Blockquote,
         CodeBlock,
         Heading,
         HorizontalRule,
