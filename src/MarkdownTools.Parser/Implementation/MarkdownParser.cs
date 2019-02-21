@@ -43,15 +43,17 @@ namespace MarkdownTools.Parser.Implementation
 
             while (! string.IsNullOrEmpty(content))
             {
-                var parsed = false;
-
                 foreach (var evaluator in _evaluators)
                 {
+                    if (! CheckEvaluatorAttributes(parent, evaluator))
+                    {
+                        continue;
+                    }
+
                     var result = evaluator.Evaluate(content);
 
                     if (result != null)
                     {
-                        parsed = true;
                         content = result.EvaluateNext;
 
                         var node = result.Node;
@@ -71,12 +73,58 @@ namespace MarkdownTools.Parser.Implementation
                         break;
                     }
                 }
+            }
+        }
 
-                if (! parsed)
+        private static bool CheckEvaluatorAttributes(Node parent, IEvaluator evaluator)
+        {
+            if (Attribute.GetCustomAttribute(evaluator.GetType(), typeof(ValidParentNodesAttribute)) is ValidParentNodesAttribute validParentNodeAttribute)
+            {
+                if (! validParentNodeAttribute.NodeTypes.Contains(parent.Type))
                 {
-                    throw new ParserException("Unable to find evaluator to handle content", content);
+                    return false;
                 }
             }
+
+            var validPreviousNodeSequenceAttributes = Attribute.GetCustomAttributes(evaluator.GetType(), typeof(ValidPreviousNodeSequenceAttribute)) as ValidPreviousNodeSequenceAttribute[];
+
+            if (validPreviousNodeSequenceAttributes != null && validPreviousNodeSequenceAttributes.Length > 0)
+            {
+                if (parent.Children.Count == 0 && parent.Type == NodeType.Root)
+                {
+                    return true;
+                }
+
+                foreach (var validPreviousNodeSequenceAttribute in validPreviousNodeSequenceAttributes)
+                {
+                    if (validPreviousNodeSequenceAttribute.NodeTypeSequence.Count > parent.Children.Count)
+                    {
+                        continue;
+                    }
+
+                    var index = 1;
+
+                    var match = true;
+
+                    foreach (var nodeType in validPreviousNodeSequenceAttribute.NodeTypeSequence)
+                    {
+                        if (parent.Children[parent.Children.Count - index].Type != nodeType)
+                        {
+                            match = false;
+                            break;
+                        }
+                    }
+
+                    if (match)
+                    {
+                        return true;
+                    }
+                }
+
+                return false;
+            }
+
+            return true;
         }
     }
 }

@@ -13,14 +13,16 @@ namespace MarkdownTools.Parser.Tests.Attributes
         {
             var instance = new DecoratedWithValidPreviousNodeSequenceAttribute();
 
-            var attribute = Attribute.GetCustomAttribute(instance.GetType(), typeof(ValidPreviousNodeSequenceAttribute)) as ValidPreviousNodeSequenceAttribute;
+            var attributes = Attribute.GetCustomAttributes(instance.GetType(), typeof(ValidPreviousNodeSequenceAttribute)) as ValidPreviousNodeSequenceAttribute[];
 
-            Assert.NotNull(attribute);
-            Assert.That(attribute.NodeTypeSequence[0], Is.EqualTo(NodeType.BlockQuote));
-            Assert.That(attribute.NodeTypeSequence[1], Is.EqualTo(NodeType.CodeBlock));
+            Assert.NotNull(attributes);
+            Assert.That(attributes[0].NodeTypeSequence[0], Is.EqualTo(NodeType.BlockQuote));
+            Assert.That(attributes[0].NodeTypeSequence[1], Is.EqualTo(NodeType.CodeBlock));
+            Assert.That(attributes[1].NodeTypeSequence[0], Is.EqualTo(NodeType.BlockQuote));
         }
     }
 
+    [ValidPreviousNodeSequence(NodeType.BlockQuote)]
     [ValidPreviousNodeSequence(NodeType.BlockQuote, NodeType.CodeBlock)]
     internal class DecoratedWithValidPreviousNodeSequenceAttribute
     {

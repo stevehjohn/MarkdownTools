@@ -60,8 +60,7 @@
     <Compile Include="Implementation\Evaluators\TextEvaluator.cs" />
     <Compile Include="Implementation\IMarkdownParser.cs" />
     <Compile Include="Implementation\MarkdownParserBuilder.cs" />
-    <Compile Include="Implementation\ParserException.cs" />
-    <Compile Include="Models\EvaluatorResult.cs" />
+    <Compile Include="Implementation\EvaluatorResult.cs" />
     <Compile Include="Implementation\Evaluators\HeadingEvaluator.cs" />
     <Compile Include="Implementation\Evaluators\WhitespaceEvaluator.cs" />
     <Compile Include="Implementation\MarkdownParser.cs" />

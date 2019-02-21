@@ -13,3 +13,7 @@ Will need to work out precedence as I go along. Figured out that this order matt
 * Text
 
 Reckon that with recursion and the attributes, something robust can be created. Need to think about it a bit more.
+
+## A note on CheckEvaluatorAttributes
+
+For now, assumes that any item can start a document so ValidPreviousNodeSequenceAttribute attributes are ignored in that case.
