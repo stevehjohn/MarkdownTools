@@ -24,7 +24,12 @@ namespace MarkdownTools.Parser.Tests.Implementation
 
             var result = _parser.Parse(markdown);
 
-            var resultJson = JsonConvert.SerializeObject(result, Formatting.Indented);
+            var resultJson = JsonConvert.SerializeObject(result,
+                                                         Formatting.Indented,
+                                                         new JsonSerializerSettings
+                                                         {
+                                                             NullValueHandling = NullValueHandling.Ignore
+                                                         });
 
             var expectedJson = File.ReadAllText($"TestFiles\\Outputs\\{sourceFile}.json");
 

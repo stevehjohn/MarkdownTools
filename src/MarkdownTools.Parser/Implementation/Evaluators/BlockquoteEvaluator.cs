@@ -43,8 +43,8 @@ namespace MarkdownTools.Parser.Implementation.Evaluators
                     {
                         Type = NodeType.BlockQuote,
                         Content = blockquote
-                    }
-                    , source);
+                    },
+                    source);
             }
 
             return null;

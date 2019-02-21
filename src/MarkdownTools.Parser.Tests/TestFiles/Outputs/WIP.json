@@ -1,14 +1,11 @@
 {
   "Type": "Root",
-  "MetaData": null,
-  "Content": null,
   "Children": [
     {
       "Type": "Heading",
       "MetaData": {
         "Level": "1"
       },
-      "Content": null,
       "Children": []
     },
     {
@@ -16,12 +13,10 @@
       "MetaData": {
         "Length": "1"
       },
-      "Content": null,
       "Children": []
     },
     {
       "Type": "Text",
-      "MetaData": null,
       "Content": "This",
       "Children": []
     },
@@ -30,12 +25,10 @@
       "MetaData": {
         "Length": "1"
       },
-      "Content": null,
       "Children": []
     },
     {
       "Type": "Text",
-      "MetaData": null,
       "Content": "is",
       "Children": []
     },
@@ -44,12 +37,10 @@
       "MetaData": {
         "Length": "1"
       },
-      "Content": null,
       "Children": []
     },
     {
       "Type": "Text",
-      "MetaData": null,
       "Content": "the",
       "Children": []
     },
@@ -58,12 +49,10 @@
       "MetaData": {
         "Length": "1"
       },
-      "Content": null,
       "Children": []
     },
     {
       "Type": "Text",
-      "MetaData": null,
       "Content": "WIP",
       "Children": []
     },
@@ -72,12 +61,10 @@
       "MetaData": {
         "Length": "1"
       },
-      "Content": null,
       "Children": []
     },
     {
       "Type": "Text",
-      "MetaData": null,
       "Content": "test",
       "Children": []
     },
@@ -86,12 +73,10 @@
       "MetaData": {
         "Length": "1"
       },
-      "Content": null,
       "Children": []
     },
     {
       "Type": "Text",
-      "MetaData": null,
       "Content": "file",
       "Children": []
     },
@@ -100,12 +85,10 @@
       "MetaData": {
         "Length": "1"
       },
-      "Content": null,
       "Children": []
     },
     {
       "Type": "Text",
-      "MetaData": null,
       "Content": "for",
       "Children": []
     },
@@ -114,12 +97,10 @@
       "MetaData": {
         "Length": "1"
       },
-      "Content": null,
       "Children": []
     },
     {
       "Type": "Text",
-      "MetaData": null,
       "Content": "markdown",
       "Children": []
     },
@@ -128,48 +109,35 @@
       "MetaData": {
         "Length": "1"
       },
-      "Content": null,
       "Children": []
     },
     {
       "Type": "Text",
-      "MetaData": null,
       "Content": "tools",
       "Children": []
     },
     {
       "Type": "Newline",
-      "MetaData": null,
-      "Content": null,
       "Children": []
     },
     {
       "Type": "Newline",
-      "MetaData": null,
-      "Content": null,
       "Children": []
     },
     {
       "Type": "HorizontalRule",
-      "MetaData": null,
-      "Content": null,
       "Children": []
     },
     {
       "Type": "Newline",
-      "MetaData": null,
-      "Content": null,
       "Children": []
     },
     {
       "Type": "Newline",
-      "MetaData": null,
-      "Content": null,
       "Children": []
     },
     {
       "Type": "Text",
-      "MetaData": null,
       "Content": "I",
       "Children": []
     },
@@ -178,12 +146,10 @@
       "MetaData": {
         "Length": "1"
       },
-      "Content": null,
       "Children": []
     },
     {
       "Type": "Text",
-      "MetaData": null,
       "Content": "will",
       "Children": []
     },
@@ -192,12 +158,10 @@
       "MetaData": {
         "Length": "1"
       },
-      "Content": null,
       "Children": []
     },
     {
       "Type": "Text",
-      "MetaData": null,
       "Content": "add",
       "Children": []
     },
@@ -206,12 +170,10 @@
       "MetaData": {
         "Length": "1"
       },
-      "Content": null,
       "Children": []
     },
     {
       "Type": "Text",
-      "MetaData": null,
       "Content": "types",
       "Children": []
     },
@@ -220,12 +182,10 @@
       "MetaData": {
         "Length": "1"
       },
-      "Content": null,
       "Children": []
     },
     {
       "Type": "Text",
-      "MetaData": null,
       "Content": "of",
       "Children": []
     },
@@ -234,12 +194,10 @@
       "MetaData": {
         "Length": "1"
       },
-      "Content": null,
       "Children": []
     },
     {
       "Type": "Text",
-      "MetaData": null,
       "Content": "markdown",
       "Children": []
     },
@@ -248,12 +206,10 @@
       "MetaData": {
         "Length": "1"
       },
-      "Content": null,
       "Children": []
     },
     {
       "Type": "Text",
-      "MetaData": null,
       "Content": "as",
       "Children": []
     },
@@ -262,12 +218,10 @@
       "MetaData": {
         "Length": "1"
       },
-      "Content": null,
       "Children": []
     },
     {
       "Type": "Text",
-      "MetaData": null,
       "Content": "each",
       "Children": []
     },
@@ -276,12 +230,10 @@
       "MetaData": {
         "Length": "1"
       },
-      "Content": null,
       "Children": []
     },
     {
       "Type": "Text",
-      "MetaData": null,
       "Content": "evaluator",
       "Children": []
     },
@@ -290,12 +242,10 @@
       "MetaData": {
         "Length": "1"
       },
-      "Content": null,
       "Children": []
     },
     {
       "Type": "Text",
-      "MetaData": null,
       "Content": "is",
       "Children": []
     },
@@ -304,25 +254,19 @@
       "MetaData": {
         "Length": "1"
       },
-      "Content": null,
       "Children": []
     },
     {
       "Type": "Text",
-      "MetaData": null,
       "Content": "implemented.",
       "Children": []
     },
     {
       "Type": "Newline",
-      "MetaData": null,
-      "Content": null,
       "Children": []
     },
     {
       "Type": "Newline",
-      "MetaData": null,
-      "Content": null,
       "Children": []
     },
     {
@@ -337,14 +281,10 @@
     },
     {
       "Type": "Newline",
-      "MetaData": null,
-      "Content": null,
       "Children": []
     },
     {
       "Type": "Newline",
-      "MetaData": null,
-      "Content": null,
       "Children": []
     },
     {
@@ -357,18 +297,14 @@
     },
     {
       "Type": "Newline",
-      "MetaData": null,
-      "Content": null,
       "Children": []
     },
     {
       "Type": "BlockQuote",
-      "MetaData": null,
       "Content": "This is a single blockquote",
       "Children": [
         {
           "Type": "Text",
-          "MetaData": null,
           "Content": "This",
           "Children": []
         },
@@ -377,12 +313,10 @@
           "MetaData": {
             "Length": "1"
           },
-          "Content": null,
           "Children": []
         },
         {
           "Type": "Text",
-          "MetaData": null,
           "Content": "is",
           "Children": []
         },
@@ -391,12 +325,10 @@
           "MetaData": {
             "Length": "1"
           },
-          "Content": null,
           "Children": []
         },
         {
           "Type": "Text",
-          "MetaData": null,
           "Content": "a",
           "Children": []
         },
@@ -405,12 +337,10 @@
           "MetaData": {
             "Length": "1"
           },
-          "Content": null,
           "Children": []
         },
         {
           "Type": "Text",
-          "MetaData": null,
           "Content": "single",
           "Children": []
         },
@@ -419,12 +349,10 @@
           "MetaData": {
             "Length": "1"
           },
-          "Content": null,
           "Children": []
         },
         {
           "Type": "Text",
-          "MetaData": null,
           "Content": "blockquote",
           "Children": []
         }
@@ -432,18 +360,14 @@
     },
     {
       "Type": "Newline",
-      "MetaData": null,
-      "Content": null,
       "Children": []
     },
     {
       "Type": "BlockQuote",
-      "MetaData": null,
       "Content": "Multiline Blockquote",
       "Children": [
         {
           "Type": "Text",
-          "MetaData": null,
           "Content": "Multiline",
           "Children": []
         },
@@ -452,12 +376,10 @@
           "MetaData": {
             "Length": "1"
           },
-          "Content": null,
           "Children": []
         },
         {
           "Type": "Text",
-          "MetaData": null,
           "Content": "Blockquote",
           "Children": []
         }
@@ -465,18 +387,14 @@
     },
     {
       "Type": "Newline",
-      "MetaData": null,
-      "Content": null,
       "Children": []
     },
     {
       "Type": "BlockQuote",
-      "MetaData": null,
       "Content": "private void Main() { }",
       "Children": [
         {
           "Type": "Text",
-          "MetaData": null,
           "Content": "private",
           "Children": []
         },
@@ -485,12 +403,10 @@
           "MetaData": {
             "Length": "1"
           },
-          "Content": null,
           "Children": []
         },
         {
           "Type": "Text",
-          "MetaData": null,
           "Content": "void",
           "Children": []
         },
@@ -499,12 +415,10 @@
           "MetaData": {
             "Length": "1"
           },
-          "Content": null,
           "Children": []
         },
         {
           "Type": "Text",
-          "MetaData": null,
           "Content": "Main()",
           "Children": []
         },
@@ -513,12 +427,10 @@
           "MetaData": {
             "Length": "1"
           },
-          "Content": null,
           "Children": []
         },
         {
           "Type": "Text",
-          "MetaData": null,
           "Content": "{",
           "Children": []
         },
@@ -527,12 +439,10 @@
           "MetaData": {
             "Length": "1"
           },
-          "Content": null,
           "Children": []
         },
         {
           "Type": "Text",
-          "MetaData": null,
           "Content": "}",
           "Children": []
         }
