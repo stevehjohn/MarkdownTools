@@ -26,7 +26,7 @@ namespace MarkdownTools.Parser.Implementation.Evaluators
                 if (eol > -1)
                 {
                     quote.Append($"{source.SafeSubstring(0, eol).Trim()} ");
-                    rawQuote.AppendLine($"{source.SafeSubstring(0, eol)} ");
+                    rawQuote.AppendLine($"{source.SafeSubstring(0, eol)}");
                     source = source.SafeSubstring(eol + Environment.NewLine.Length);
                 }
                 else

@@ -302,7 +302,7 @@
     {
       "Type": "BlockQuote",
       "Content": "This is a single blockquote",
-      "RawContent": " This is a single blockquote \r\n",
+      "RawContent": " This is a single blockquote\r\n",
       "Children": [
         {
           "Type": "Whitespace",
@@ -365,13 +365,6 @@
           "Children": []
         },
         {
-          "Type": "Whitespace",
-          "MetaData": {
-            "Length": "1"
-          },
-          "Children": []
-        },
-        {
           "Type": "Newline",
           "Children": []
         }
@@ -384,7 +377,7 @@
     {
       "Type": "BlockQuote",
       "Content": "Multiline Blockquote",
-      "RawContent": " Multiline \r\n Blockquote \r\n",
+      "RawContent": " Multiline\r\n Blockquote\r\n",
       "Children": [
         {
           "Type": "Whitespace",
@@ -396,13 +389,6 @@
         {
           "Type": "Text",
           "Content": "Multiline",
-          "Children": []
-        },
-        {
-          "Type": "Whitespace",
-          "MetaData": {
-            "Length": "1"
-          },
           "Children": []
         },
         {
@@ -422,13 +408,6 @@
           "Children": []
         },
         {
-          "Type": "Whitespace",
-          "MetaData": {
-            "Length": "1"
-          },
-          "Children": []
-        },
-        {
           "Type": "Newline",
           "Children": []
         }
@@ -441,61 +420,14 @@
     {
       "Type": "BlockQuote",
       "Content": "private void Main() { // Handle stuff }",
-      "RawContent": "    private void Main() \r\n    { \r\n        // Handle stuff \r\n    } \r\n",
+      "RawContent": "    private void Main()\r\n    {\r\n        // Handle stuff\r\n    }\r\n",
       "Children": [
-        {
-          "Type": "Whitespace",
-          "MetaData": {
-            "Length": "4"
-          },
-          "Children": []
-        },
-        {
-          "Type": "Text",
-          "Content": "private",
-          "Children": []
-        },
-        {
-          "Type": "Whitespace",
-          "MetaData": {
-            "Length": "1"
-          },
-          "Children": []
-        },
-        {
-          "Type": "Text",
-          "Content": "void",
-          "Children": []
-        },
-        {
-          "Type": "Whitespace",
-          "MetaData": {
-            "Length": "1"
-          },
-          "Children": []
-        },
-        {
-          "Type": "Text",
-          "Content": "Main()",
-          "Children": []
-        },
-        {
-          "Type": "Whitespace",
-          "MetaData": {
-            "Length": "1"
-          },
-          "Children": []
-        },
-        {
-          "Type": "Newline",
-          "Children": []
-        },
         {
           "Type": "CodeBlock",
           "MetaData": {
             "SubType": "Indented"
           },
-          "Content": "{ \r\n    // Handle stuff \r\n} \r\n",
+          "Content": "private void Main()\r\n{\r\n    // Handle stuff\r\n}\r\n",
           "Children": []
         }
       ]
