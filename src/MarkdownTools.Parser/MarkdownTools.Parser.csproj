@@ -53,6 +53,7 @@
     <Compile Include="Attributes\ValidParentNodesAttribute.cs" />
     <Compile Include="Attributes\ValidPreviousNodeSequenceAttribute.cs" />
     <Compile Include="Extensions\StringExtensions.cs" />
+    <Compile Include="Implementation\Evaluators\BlockquoteEvaluator.cs" />
     <Compile Include="Implementation\Evaluators\CodeBlockIndentedEvaluator.cs" />
     <Compile Include="Implementation\Evaluators\Base\IEvaluator.cs" />
     <Compile Include="Implementation\Evaluators\CodeBlockTickMarkEvaluator.cs" />

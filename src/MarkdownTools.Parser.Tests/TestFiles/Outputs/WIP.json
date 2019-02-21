@@ -354,6 +354,189 @@
       },
       "Content": "private void Main(string[] args)\r\n{\r\n    // Entrypoint to a C# console app\r\n}\r\n",
       "Children": []
+    },
+    {
+      "Type": "Newline",
+      "MetaData": null,
+      "Content": null,
+      "Children": []
+    },
+    {
+      "Type": "BlockQuote",
+      "MetaData": null,
+      "Content": "This is a single blockquote",
+      "Children": [
+        {
+          "Type": "Text",
+          "MetaData": null,
+          "Content": "This",
+          "Children": []
+        },
+        {
+          "Type": "Whitespace",
+          "MetaData": {
+            "Length": "1"
+          },
+          "Content": null,
+          "Children": []
+        },
+        {
+          "Type": "Text",
+          "MetaData": null,
+          "Content": "is",
+          "Children": []
+        },
+        {
+          "Type": "Whitespace",
+          "MetaData": {
+            "Length": "1"
+          },
+          "Content": null,
+          "Children": []
+        },
+        {
+          "Type": "Text",
+          "MetaData": null,
+          "Content": "a",
+          "Children": []
+        },
+        {
+          "Type": "Whitespace",
+          "MetaData": {
+            "Length": "1"
+          },
+          "Content": null,
+          "Children": []
+        },
+        {
+          "Type": "Text",
+          "MetaData": null,
+          "Content": "single",
+          "Children": []
+        },
+        {
+          "Type": "Whitespace",
+          "MetaData": {
+            "Length": "1"
+          },
+          "Content": null,
+          "Children": []
+        },
+        {
+          "Type": "Text",
+          "MetaData": null,
+          "Content": "blockquote",
+          "Children": []
+        }
+      ]
+    },
+    {
+      "Type": "Newline",
+      "MetaData": null,
+      "Content": null,
+      "Children": []
+    },
+    {
+      "Type": "BlockQuote",
+      "MetaData": null,
+      "Content": "Multiline Blockquote",
+      "Children": [
+        {
+          "Type": "Text",
+          "MetaData": null,
+          "Content": "Multiline",
+          "Children": []
+        },
+        {
+          "Type": "Whitespace",
+          "MetaData": {
+            "Length": "1"
+          },
+          "Content": null,
+          "Children": []
+        },
+        {
+          "Type": "Text",
+          "MetaData": null,
+          "Content": "Blockquote",
+          "Children": []
+        }
+      ]
+    },
+    {
+      "Type": "Newline",
+      "MetaData": null,
+      "Content": null,
+      "Children": []
+    },
+    {
+      "Type": "BlockQuote",
+      "MetaData": null,
+      "Content": "private void Main() { }",
+      "Children": [
+        {
+          "Type": "Text",
+          "MetaData": null,
+          "Content": "private",
+          "Children": []
+        },
+        {
+          "Type": "Whitespace",
+          "MetaData": {
+            "Length": "1"
+          },
+          "Content": null,
+          "Children": []
+        },
+        {
+          "Type": "Text",
+          "MetaData": null,
+          "Content": "void",
+          "Children": []
+        },
+        {
+          "Type": "Whitespace",
+          "MetaData": {
+            "Length": "1"
+          },
+          "Content": null,
+          "Children": []
+        },
+        {
+          "Type": "Text",
+          "MetaData": null,
+          "Content": "Main()",
+          "Children": []
+        },
+        {
+          "Type": "Whitespace",
+          "MetaData": {
+            "Length": "1"
+          },
+          "Content": null,
+          "Children": []
+        },
+        {
+          "Type": "Text",
+          "MetaData": null,
+          "Content": "{",
+          "Children": []
+        },
+        {
+          "Type": "Whitespace",
+          "MetaData": {
+            "Length": "1"
+          },
+          "Content": null,
+          "Children": []
+        },
+        {
+          "Type": "Text",
+          "MetaData": null,
+          "Content": "}",
+          "Children": []
+        }
+      ]
     }
   ]
 }
