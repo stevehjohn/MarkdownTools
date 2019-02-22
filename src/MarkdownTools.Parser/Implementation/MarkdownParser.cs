@@ -78,14 +78,6 @@ namespace MarkdownTools.Parser.Implementation
 
         private static bool CheckEvaluatorAttributes(Node parent, IEvaluator evaluator)
         {
-            if (Attribute.GetCustomAttribute(evaluator.GetType(), typeof(ValidParentNodesAttribute)) is ValidParentNodesAttribute validParentNodeAttribute)
-            {
-                if (! validParentNodeAttribute.NodeTypes.Contains(parent.Type))
-                {
-                    return false;
-                }
-            }
-
             var validPreviousNodeSequenceAttributes = Attribute.GetCustomAttributes(evaluator.GetType(), typeof(ValidPreviousNodeSequenceAttribute)) as ValidPreviousNodeSequenceAttribute[];
 
             if (validPreviousNodeSequenceAttributes != null && validPreviousNodeSequenceAttributes.Length > 0)

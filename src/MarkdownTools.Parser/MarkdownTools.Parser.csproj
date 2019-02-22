@@ -50,7 +50,6 @@
   <ItemGroup>
     <Compile Include="Attributes\ParseContentAttribute.cs" />
     <Compile Include="Attributes\PrecedenceAttribute.cs" />
-    <Compile Include="Attributes\ValidParentNodesAttribute.cs" />
     <Compile Include="Attributes\ValidPreviousNodeSequenceAttribute.cs" />
     <Compile Include="Extensions\StringExtensions.cs" />
     <Compile Include="Implementation\Evaluators\BlockquoteEvaluator.cs" />
