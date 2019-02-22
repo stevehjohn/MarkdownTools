@@ -23,9 +23,14 @@ namespace MarkdownTools.Parser.Implementation.Evaluators
 
                 if (level < 7)
                 {
+                    source = source.SafeSubstring(level);
+
                     var heading = new string('#', level);
 
                     var eol = source.IndexOf(Environment.NewLine, StringComparison.InvariantCulture);
+
+                    string content;
+                    string rawContent;
 
                     if (eol < 0)
                     {
@@ -33,6 +38,10 @@ namespace MarkdownTools.Parser.Implementation.Evaluators
                         {
                             source = source.SafeSubstring(0, source.Length - level);
                         }
+
+                        rawContent = source;
+                        content = rawContent.Trim();
+                        source = null;
                     }
                     else
                     {
@@ -44,9 +53,14 @@ namespace MarkdownTools.Parser.Implementation.Evaluators
 
                             source = $"{line}{Environment.NewLine}{source.SafeSubstring(eol + Environment.NewLine.Length)}";
                         }
+
+                        eol = source.IndexOf(Environment.NewLine, StringComparison.InvariantCulture);
+
+                        rawContent = source.SafeSubstring(0, eol);
+                        content = rawContent.Trim();
+                        source = source.SafeSubstring(eol + Environment.NewLine.Length);
                     }
 
-                    source = source.SafeSubstring(level);
 
                     return new EvaluatorResult(
                         new Node
@@ -55,7 +69,9 @@ namespace MarkdownTools.Parser.Implementation.Evaluators
                             MetaData = new Dictionary<string, string>
                                        {
                                            { "Level", $"{level}" }
-                                       }
+                                       },
+                            Content = content,
+                            RawContent = rawContent
                         },
                         source);
                 }

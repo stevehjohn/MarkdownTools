@@ -1,7 +1,6 @@
 ﻿using MarkdownTools.Parser.Implementation.Evaluators;
 using MarkdownTools.Parser.Implementation.Evaluators.Base;
 using NUnit.Framework;
-using System;
 
 namespace MarkdownTools.Parser.Tests.Implementation.Evaluators
 {
@@ -16,18 +15,11 @@ namespace MarkdownTools.Parser.Tests.Implementation.Evaluators
             _evaluator = new HeadingEvaluator();
         }
 
-        [TestCase("## This is a heading ##", " This is a heading ")]
-        [TestCase("## This is a heading ##\r\nNext Line", " This is a heading \r\nNext Line")]
+        [TestCase("## This is a heading ##", "This is a heading")]
+        [TestCase("## This is a heading ##\r\nNext Line", "This is a heading")]
         public void Removes_end_hashes(string input, string expected)
         {
-            Assert.That(_evaluator.Evaluate(input).EvaluateNext, Is.EqualTo(expected));
-        }
-
-        [Test]
-        public void Removes_end_hashes_with_newline()
-        {
-            Assert.That(_evaluator.Evaluate($"## This is a heading ##{Environment.NewLine}Next Line").EvaluateNext,
-                        Is.EqualTo($" This is a heading {Environment.NewLine}Next Line"));
+            Assert.That(_evaluator.Evaluate(input).Node.Content, Is.EqualTo(expected));
         }
 
         [TestCase("", 0)]
