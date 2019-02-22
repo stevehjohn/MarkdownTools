@@ -7,6 +7,7 @@ using System.Collections.Generic;
 
 namespace MarkdownTools.Parser.Implementation.Evaluators
 {
+    [ParseContent]
     [Precedence(2)]
     public class HeadingEvaluator : IEvaluator
     {
