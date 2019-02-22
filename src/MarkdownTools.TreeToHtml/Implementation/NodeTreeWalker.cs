@@ -60,9 +60,15 @@ namespace MarkdownTools.TreeToHtml.Implementation
         {
             if (node.Children.Any())
             {
-                builder.Append($"{new string(' ', level * Indentation)}<blockquote>");
+                builder.AppendLine($"{new string(' ', level * Indentation)}<blockquote>");
                 ProcessNodes(node.Children, builder, level + 1);
-                builder.Append($"{new string(' ', level * Indentation)}</blockquote>");
+                builder.AppendLine($"{new string(' ', level * Indentation)}</blockquote>");
+            }
+            else
+            {
+                builder.AppendLine($"{new string(' ', level * Indentation)}<blockquote>");
+                builder.AppendLine($"{new string(' ', (level + 1) * Indentation)}{node.Content}");
+                builder.AppendLine($"{new string(' ', level * Indentation)}</blockquote>");
             }
         }
 

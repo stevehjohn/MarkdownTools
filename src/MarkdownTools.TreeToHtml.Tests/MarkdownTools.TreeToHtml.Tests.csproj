@@ -68,6 +68,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\MarkdownTools.Models\MarkdownTools.Models.csproj">
+      <Project>{e3e1d9d9-37c9-4848-9415-fb3040bdda23}</Project>
+      <Name>MarkdownTools.Models</Name>
+    </ProjectReference>
     <ProjectReference Include="..\MarkdownTools.TreeToHtml\MarkdownTools.TreeToHtml.csproj">
       <Project>{e8be120b-9f3f-43f7-93b3-a09df37da8ae}</Project>
       <Name>MarkdownTools.TreeToHtml</Name>
