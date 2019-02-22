@@ -41,6 +41,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Implementation\INodeTreeWalker.cs" />
+    <Compile Include="Implementation\NodeTreeWalker.cs" />
+    <Compile Include="Implementation\Theme.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -50,6 +53,12 @@
     <Content Include="Templates\Light.html">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MarkdownTools.Models\MarkdownTools.Models.csproj">
+      <Project>{E3E1D9D9-37C9-4848-9415-FB3040BDDA23}</Project>
+      <Name>MarkdownTools.Models</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
