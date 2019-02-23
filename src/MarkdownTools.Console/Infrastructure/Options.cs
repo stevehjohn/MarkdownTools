@@ -1,7 +1,9 @@
 ﻿using CommandLine;
+using System.Diagnostics.CodeAnalysis;
 
 namespace MarkdownTools.Console.Infrastructure
 {
+    [ExcludeFromCodeCoverage]
     public class Options
     {
         [Option('i', "InputFile", Required = true, HelpText = "Markdown file to parse.")]
