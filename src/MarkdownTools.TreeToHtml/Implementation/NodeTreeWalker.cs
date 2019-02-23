@@ -91,6 +91,9 @@ namespace MarkdownTools.TreeToHtml.Implementation
                     case NodeType.Newline:
                         ProcessNewlineNode(builder);
                         break;
+                    case NodeType.Paragraph:
+                        ProcessParagraphNode(node, builder, level);
+                        break;
                     case NodeType.Whitespace:
                         ProcessWhitespaceNode(builder);
                         break;
@@ -139,15 +142,22 @@ namespace MarkdownTools.TreeToHtml.Implementation
             builder.AppendLine();
         }
 
-        private static void ProcessWhitespaceNode(StringBuilder builder)
+        private void ProcessParagraphNode(Node node, StringBuilder builder, int level)
         {
-            builder.Append(" ");
+            builder.AppendLine($"{new string(' ', level * Indentation)}<p>");
+            ProcessNodes(node.Children, builder, level + 1);
+            builder.AppendLine($"{new string(' ', level * Indentation)}</p>");
         }
 
         private static void ProcessTextNode(Node node, StringBuilder builder)
         {
-            // TODO: Indent when first in sequence
+            // TODO: Indent when first in sequence?
             builder.Append(node.Content);
+        }
+
+        private static void ProcessWhitespaceNode(StringBuilder builder)
+        {
+            builder.Append(" ");
         }
     }
 }

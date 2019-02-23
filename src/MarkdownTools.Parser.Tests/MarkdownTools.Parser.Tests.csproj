@@ -62,6 +62,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Attributes\PrecedenceAttributeTests.cs" />
+    <Compile Include="Attributes\ValidChildNodesAttributeTests.cs" />
     <Compile Include="Attributes\ValidPreviousNodeSequenceAttributeTests.cs" />
     <Compile Include="Extensions\EnumerableExtensionsTests.cs" />
     <Compile Include="Extensions\StringExtensionsTests.cs" />

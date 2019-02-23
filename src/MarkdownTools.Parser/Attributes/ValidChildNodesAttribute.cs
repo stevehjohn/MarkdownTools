@@ -9,7 +9,7 @@ namespace MarkdownTools.Parser.Attributes
     {
         public IList<NodeType> ValidChildNodes;
 
-        public ValidChildNodesAttribute(IList<NodeType> validChildNodes)
+        public ValidChildNodesAttribute(params NodeType[] validChildNodes)
         {
             ValidChildNodes = validChildNodes;
         }
