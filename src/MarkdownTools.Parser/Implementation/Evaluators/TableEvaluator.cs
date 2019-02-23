@@ -1,4 +1,5 @@
 ﻿using MarkdownTools.Models;
+using MarkdownTools.Parser.Attributes;
 using MarkdownTools.Parser.Extensions;
 using MarkdownTools.Parser.Implementation.Evaluators.Base;
 using System.Collections.Generic;
@@ -6,6 +7,7 @@ using System.Linq;
 
 namespace MarkdownTools.Parser.Implementation.Evaluators
 {
+    [DoNotParseForParagraphs]
     public class TableEvaluator : IEvaluator
     {
         public NodeType IsEvaluatorFor => NodeType.Table;
