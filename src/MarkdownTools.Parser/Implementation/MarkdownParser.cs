@@ -43,7 +43,9 @@ namespace MarkdownTools.Parser.Implementation
 
             while (! string.IsNullOrEmpty(content))
             {
-                foreach (var evaluator in _evaluators)
+                var validEvaluators = GetValidEvaluators(parent);
+
+                foreach (var evaluator in validEvaluators)
                 {
                     if (! CheckEvaluatorAttributes(parent, evaluator))
                     {
@@ -74,6 +76,23 @@ namespace MarkdownTools.Parser.Implementation
                     }
                 }
             }
+        }
+
+        private IEnumerable<IEvaluator> GetValidEvaluators(Node parent)
+        {
+            var evaluators = new List<IEvaluator>();
+
+            foreach (var evaluator in _evaluators)
+            {
+                var attribute = Attribute.GetCustomAttribute(evaluator.GetType(), typeof(ValidChildNodesAttribute)) as ValidChildNodesAttribute;
+
+                if (attribute == null || attribute.ValidChildNodes.Contains(evaluator.IsEvaluatorFor))
+                {
+                    evaluators.Add(evaluator);
+                }
+            }
+
+            return evaluators;
         }
 
         private static bool CheckEvaluatorAttributes(Node parent, IEvaluator evaluator)

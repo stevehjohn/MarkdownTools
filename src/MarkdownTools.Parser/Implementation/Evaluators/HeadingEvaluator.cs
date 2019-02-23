@@ -11,6 +11,8 @@ namespace MarkdownTools.Parser.Implementation.Evaluators
     [Precedence(2)]
     public class HeadingEvaluator : IEvaluator
     {
+        public NodeType IsEvaluatorFor => NodeType.Heading;
+
         public EvaluatorResult Evaluate(string source)
         {
             if (source.SafeGetChar(0) == '#')

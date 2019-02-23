@@ -9,6 +9,8 @@ namespace MarkdownTools.Parser.Implementation.Evaluators
     [Precedence(int.MaxValue - 1)]
     public class WhitespaceEvaluator : IEvaluator
     {
+        public NodeType IsEvaluatorFor => NodeType.Whitespace;
+
         public EvaluatorResult Evaluate(string source)
         {
             var length = 0;

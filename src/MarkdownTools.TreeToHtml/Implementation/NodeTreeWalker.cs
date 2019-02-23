@@ -1,6 +1,9 @@
 ﻿using MarkdownTools.Models;
+using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 
 namespace MarkdownTools.TreeToHtml.Implementation
@@ -10,6 +13,8 @@ namespace MarkdownTools.TreeToHtml.Implementation
         private const int Indentation = 4;
 
         private Node _root;
+
+        private string _title;
 
         public void LoadTree(Node root)
         {
@@ -22,10 +27,46 @@ namespace MarkdownTools.TreeToHtml.Implementation
 
             ProcessNodes(_root.Children, builder, 1);
 
-            return builder.ToString();
+            var html = builder.ToString();
+
+            string template;
+
+            switch (theme)
+            {
+                case Theme.Dark:
+                    template = LoadThemeFromResource("MarkdownTools.TreeToHtml.Templates.Dark.html");
+                    break;
+                case Theme.Light:
+                    template = LoadThemeFromResource("MarkdownTools.TreeToHtml.Templates.Light.html");
+                    break;
+                case Theme.Raw:
+                    return html;
+                default:
+                    if (string.IsNullOrWhiteSpace(customThemePath))
+                    {
+                        throw new ArgumentNullException(nameof(customThemePath));
+                    }
+                    template = File.ReadAllText(customThemePath);
+                    break;
+            }
+
+            return template.Replace("{title}", _title).Replace("{body}", html);
         }
 
-        private static void ProcessNodes(IEnumerable<Node> nodes, StringBuilder builder, int level)
+        private string LoadThemeFromResource(string name)
+        {
+            var assembly = Assembly.GetExecutingAssembly();
+
+            using (var stream = assembly.GetManifestResourceStream(name))
+            {
+                using (var reader = new StreamReader(stream))
+                {
+                    return reader.ReadToEnd();
+                }
+            }
+        }
+
+        private void ProcessNodes(IEnumerable<Node> nodes, StringBuilder builder, int level)
         {
             foreach (var node in nodes)
             {
@@ -38,6 +79,10 @@ namespace MarkdownTools.TreeToHtml.Implementation
                         ProcessCodeBlockNode(node, builder, level);
                         break;
                     case NodeType.Heading:
+                        if (string.IsNullOrWhiteSpace(_title))
+                        {
+                            _title = node.Content;
+                        }
                         ProcessHeadingNode(node, builder, level);
                         break;
                     case NodeType.HorizontalRule:
@@ -56,7 +101,7 @@ namespace MarkdownTools.TreeToHtml.Implementation
             }
         }
 
-        private static void ProcessBlockquoteNode(Node node, StringBuilder builder, int level)
+        private void ProcessBlockquoteNode(Node node, StringBuilder builder, int level)
         {
             if (node.Children.Any())
             {
@@ -74,9 +119,9 @@ namespace MarkdownTools.TreeToHtml.Implementation
 
         private static void ProcessCodeBlockNode(Node node, StringBuilder builder, int level)
         {
-            builder.AppendLine($"{new string(' ', level * Indentation)}<code>");
-            builder.Append(node.Content);
-            builder.AppendLine($"{new string(' ', level * Indentation)}</code>");
+            builder.Append($"{new string(' ', level * Indentation)}<code>");
+            builder.Append(node.Content.Trim());
+            builder.AppendLine("</code>");
         }
 
         private static void ProcessHeadingNode(Node node, StringBuilder builder, int level)

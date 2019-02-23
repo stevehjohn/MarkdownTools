@@ -47,12 +47,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Templates\Dark.html">
+    <EmbeddedResource Include="Templates\Dark.html" />
+    <EmbeddedResource Include="Templates\Light.html">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Templates\Light.html">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\MarkdownTools.Models\MarkdownTools.Models.csproj">

@@ -8,6 +8,8 @@ namespace MarkdownTools.Parser.Implementation.Evaluators
 {
     public class CodeBlockTickMarkEvaluator : IEvaluator
     {
+        public NodeType IsEvaluatorFor => NodeType.CodeBlock;
+
         public EvaluatorResult Evaluate(string source)
         {
             if (!source.StartsWith("```"))

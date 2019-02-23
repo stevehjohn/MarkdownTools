@@ -7,6 +7,8 @@ namespace MarkdownTools.Parser.Implementation.Evaluators
 {
     public class NewlineEvaluator : IEvaluator
     {
+        public NodeType IsEvaluatorFor => NodeType.Newline;
+
         public EvaluatorResult Evaluate(string source)
         {
             if (source.StartsWith(Environment.NewLine))

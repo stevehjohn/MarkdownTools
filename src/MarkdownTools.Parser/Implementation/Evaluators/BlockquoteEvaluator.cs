@@ -12,6 +12,8 @@ namespace MarkdownTools.Parser.Implementation.Evaluators
     [ValidPreviousNodeSequence(NodeType.Newline, NodeType.Whitespace)]
     public class BlockquoteEvaluator : IEvaluator
     {
+        public NodeType IsEvaluatorFor => NodeType.Blockquote;
+
         public EvaluatorResult Evaluate(string source)
         {
             var quote = new StringBuilder();

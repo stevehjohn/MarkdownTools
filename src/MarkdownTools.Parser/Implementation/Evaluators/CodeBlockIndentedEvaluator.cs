@@ -12,6 +12,8 @@ namespace MarkdownTools.Parser.Implementation.Evaluators
     //[ValidPreviousNodeSequence(NodeType.Newline)]
     public class CodeBlockIndentedEvaluator : IEvaluator
     {
+        public NodeType IsEvaluatorFor => NodeType.CodeBlock;
+
         public EvaluatorResult Evaluate(string source)
         {
             var code = new StringBuilder();

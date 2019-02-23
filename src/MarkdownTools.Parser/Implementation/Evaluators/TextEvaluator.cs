@@ -8,6 +8,8 @@ namespace MarkdownTools.Parser.Implementation.Evaluators
     [Precedence(int.MaxValue)]
     public class TextEvaluator : IEvaluator
     {
+        public NodeType IsEvaluatorFor => NodeType.Text;
+
         public EvaluatorResult Evaluate(string source)
         {
             return new EvaluatorResult(
