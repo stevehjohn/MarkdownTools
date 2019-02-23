@@ -4,6 +4,7 @@ using MarkdownTools.Parser.Implementation.Evaluators.Base;
 
 namespace MarkdownTools.Parser.Implementation.Evaluators
 {
+    [ParseContent]
     [DoNotParseForParagraphs]
     [ValidChildNodes(NodeType.Text, NodeType.Whitespace)]
     public class TableCellHeadEvaluator : IEvaluator

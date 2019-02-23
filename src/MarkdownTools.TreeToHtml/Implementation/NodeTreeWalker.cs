@@ -92,6 +92,18 @@ namespace MarkdownTools.TreeToHtml.Implementation
                     case NodeType.LineBreak:
                         ProcessLineBreakNode(builder, level);
                         break;
+                    case NodeType.Table:
+                        ProcessTableNode(node, builder, level);
+                        break;
+                    case NodeType.TableCell:
+                        ProcessTableCellNode(node, builder, level);
+                        break;
+                    case NodeType.TableCellHead:
+                        ProcessTableCellHeadNode(node, builder, level);
+                        break;
+                    case NodeType.TableRow:
+                        ProcessTableRowNode(node, builder, level);
+                        break;
                     case NodeType.Newline:
                         ProcessNewlineNode(builder);
                         break;
@@ -144,6 +156,34 @@ namespace MarkdownTools.TreeToHtml.Implementation
         private static void ProcessLineBreakNode(StringBuilder builder, int level)
         {
             builder.AppendLine($"{new string(' ', level * Indentation)}<br>");
+        }
+
+        private void ProcessTableNode(Node node, StringBuilder builder, int level)
+        {
+            builder.AppendLine($"{new string(' ', level * Indentation)}<table>");
+            ProcessNodes(node.Children, builder, level + 1);
+            builder.AppendLine($"{Environment.NewLine}{new string(' ', level * Indentation)}</table>");
+        }
+
+        private void ProcessTableCellNode(Node node, StringBuilder builder, int level)
+        {
+            builder.AppendLine($"{new string(' ', level * Indentation)}<td>");
+            ProcessNodes(node.Children, builder, level + 1);
+            builder.AppendLine($"{Environment.NewLine}{new string(' ', level * Indentation)}</td>");
+        }
+
+        private void ProcessTableCellHeadNode(Node node, StringBuilder builder, int level)
+        {
+            builder.AppendLine($"{new string(' ', level * Indentation)}<th>");
+            ProcessNodes(node.Children, builder, level + 1);
+            builder.AppendLine($"{Environment.NewLine}{new string(' ', level * Indentation)}</th>");
+        }
+
+        private void ProcessTableRowNode(Node node, StringBuilder builder, int level)
+        {
+            builder.AppendLine($"{new string(' ', level * Indentation)}<tr>");
+            ProcessNodes(node.Children, builder, level + 1);
+            builder.AppendLine($"{Environment.NewLine}{new string(' ', level * Indentation)}</tr>");
         }
 
         private static void ProcessNewlineNode(StringBuilder builder)

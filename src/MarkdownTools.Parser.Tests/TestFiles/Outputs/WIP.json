@@ -596,14 +596,56 @@
               },
               "Content": "Left",
               "RawContent": " Left ",
-              "Children": []
+              "Children": [
+                {
+                  "Type": "Whitespace",
+                  "MetaData": {
+                    "Length": "1"
+                  },
+                  "Children": []
+                },
+                {
+                  "Type": "Text",
+                  "MetaData": {},
+                  "Content": "Left",
+                  "Children": []
+                },
+                {
+                  "Type": "Whitespace",
+                  "MetaData": {
+                    "Length": "1"
+                  },
+                  "Children": []
+                }
+              ]
             },
             {
               "Type": "TableCellHead",
               "MetaData": {},
               "Content": "Default",
               "RawContent": " Default ",
-              "Children": []
+              "Children": [
+                {
+                  "Type": "Whitespace",
+                  "MetaData": {
+                    "Length": "1"
+                  },
+                  "Children": []
+                },
+                {
+                  "Type": "Text",
+                  "MetaData": {},
+                  "Content": "Default",
+                  "Children": []
+                },
+                {
+                  "Type": "Whitespace",
+                  "MetaData": {
+                    "Length": "1"
+                  },
+                  "Children": []
+                }
+              ]
             },
             {
               "Type": "TableCellHead",
@@ -612,7 +654,28 @@
               },
               "Content": "Centered",
               "RawContent": " Centered ",
-              "Children": []
+              "Children": [
+                {
+                  "Type": "Whitespace",
+                  "MetaData": {
+                    "Length": "1"
+                  },
+                  "Children": []
+                },
+                {
+                  "Type": "Text",
+                  "MetaData": {},
+                  "Content": "Centered",
+                  "Children": []
+                },
+                {
+                  "Type": "Whitespace",
+                  "MetaData": {
+                    "Length": "1"
+                  },
+                  "Children": []
+                }
+              ]
             },
             {
               "Type": "TableCellHead",
@@ -621,7 +684,28 @@
               },
               "Content": "Right",
               "RawContent": " Right ",
-              "Children": []
+              "Children": [
+                {
+                  "Type": "Whitespace",
+                  "MetaData": {
+                    "Length": "1"
+                  },
+                  "Children": []
+                },
+                {
+                  "Type": "Text",
+                  "MetaData": {},
+                  "Content": "Right",
+                  "Children": []
+                },
+                {
+                  "Type": "Whitespace",
+                  "MetaData": {
+                    "Length": "1"
+                  },
+                  "Children": []
+                }
+              ]
             }
           ]
         },
@@ -999,7 +1083,28 @@
               },
               "Content": "Centered",
               "RawContent": " Centered ",
-              "Children": []
+              "Children": [
+                {
+                  "Type": "Whitespace",
+                  "MetaData": {
+                    "Length": "1"
+                  },
+                  "Children": []
+                },
+                {
+                  "Type": "Text",
+                  "MetaData": {},
+                  "Content": "Centered",
+                  "Children": []
+                },
+                {
+                  "Type": "Whitespace",
+                  "MetaData": {
+                    "Length": "1"
+                  },
+                  "Children": []
+                }
+              ]
             }
           ]
         },
@@ -1072,14 +1177,56 @@
               },
               "Content": "Left",
               "RawContent": " Left ",
-              "Children": []
+              "Children": [
+                {
+                  "Type": "Whitespace",
+                  "MetaData": {
+                    "Length": "1"
+                  },
+                  "Children": []
+                },
+                {
+                  "Type": "Text",
+                  "MetaData": {},
+                  "Content": "Left",
+                  "Children": []
+                },
+                {
+                  "Type": "Whitespace",
+                  "MetaData": {
+                    "Length": "1"
+                  },
+                  "Children": []
+                }
+              ]
             },
             {
               "Type": "TableCellHead",
               "MetaData": {},
               "Content": "Default",
               "RawContent": " Default ",
-              "Children": []
+              "Children": [
+                {
+                  "Type": "Whitespace",
+                  "MetaData": {
+                    "Length": "1"
+                  },
+                  "Children": []
+                },
+                {
+                  "Type": "Text",
+                  "MetaData": {},
+                  "Content": "Default",
+                  "Children": []
+                },
+                {
+                  "Type": "Whitespace",
+                  "MetaData": {
+                    "Length": "1"
+                  },
+                  "Children": []
+                }
+              ]
             },
             {
               "Type": "TableCellHead",
@@ -1088,7 +1235,28 @@
               },
               "Content": "Centered",
               "RawContent": " Centered ",
-              "Children": []
+              "Children": [
+                {
+                  "Type": "Whitespace",
+                  "MetaData": {
+                    "Length": "1"
+                  },
+                  "Children": []
+                },
+                {
+                  "Type": "Text",
+                  "MetaData": {},
+                  "Content": "Centered",
+                  "Children": []
+                },
+                {
+                  "Type": "Whitespace",
+                  "MetaData": {
+                    "Length": "1"
+                  },
+                  "Children": []
+                }
+              ]
             },
             {
               "Type": "TableCellHead",
@@ -1097,7 +1265,28 @@
               },
               "Content": "Right",
               "RawContent": " Right ",
-              "Children": []
+              "Children": [
+                {
+                  "Type": "Whitespace",
+                  "MetaData": {
+                    "Length": "1"
+                  },
+                  "Children": []
+                },
+                {
+                  "Type": "Text",
+                  "MetaData": {},
+                  "Content": "Right",
+                  "Children": []
+                },
+                {
+                  "Type": "Whitespace",
+                  "MetaData": {
+                    "Length": "1"
+                  },
+                  "Children": []
+                }
+              ]
             }
           ]
         },

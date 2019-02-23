@@ -36,15 +36,21 @@
             margin: 0;
             padding: 0;
         }
+        table {
+            border-spacing: 0;
+        }
         th {
             font-weight: bold;
             color: #dedede;
             border-bottom: 1px solid #bebebe;
-            padding-right: 10px;
+            margin-right: 20px;
+            padding: 4px 10px 4px 10px;
         }
         td {
             padding-right: 10px;
             border-bottom: 1px solid #474747;
+            margin-right: 20px;
+            padding: 4px 10px 4px 10px;
         }
         blockquote {
             border-left: 5px solid #14517a;
@@ -102,8 +108,32 @@ This line has `Some inline code`.
 Hmm, should probably test that paragraphs work. This line should be the same paragraph.  
     </p>
     <p>
-This line should be separate.
+This line should be separate.  
     </p>
+    <p>
+
+    </p>
+    <table>
+        <tr>
+            <th>
+ Heading 1 
+            </th>
+            <th>
+ Heading 2 
+            </th>
+
+        </tr>
+        <tr>
+            <td>
+ Column 1 
+            </td>
+            <td>
+ Column 2 
+            </td>
+
+        </tr>
+
+    </table>
 
 </body>
 </html>
