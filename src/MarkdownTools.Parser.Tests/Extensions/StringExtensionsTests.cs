@@ -1,5 +1,6 @@
 ﻿using MarkdownTools.Parser.Extensions;
 using NUnit.Framework;
+using System;
 
 namespace MarkdownTools.Parser.Tests.Extensions
 {
@@ -29,6 +30,28 @@ namespace MarkdownTools.Parser.Tests.Extensions
         [TestCase("Steve", 5, '\0')]
         public void Exercise_SafeGetChar(string input, int index, char expected)
         {
+        }
+
+        [TestCase("", null)]
+        [TestCase("A string", null)]
+        [TestCase("A string\n", null)]
+        [TestCase("A string\nA new line", "A new line")]
+        public void NewLine_returns_expected_value(string input, string expected)
+        {
+            input = input.Replace("\n", Environment.NewLine);
+
+            Assert.That(input.NextLine(), Is.EqualTo(expected));
+        }
+
+        [TestCase("", "Steve", false)]
+        [TestCase("Bert", "Steve", false)]
+        [TestCase("Steve", "Steve", true)]
+        [TestCase("   Steve", "Steve", true)]
+        [TestCase("\tSteve", "Steve", true)]
+        [TestCase("\t\t  Steve", "Steve", true)]
+        public void StartsWithExcludingWhitespace_returns_expected_value(string input, string parameter, bool expected)
+        {
+            Assert.That(input.StartsWithExcludingWhitespace(parameter), Is.EqualTo(expected));
         }
     }
 }
