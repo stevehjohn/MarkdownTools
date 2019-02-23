@@ -81,8 +81,20 @@ namespace MarkdownTools.Parser.Implementation
             }
         }
 
-        private static void PostProcessForParagraphs(Node node)
+        private void PostProcessForParagraphs(Node node)
         {
+            if (node.Type != NodeType.Root)
+            {
+                var evaluator = _evaluators.Single(e => e.IsEvaluatorFor == node.Type);
+
+                var attribute = Attribute.GetCustomAttribute(evaluator.GetType(), typeof(DoNotParseForParagraphsAttribute)) as DoNotParseForParagraphsAttribute;
+
+                if (attribute != null)
+                {
+                    return;
+                }
+            }
+
             var nodes = node.Children;
 
             if (nodes.Count == 0)
