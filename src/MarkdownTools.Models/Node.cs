@@ -16,6 +16,7 @@ namespace MarkdownTools.Models
         public Node()
         {
             Children = new List<Node>();
+            MetaData = new Dictionary<string, string>();
         }
     }
 }

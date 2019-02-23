@@ -39,6 +39,16 @@ namespace MarkdownTools.Parser.Extensions
             return '\0';
         }
 
+        public static string GetLine(this string left)
+        {
+            if (left.Contains(Environment.NewLine))
+            {
+                return left.Substring(0, left.IndexOf(Environment.NewLine, StringComparison.Ordinal));
+            }
+
+            return left;
+        }
+
         public static string NextLine(this string left)
         {
             if (left.Contains(Environment.NewLine))
@@ -49,11 +59,11 @@ namespace MarkdownTools.Parser.Extensions
             return null;
         }
 
-        public static bool StartsWithExcludingWhitespace(this string left, string right)
+        public static bool StartsWithExcludingWhitespace(this string left, string right, int limit = int.MaxValue)
         {
             var index = 0;
 
-            while (index < left.Length && (left[index] == ' ' || left[index] == '\t'))
+            while (index < left.Length && index < limit && (left[index] == ' ' || left[index] == '\t'))
             {
                 index++;
             }

@@ -1,9 +1,9 @@
-﻿using MarkdownTools.Parser.Implementation;
+﻿using MarkdownTools.Models;
+using MarkdownTools.Parser.Implementation;
 using MarkdownTools.Parser.Implementation.Evaluators;
 using Newtonsoft.Json;
 using NUnit.Framework;
 using System.IO;
-using MarkdownTools.Models;
 
 namespace MarkdownTools.Parser.Tests.Implementation
 {

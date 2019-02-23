@@ -32,11 +32,20 @@ namespace MarkdownTools.Parser.Tests.Extensions
         {
         }
 
+        [TestCase("Steve", "Steve")]
+        [TestCase("Steve\nJohn", "Steve")]
+        public void GetLine_returns_expected_value(string input, string expected)
+        {
+            input = input.Replace("\n", Environment.NewLine);
+
+            Assert.That(input.GetLine(), Is.EqualTo(expected));
+        }
+
         [TestCase("", null)]
         [TestCase("A string", null)]
         [TestCase("A string\n", null)]
         [TestCase("A string\nA new line", "A new line")]
-        public void NewLine_returns_expected_value(string input, string expected)
+        public void NextLine_returns_expected_value(string input, string expected)
         {
             input = input.Replace("\n", Environment.NewLine);
 
@@ -49,9 +58,10 @@ namespace MarkdownTools.Parser.Tests.Extensions
         [TestCase("   Steve", "Steve", true)]
         [TestCase("\tSteve", "Steve", true)]
         [TestCase("\t\t  Steve", "Steve", true)]
-        public void StartsWithExcludingWhitespace_returns_expected_value(string input, string parameter, bool expected)
+        [TestCase("\t\t  Steve", "Steve", false, 2)]
+        public void StartsWithExcludingWhitespace_returns_expected_value(string input, string parameter, bool expected, int limit = int.MaxValue)
         {
-            Assert.That(input.StartsWithExcludingWhitespace(parameter), Is.EqualTo(expected));
+            Assert.That(input.StartsWithExcludingWhitespace(parameter, limit), Is.EqualTo(expected));
         }
     }
 }
