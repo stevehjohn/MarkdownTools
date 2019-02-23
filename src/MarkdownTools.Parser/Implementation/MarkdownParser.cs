@@ -88,6 +88,7 @@ namespace MarkdownTools.Parser.Implementation
                 var evaluator = _evaluators.FirstOrDefault(e => e.IsEvaluatorFor == node.Type);
 
                 // ReSharper disable once UsePatternMatching
+                // ReSharper disable once PossibleNullReferenceException
                 var attribute = Attribute.GetCustomAttribute(evaluator.GetType(), typeof(DoNotParseForParagraphsAttribute)) as DoNotParseForParagraphsAttribute;
 
                 if (attribute != null)

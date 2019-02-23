@@ -113,19 +113,23 @@ namespace MarkdownTools.Parser.Implementation.Evaluators
 
                 var lines = 0;
 
+                if (string.IsNullOrWhiteSpace(bodyStart))
+                {
+                    continue;
+                }
+
                 var next = bodyStart;
 
                 while (true)
                 {
                     if (! string.IsNullOrWhiteSpace(bodyStart))
                     {
-                        var line = next.GetLine();
-                        next = next.NextLine();
-
-                        if (string.IsNullOrWhiteSpace(line))
+                        if (string.IsNullOrWhiteSpace(next))
                         {
                             break;
                         }
+                        var line = next.GetLine();
+                        next = next.NextLine();
 
                         var cols = line.Split('|');
 

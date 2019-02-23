@@ -12,6 +12,8 @@ Will need to work out precedence as I go along. Figured out that this order matt
 * WhiteSpace
 * Text
 
+Not sure I'm happy with the concept of dummy evaluators just being used to apply attributes. Might need a bit of rearchitecting.
+
 ## A note on CheckEvaluatorAttributes
 
 For now, assumes that any item can start a document so ValidPreviousNodeSequenceAttribute attributes are ignored in that case.

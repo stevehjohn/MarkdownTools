@@ -18,7 +18,8 @@ namespace MarkdownTools.Parser.Tests.Implementation.Evaluators
         }
 
         [TestCase("Not a table", false)]
-        //[TestCase("|Heading 1|Heading 2|\n|---|---|\n|Column 1|Column 2|", true)]
+        [TestCase("|Heading 1|Heading 2|\n|---|---|\n|Column 1|Column 2|", true)]
+        [TestCase("|Heading 1|Heading 2|\n|---|---|\n", true)]
         public void Identifies_tables(string input, bool isTable)
         {
             input = input.Replace("\n", Environment.NewLine);

@@ -61,7 +61,10 @@
     <Compile Include="Implementation\Evaluators\HorizontalRuleEvaluator.cs" />
     <Compile Include="Implementation\Evaluators\LineBreakEvaluator.cs" />
     <Compile Include="Implementation\Evaluators\NewlineEvaluator.cs" />
+    <Compile Include="Implementation\Evaluators\TableCellEvaluator.cs" />
+    <Compile Include="Implementation\Evaluators\TableCellHeadEvaluator.cs" />
     <Compile Include="Implementation\Evaluators\TableEvaluator.cs" />
+    <Compile Include="Implementation\Evaluators\TableRowEvaluator.cs" />
     <Compile Include="Implementation\Evaluators\TextEvaluator.cs" />
     <Compile Include="Implementation\IMarkdownParser.cs" />
     <Compile Include="Implementation\MarkdownParserBuilder.cs" />
