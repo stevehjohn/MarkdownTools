@@ -15,7 +15,6 @@
         OrderedList,
         OrderedListItem,
         Paragraph,
-        RawHtml,
         Root,
         Strikethrough,
         Strong,
