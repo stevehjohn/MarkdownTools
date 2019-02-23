@@ -54,14 +54,14 @@ namespace MarkdownTools.Parser.Implementation.Evaluators
                         {
                             line = line.SafeSubstring(0, line.Length - level);
 
-                            source = $"{line}{Environment.NewLine}{source.SafeSubstring(eol + Environment.NewLine.Length)}";
+                            source = $"{line}{Environment.NewLine}{source.NextLine()}";
                         }
 
                         eol = source.IndexOf(Environment.NewLine, StringComparison.InvariantCulture);
 
                         rawContent = source.SafeSubstring(0, eol);
                         content = rawContent.Trim();
-                        source = source.SafeSubstring(eol + Environment.NewLine.Length);
+                        source = source.NextLine();
                     }
 
 

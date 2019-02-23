@@ -32,7 +32,7 @@ namespace MarkdownTools.Parser.Implementation.Evaluators
 
                     if (string.IsNullOrWhiteSpace(text))
                     {
-                        var nextLine = source.SafeSubstring(eol + Environment.NewLine.Length);
+                        var nextLine = source.NextLine();
 
                         if (nextLine != null && (nextLine.StartsWith(">") || nextLine.StartsWith(" >") || nextLine.StartsWith("  >") || nextLine.StartsWith("   >")))
                         {
@@ -45,7 +45,7 @@ namespace MarkdownTools.Parser.Implementation.Evaluators
                         rawQuote.AppendLine($"{source.SafeSubstring(0, eol)}");
                     }
 
-                    source = source.SafeSubstring(eol + Environment.NewLine.Length);
+                    source = source.NextLine();
                 }
                 else
                 {

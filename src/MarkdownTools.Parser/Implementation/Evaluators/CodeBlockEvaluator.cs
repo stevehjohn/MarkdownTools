@@ -42,7 +42,7 @@ namespace MarkdownTools.Parser.Implementation.Evaluators
             if (eol > 0)
             {
                 language = source.SafeSubstring(length, eol - length).Trim();
-                source = source.SafeSubstring(eol + Environment.NewLine.Length);
+                source = source.NextLine();
 
                 var span = source.IndexOf(new string('`', length), StringComparison.Ordinal);
 
@@ -98,7 +98,7 @@ namespace MarkdownTools.Parser.Implementation.Evaluators
                 if (eol > -1)
                 {
                     code.AppendLine(source.SafeSubstring(0, eol));
-                    source = source.SafeSubstring(eol + Environment.NewLine.Length);
+                    source = source.NextLine();
                 }
                 else
                 {
