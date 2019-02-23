@@ -7,7 +7,7 @@ namespace MarkdownTools.Parser.Tests.Extensions
     public class StringExtensionsTests
     {
         [TestCase("", 1, null)]
-        [TestCase("Steve", 1, "teve")]
+        [TestCase("Block", 1, "lock")]
         [TestCase("Steve", 5, null)]
         [TestCase("", 0, null)]
         public void Exercise_SafeSubstring_overload_1(string input, int startIndex, string expected)
@@ -16,7 +16,7 @@ namespace MarkdownTools.Parser.Tests.Extensions
         }
 
         [TestCase("", 1, 10, null)]
-        [TestCase("Steve", 1, 10, "teve")]
+        [TestCase("Block", 1, 10, "lock")]
         [TestCase("Steve", 5, 10, null)]
         [TestCase("", 0, 10, null)]
         public void Exercise_SafeSubstring_overload_2(string input, int startIndex, int length, string expected)

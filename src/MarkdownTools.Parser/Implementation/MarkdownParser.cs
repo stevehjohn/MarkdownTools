@@ -87,6 +87,7 @@ namespace MarkdownTools.Parser.Implementation
             {
                 var evaluator = _evaluators.Single(e => e.IsEvaluatorFor == node.Type);
 
+                // ReSharper disable once UsePatternMatching
                 var attribute = Attribute.GetCustomAttribute(evaluator.GetType(), typeof(DoNotParseForParagraphsAttribute)) as DoNotParseForParagraphsAttribute;
 
                 if (attribute != null)
@@ -166,6 +167,7 @@ namespace MarkdownTools.Parser.Implementation
 
         private static bool CheckEvaluatorAttributes(Node parent, IEvaluator evaluator)
         {
+            // ReSharper disable once UsePatternMatching
             var validPreviousNodeSequenceAttributes = Attribute.GetCustomAttributes(evaluator.GetType(), typeof(ValidPreviousNodeSequenceAttribute)) as ValidPreviousNodeSequenceAttribute[];
 
             if (validPreviousNodeSequenceAttributes != null && validPreviousNodeSequenceAttributes.Length > 0)
