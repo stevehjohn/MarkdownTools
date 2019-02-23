@@ -7,6 +7,7 @@ using System.Linq;
 
 namespace MarkdownTools.Parser.Implementation.Evaluators
 {
+    [ParseChildren]
     [DoNotParseForParagraphs]
     public class TableEvaluator : IEvaluator
     {

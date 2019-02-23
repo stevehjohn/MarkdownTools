@@ -49,6 +49,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Attributes\DoNotParseForParagraphsAttribute.cs" />
+    <Compile Include="Attributes\ParseChildrenAttribute.cs" />
     <Compile Include="Attributes\ParseContentAttribute.cs" />
     <Compile Include="Attributes\PrecedenceAttribute.cs" />
     <Compile Include="Attributes\ValidChildNodesAttribute.cs" />
