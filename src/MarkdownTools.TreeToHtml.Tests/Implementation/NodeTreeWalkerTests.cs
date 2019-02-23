@@ -64,7 +64,7 @@ namespace MarkdownTools.TreeToHtml.Tests.Implementation
                                  Type = NodeType.Root
                              });
 
-            Assert.Throws<ArgumentNullException>(() => _walker.ToHtml(Theme.Custom, null));
+            Assert.Throws<ArgumentNullException>(() => _walker.ToHtml(Theme.Custom));
         }
     }
 }

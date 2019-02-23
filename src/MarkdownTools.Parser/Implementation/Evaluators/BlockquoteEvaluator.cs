@@ -28,8 +28,23 @@ namespace MarkdownTools.Parser.Implementation.Evaluators
 
                 if (eol > -1)
                 {
-                    quote.Append($"{source.SafeSubstring(0, eol).Trim()} ");
-                    rawQuote.AppendLine($"{source.SafeSubstring(0, eol)}");
+                    var text = source.SafeSubstring(0, eol).Trim();
+
+                    if (string.IsNullOrWhiteSpace(text))
+                    {
+                        var nextLine = source.SafeSubstring(eol + Environment.NewLine.Length);
+
+                        if (nextLine != null && (nextLine.StartsWith(">") || nextLine.StartsWith(" >") || nextLine.StartsWith("  >") || nextLine.StartsWith("   >")))
+                        {
+                            rawQuote.Append("<br><br>");
+                        }
+                    }
+                    else
+                    {
+                        quote.Append($"{text} ");
+                        rawQuote.AppendLine($"{source.SafeSubstring(0, eol)}");
+                    }
+
                     source = source.SafeSubstring(eol + Environment.NewLine.Length);
                 }
                 else

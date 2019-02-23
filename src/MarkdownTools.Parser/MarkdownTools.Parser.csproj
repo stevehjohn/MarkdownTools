@@ -59,6 +59,7 @@
     <Compile Include="Implementation\Evaluators\CodeBlockEvaluator.cs" />
     <Compile Include="Implementation\Evaluators\Base\IEvaluator.cs" />
     <Compile Include="Implementation\Evaluators\HorizontalRuleEvaluator.cs" />
+    <Compile Include="Implementation\Evaluators\LineBreakEvaluator.cs" />
     <Compile Include="Implementation\Evaluators\NewlineEvaluator.cs" />
     <Compile Include="Implementation\Evaluators\TextEvaluator.cs" />
     <Compile Include="Implementation\IMarkdownParser.cs" />

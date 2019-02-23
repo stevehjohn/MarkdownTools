@@ -386,7 +386,7 @@
     {
       "Type": "Blockquote",
       "Content": "Multiline Blockquote",
-      "RawContent": " Multiline\r\n Blockquote\r\n",
+      "RawContent": " Multiline\r\n<br><br> Blockquote\r\n",
       "Children": [
         {
           "Type": "Whitespace",
@@ -402,6 +402,14 @@
         },
         {
           "Type": "Newline",
+          "Children": []
+        },
+        {
+          "Type": "LineBreak",
+          "Children": []
+        },
+        {
+          "Type": "LineBreak",
           "Children": []
         },
         {

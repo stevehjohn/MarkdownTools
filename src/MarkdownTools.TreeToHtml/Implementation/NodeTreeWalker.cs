@@ -89,6 +89,9 @@ namespace MarkdownTools.TreeToHtml.Implementation
                     case NodeType.HorizontalRule:
                         ProcessHorizontalRuleNode(builder, level);
                         break;
+                    case NodeType.LineBreak:
+                        ProcessLineBreakNode(builder, level);
+                        break;
                     case NodeType.Newline:
                         ProcessNewlineNode(builder);
                         break;
@@ -136,6 +139,11 @@ namespace MarkdownTools.TreeToHtml.Implementation
         private static void ProcessHorizontalRuleNode(StringBuilder builder, int level)
         {
             builder.AppendLine($"{new string(' ', level * Indentation)}<hr>");
+        }
+
+        private static void ProcessLineBreakNode(StringBuilder builder, int level)
+        {
+            builder.AppendLine($"{new string(' ', level * Indentation)}<br>");
         }
 
         private static void ProcessNewlineNode(StringBuilder builder)
