@@ -74,9 +74,33 @@ namespace MarkdownTools.Parser.Implementation
                             Parse(node, node.RawContent);
                         }
 
+                        if (Attribute.GetCustomAttribute(evaluator.GetType(), typeof(ParseChildrenAttribute)) != null)
+                        {
+                            ParseChildren(node);
+                        }
+
                         previousNode = node;
                         break;
                     }
+                }
+            }
+        }
+
+        private void ParseChildren(Node node)
+        {
+            foreach (var child in node.Children)
+            {
+                var evaluator = _evaluators.FirstOrDefault(e => e.IsEvaluatorFor == child.Type);
+
+                // ReSharper disable once PossibleNullReferenceException
+                if (Attribute.GetCustomAttribute(evaluator.GetType(), typeof(ParseContentAttribute)) != null)
+                {
+                    Parse(child, child.RawContent);
+                }
+
+                if (Attribute.GetCustomAttribute(evaluator.GetType(), typeof(ParseChildrenAttribute)) != null)
+                {
+                    ParseChildren(child);
                 }
             }
         }

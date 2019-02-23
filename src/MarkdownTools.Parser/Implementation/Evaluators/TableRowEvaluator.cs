@@ -4,6 +4,7 @@ using MarkdownTools.Parser.Implementation.Evaluators.Base;
 
 namespace MarkdownTools.Parser.Implementation.Evaluators
 {
+    [ParseChildren]
     [DoNotParseForParagraphs]
     public class TableRowEvaluator : IEvaluator
     {
