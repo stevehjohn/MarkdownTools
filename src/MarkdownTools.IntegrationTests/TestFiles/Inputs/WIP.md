@@ -28,3 +28,8 @@ private void Main(string[] args)
 >    {
 >        // Handle stuff
 >    }
+
+Hmm, should probably test that paragraphs work.
+This line should be the same paragraph.
+
+This line should be separate.

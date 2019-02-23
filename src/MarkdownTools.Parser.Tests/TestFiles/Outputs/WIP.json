@@ -294,16 +294,21 @@
           "MetaData": {},
           "Content": "implemented.",
           "Children": []
+        },
+        {
+          "Type": "Whitespace",
+          "MetaData": {},
+          "Children": []
+        },
+        {
+          "Type": "Whitespace",
+          "MetaData": {},
+          "Children": []
         }
       ]
     },
     {
-      "Type": "Newline",
-      "MetaData": {},
-      "Children": []
-    },
-    {
-      "Type": "Newline",
+      "Type": "Paragraph",
       "MetaData": {},
       "Children": []
     },
@@ -1400,18 +1405,18 @@
           "MetaData": {},
           "Content": "|",
           "Children": []
+        },
+        {
+          "Type": "Whitespace",
+          "MetaData": {},
+          "Children": []
+        },
+        {
+          "Type": "Whitespace",
+          "MetaData": {},
+          "Children": []
         }
       ]
-    },
-    {
-      "Type": "Newline",
-      "MetaData": {},
-      "Children": []
-    },
-    {
-      "Type": "Newline",
-      "MetaData": {},
-      "Children": []
     },
     {
       "Type": "Paragraph",
@@ -1461,18 +1466,12 @@
           "MetaData": {},
           "Content": "table",
           "Children": []
-        }
-      ]
-    },
-    {
-      "Type": "Newline",
-      "MetaData": {},
-      "Children": []
-    },
-    {
-      "Type": "Paragraph",
-      "MetaData": {},
-      "Children": [
+        },
+        {
+          "Type": "Whitespace",
+          "MetaData": {},
+          "Children": []
+        },
         {
           "Type": "Text",
           "MetaData": {},
@@ -1504,18 +1503,18 @@
           "MetaData": {},
           "Content": "|",
           "Children": []
+        },
+        {
+          "Type": "Whitespace",
+          "MetaData": {},
+          "Children": []
+        },
+        {
+          "Type": "Whitespace",
+          "MetaData": {},
+          "Children": []
         }
       ]
-    },
-    {
-      "Type": "Newline",
-      "MetaData": {},
-      "Children": []
-    },
-    {
-      "Type": "Newline",
-      "MetaData": {},
-      "Children": []
     },
     {
       "Type": "Paragraph",
@@ -1617,35 +1616,23 @@
           "MetaData": {},
           "Content": "|",
           "Children": []
-        }
-      ]
-    },
-    {
-      "Type": "Newline",
-      "MetaData": {},
-      "Children": []
-    },
-    {
-      "Type": "Paragraph",
-      "MetaData": {},
-      "Children": [
+        },
+        {
+          "Type": "Whitespace",
+          "MetaData": {},
+          "Children": []
+        },
         {
           "Type": "Text",
           "MetaData": {},
           "Content": "|:---|---|:---:|---:|",
           "Children": []
-        }
-      ]
-    },
-    {
-      "Type": "Newline",
-      "MetaData": {},
-      "Children": []
-    },
-    {
-      "Type": "Paragraph",
-      "MetaData": {},
-      "Children": [
+        },
+        {
+          "Type": "Whitespace",
+          "MetaData": {},
+          "Children": []
+        },
         {
           "Type": "Text",
           "MetaData": {},
@@ -1807,18 +1794,12 @@
           "MetaData": {},
           "Content": "|",
           "Children": []
-        }
-      ]
-    },
-    {
-      "Type": "Newline",
-      "MetaData": {},
-      "Children": []
-    },
-    {
-      "Type": "Paragraph",
-      "MetaData": {},
-      "Children": [
+        },
+        {
+          "Type": "Whitespace",
+          "MetaData": {},
+          "Children": []
+        },
         {
           "Type": "Text",
           "MetaData": {},
@@ -1980,26 +1961,43 @@
           "MetaData": {},
           "Content": "|",
           "Children": []
+        },
+        {
+          "Type": "Whitespace",
+          "MetaData": {},
+          "Children": []
+        },
+        {
+          "Type": "Whitespace",
+          "MetaData": {},
+          "Children": []
         }
       ]
     },
     {
-      "Type": "Newline",
+      "Type": "Paragraph",
       "MetaData": {},
-      "Children": []
+      "Children": [
+        {
+          "Type": "Whitespace",
+          "MetaData": {},
+          "Children": []
+        }
+      ]
     },
     {
-      "Type": "Newline",
+      "Type": "Paragraph",
       "MetaData": {},
-      "Children": []
+      "Children": [
+        {
+          "Type": "Whitespace",
+          "MetaData": {},
+          "Children": []
+        }
+      ]
     },
     {
-      "Type": "Newline",
-      "MetaData": {},
-      "Children": []
-    },
-    {
-      "Type": "Newline",
+      "Type": "Paragraph",
       "MetaData": {},
       "Children": []
     }

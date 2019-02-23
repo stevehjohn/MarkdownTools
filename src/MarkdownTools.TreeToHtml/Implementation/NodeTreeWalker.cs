@@ -160,7 +160,6 @@ namespace MarkdownTools.TreeToHtml.Implementation
 
         private static void ProcessTextNode(Node node, StringBuilder builder)
         {
-            // TODO: Indent when first in sequence?
             builder.Append(node.Content);
         }
 

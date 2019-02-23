@@ -29,14 +29,14 @@ namespace MarkdownTools.Parser.Implementation
         public Node Parse(string markdown)
         {
             var root = new Node
-                       {
-                           Type = NodeType.Root
-                       };
+            {
+                Type = NodeType.Root
+            };
 
             Parse(root, markdown);
 
             PostProcessForParagraphs(root);
-            
+
             return root;
         }
 
@@ -44,13 +44,13 @@ namespace MarkdownTools.Parser.Implementation
         {
             Node previousNode = null;
 
-            while (! string.IsNullOrEmpty(content))
+            while (!string.IsNullOrEmpty(content))
             {
                 var validEvaluators = GetValidEvaluators(parent);
 
                 foreach (var evaluator in validEvaluators)
                 {
-                    if (! CheckEvaluatorAttributes(parent, evaluator))
+                    if (!CheckEvaluatorAttributes(parent, evaluator))
                     {
                         continue;
                     }
@@ -141,21 +141,54 @@ namespace MarkdownTools.Parser.Implementation
 
                 var length = 1;
 
-                while (first + length < nodes.Count 
-                       && (nodes[first + length].Type == NodeType.Text || nodes[first + length].Type == NodeType.Whitespace))
+                while (first + length < nodes.Count
+                       && (nodes[first + length].Type == NodeType.Text || nodes[first + length].Type == NodeType.Whitespace || nodes[first + length].Type == NodeType.Newline))
                 {
                     length++;
                 }
 
+                var paragraphs = new List<Node>();
+
+                var range = nodes.GetRange(first, length).ToList();
+
                 var paragraph = new Node
-                                {
-                                    Type = NodeType.Paragraph,
-                                    Children = nodes.GetRange(first, length).ToList()
-                                };
+                {
+                    Type = NodeType.Paragraph
+                };
+
+                paragraphs.Add(paragraph);
+
+                for (var i = 0; i < range.Count; i++)
+                {
+                    if (range[i].Type == NodeType.Newline)
+                    {
+                        paragraph.Children.Add(new Node
+                                               {
+                                                   Type = NodeType.Whitespace
+                                               });
+
+                        if (i > 0 && range[i - 1].Type == NodeType.Newline)
+                        {
+                            paragraph = new Node
+                            {
+                                Type = NodeType.Paragraph
+                            };
+
+                            paragraphs.Add(paragraph);
+                        }
+                    }
+                    else
+                    {
+                        paragraph.Children.Add(range[i]);
+                    }
+                }
 
                 nodes = nodes.RemoveRange(first, length).ToList();
 
-                nodes.Insert(first, paragraph);
+                for (var i = 0; i < paragraphs.Count; i++)
+                {
+                    nodes.Insert(first + i, paragraphs[i]);
+                }
 
                 node.Children = nodes;
             }
