@@ -167,14 +167,28 @@ namespace MarkdownTools.TreeToHtml.Implementation
 
         private void ProcessTableCellNode(Node node, StringBuilder builder, int level)
         {
-            builder.AppendLine($"{new string(' ', level * Indentation)}<td>");
+            var attributes = string.Empty;
+
+            if (node.MetaData.ContainsKey("Alignment"))
+            {
+                attributes = $" align=\"{node.MetaData["Alignment"]}\"";
+            }
+
+            builder.AppendLine($"{new string(' ', level * Indentation)}<td{attributes}>");
             ProcessNodes(node.Children, builder, level + 1);
             builder.AppendLine($"{Environment.NewLine}{new string(' ', level * Indentation)}</td>");
         }
 
         private void ProcessTableCellHeadNode(Node node, StringBuilder builder, int level)
         {
-            builder.AppendLine($"{new string(' ', level * Indentation)}<th>");
+            var attributes = string.Empty;
+
+            if (node.MetaData.ContainsKey("Alignment"))
+            {
+                attributes = $" align=\"{node.MetaData["Alignment"]}\"";
+            }
+
+            builder.AppendLine($"{new string(' ', level * Indentation)}<th{attributes}>");
             ProcessNodes(node.Children, builder, level + 1);
             builder.AppendLine($"{Environment.NewLine}{new string(' ', level * Indentation)}</th>");
         }

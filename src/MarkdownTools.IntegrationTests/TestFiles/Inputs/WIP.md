@@ -35,5 +35,5 @@ This line should be the same paragraph.
 This line should be separate.
 
 | Heading 1 | Heading 2 |
-|---|---|
+|:---|---:|
 | Column 1 | Column 2 |
