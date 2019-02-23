@@ -12,13 +12,6 @@ Will need to work out precedence as I go along. Figured out that this order matt
 * WhiteSpace
 * Text
 
-Reckon that with recursion and the attributes, something robust can be created. Need to think about it a bit more.
-
-ParseContent is going to need more thought. Maybe store unformatted content against nodes that support child parsing.
-Also, maybe instead of allowed parent, use allowed children.
-
-Might need a post-process step to turn text-whitespace-text-... runs into paragraphs.
-
 ## A note on CheckEvaluatorAttributes
 
 For now, assumes that any item can start a document so ValidPreviousNodeSequenceAttribute attributes are ignored in that case.

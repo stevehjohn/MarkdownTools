@@ -42,5 +42,29 @@ namespace MarkdownTools.TreeToHtml.Tests.Implementation
         {
             _walker.LoadTree(new Node());
         }
+
+        [TestCase(Theme.Dark)]
+        [TestCase(Theme.Light)]
+        [TestCase(Theme.Custom, "TestFiles\\CustomTheme.html")]
+        public void Can_load_themes(Theme theme, string customTheme = null)
+        {
+            _walker.LoadTree(new Node
+                             {
+                                 Type = NodeType.Root
+                             });
+
+            Assert.DoesNotThrow(() => _walker.ToHtml(theme, customTheme));
+        }
+
+        [Test]
+        public void Throws_argument_exception_when_custom_theme_is_null()
+        {
+            _walker.LoadTree(new Node
+                             {
+                                 Type = NodeType.Root
+                             });
+
+            Assert.Throws<ArgumentNullException>(() => _walker.ToHtml(Theme.Custom, null));
+        }
     }
 }

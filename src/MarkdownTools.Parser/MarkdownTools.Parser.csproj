@@ -56,9 +56,8 @@
     <Compile Include="Extensions\EnumerableExtensions.cs" />
     <Compile Include="Extensions\StringExtensions.cs" />
     <Compile Include="Implementation\Evaluators\BlockquoteEvaluator.cs" />
-    <Compile Include="Implementation\Evaluators\CodeBlockIndentedEvaluator.cs" />
+    <Compile Include="Implementation\Evaluators\CodeBlockEvaluator.cs" />
     <Compile Include="Implementation\Evaluators\Base\IEvaluator.cs" />
-    <Compile Include="Implementation\Evaluators\CodeBlockTickMarkEvaluator.cs" />
     <Compile Include="Implementation\Evaluators\HorizontalRuleEvaluator.cs" />
     <Compile Include="Implementation\Evaluators\NewlineEvaluator.cs" />
     <Compile Include="Implementation\Evaluators\TextEvaluator.cs" />

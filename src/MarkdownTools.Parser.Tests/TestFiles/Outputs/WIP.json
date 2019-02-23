@@ -321,62 +321,57 @@
           "Children": []
         },
         {
-          "Type": "Paragraph",
-          "Children": [
-            {
-              "Type": "Text",
-              "Content": "This",
-              "Children": []
-            },
-            {
-              "Type": "Whitespace",
-              "MetaData": {
-                "Length": "1"
-              },
-              "Children": []
-            },
-            {
-              "Type": "Text",
-              "Content": "is",
-              "Children": []
-            },
-            {
-              "Type": "Whitespace",
-              "MetaData": {
-                "Length": "1"
-              },
-              "Children": []
-            },
-            {
-              "Type": "Text",
-              "Content": "a",
-              "Children": []
-            },
-            {
-              "Type": "Whitespace",
-              "MetaData": {
-                "Length": "1"
-              },
-              "Children": []
-            },
-            {
-              "Type": "Text",
-              "Content": "single",
-              "Children": []
-            },
-            {
-              "Type": "Whitespace",
-              "MetaData": {
-                "Length": "1"
-              },
-              "Children": []
-            },
-            {
-              "Type": "Text",
-              "Content": "blockquote",
-              "Children": []
-            }
-          ]
+          "Type": "Text",
+          "Content": "This",
+          "Children": []
+        },
+        {
+          "Type": "Whitespace",
+          "MetaData": {
+            "Length": "1"
+          },
+          "Children": []
+        },
+        {
+          "Type": "Text",
+          "Content": "is",
+          "Children": []
+        },
+        {
+          "Type": "Whitespace",
+          "MetaData": {
+            "Length": "1"
+          },
+          "Children": []
+        },
+        {
+          "Type": "Text",
+          "Content": "a",
+          "Children": []
+        },
+        {
+          "Type": "Whitespace",
+          "MetaData": {
+            "Length": "1"
+          },
+          "Children": []
+        },
+        {
+          "Type": "Text",
+          "Content": "single",
+          "Children": []
+        },
+        {
+          "Type": "Whitespace",
+          "MetaData": {
+            "Length": "1"
+          },
+          "Children": []
+        },
+        {
+          "Type": "Text",
+          "Content": "blockquote",
+          "Children": []
         },
         {
           "Type": "Newline",
@@ -401,14 +396,9 @@
           "Children": []
         },
         {
-          "Type": "Paragraph",
-          "Children": [
-            {
-              "Type": "Text",
-              "Content": "Multiline",
-              "Children": []
-            }
-          ]
+          "Type": "Text",
+          "Content": "Multiline",
+          "Children": []
         },
         {
           "Type": "Newline",
@@ -422,14 +412,9 @@
           "Children": []
         },
         {
-          "Type": "Paragraph",
-          "Children": [
-            {
-              "Type": "Text",
-              "Content": "Blockquote",
-              "Children": []
-            }
-          ]
+          "Type": "Text",
+          "Content": "Blockquote",
+          "Children": []
         },
         {
           "Type": "Newline",
