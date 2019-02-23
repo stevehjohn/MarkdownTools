@@ -59,6 +59,11 @@ namespace MarkdownTools.TreeToHtml.Implementation
 
             using (var stream = assembly.GetManifestResourceStream(name))
             {
+                if (stream == null)
+                {
+                    throw new ArgumentOutOfRangeException(nameof(name));
+                }
+
                 using (var reader = new StreamReader(stream))
                 {
                     return reader.ReadToEnd();

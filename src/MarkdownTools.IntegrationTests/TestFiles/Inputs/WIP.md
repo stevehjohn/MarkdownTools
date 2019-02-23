@@ -4,6 +4,8 @@
 
 I will add types of markdown as each evaluator is implemented.
 
+This line has `Some inline code`.
+
 ```CSharp
 private void Main(string[] args)
 {

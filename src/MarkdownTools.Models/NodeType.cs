@@ -9,6 +9,7 @@
         Image,
         InlineCode,
         Italic,
+        LineBreak,
         Link,
         Newline,
         OrderedList,

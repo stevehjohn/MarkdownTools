@@ -19,14 +19,22 @@
         h1 {
             border-bottom: 1px solid #474747;
         }
+        hr {
+            border-color: #474747;
+        }
         code {
             color: #d7ba7d;
             font-family: 'Source Code Pro', 'Consolas', 'Menlo', monospace;
             border-radius: 2px;
-            background-color: #242424;
+            background-color: #282828;
             padding: 0 4px;
             white-space: pre;
             display: block;
+            margin: 16px 0;
+        }
+        blockquote code {
+            margin: 0;
+            padding: 0;
         }
         th {
             font-weight: bold;
@@ -41,12 +49,10 @@
         blockquote {
             border-left: 5px solid #14517a;
             background-color: #282828;
-            margin-left: 0;
-            margin-right: 0;
+            margin: 16px 0;
             padding: 3px 10px 3px 10px;
             border-radius: 3px;
-        }
-    </style>
+        }    </style>
 </head>
 <body>
     <h1>This is the WIP test file for markdown tools</h1>
@@ -56,6 +62,11 @@
 
     <p>
 I will add types of markdown as each evaluator is implemented.
+    </p>
+
+
+    <p>
+This line has `Some inline code`.
     </p>
 
 

@@ -8,6 +8,7 @@ using System.Text;
 namespace MarkdownTools.Parser.Implementation.Evaluators
 {
     [ParseContent]
+    [DoNotParseForParagraphs]
     [ValidPreviousNodeSequence(NodeType.Newline)]
     [ValidPreviousNodeSequence(NodeType.Newline, NodeType.Whitespace)]
     public class BlockquoteEvaluator : IEvaluator

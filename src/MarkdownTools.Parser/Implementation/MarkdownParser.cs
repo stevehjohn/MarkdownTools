@@ -35,7 +35,7 @@ namespace MarkdownTools.Parser.Implementation
 
             Parse(root, markdown);
 
-            PostProcessTree(root);
+            PostProcessForParagraphs(root);
             
             return root;
         }
@@ -81,7 +81,7 @@ namespace MarkdownTools.Parser.Implementation
             }
         }
 
-        private static void PostProcessTree(Node node)
+        private static void PostProcessForParagraphs(Node node)
         {
             var nodes = node.Children;
 
@@ -90,7 +90,7 @@ namespace MarkdownTools.Parser.Implementation
                 return;
             }
 
-            nodes.ToList().ForEach(PostProcessTree);
+            nodes.ToList().ForEach(PostProcessForParagraphs);
 
             while (true)
             {
