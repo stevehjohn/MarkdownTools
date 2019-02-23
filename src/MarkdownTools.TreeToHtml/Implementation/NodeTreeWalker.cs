@@ -146,7 +146,7 @@ namespace MarkdownTools.TreeToHtml.Implementation
         {
             builder.AppendLine($"{new string(' ', level * Indentation)}<p>");
             ProcessNodes(node.Children, builder, level + 1);
-            builder.AppendLine($"{new string(' ', level * Indentation)}</p>");
+            builder.AppendLine($"{Environment.NewLine}{new string(' ', level * Indentation)}</p>");
         }
 
         private static void ProcessTextNode(Node node, StringBuilder builder)
