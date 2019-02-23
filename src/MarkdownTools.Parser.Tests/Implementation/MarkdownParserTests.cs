@@ -3,6 +3,7 @@ using MarkdownTools.Parser.Implementation.Evaluators;
 using Newtonsoft.Json;
 using NUnit.Framework;
 using System.IO;
+using MarkdownTools.Models;
 
 namespace MarkdownTools.Parser.Tests.Implementation
 {
@@ -46,6 +47,14 @@ namespace MarkdownTools.Parser.Tests.Implementation
 
             Assert.That(attributes[attributes.Count - 2], Is.AssignableTo(typeof(WhitespaceEvaluator)));
             Assert.That(attributes[attributes.Count - 1], Is.AssignableTo(typeof(TextEvaluator)));
+        }
+
+        [Test]
+        public void Ignores_ValidPreviousNodeSequenceAttribute_at_start_of_document()
+        {
+            var result = _parser.Parse("> BlockQuote");
+
+            Assert.That(result.Children[0].Type == NodeType.Blockquote);
         }
     }
 }

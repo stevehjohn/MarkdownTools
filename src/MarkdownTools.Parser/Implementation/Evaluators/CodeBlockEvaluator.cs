@@ -9,6 +9,7 @@ using System.Text;
 namespace MarkdownTools.Parser.Implementation.Evaluators
 {
     [Precedence(1)]
+    [ValidChildNodes(NodeType.Text, NodeType.Whitespace)]
     public class CodeBlockEvaluator : IEvaluator
     {
         public NodeType IsEvaluatorFor => NodeType.CodeBlock;
