@@ -63,6 +63,7 @@
   <ItemGroup>
     <Compile Include="Attributes\PrecedenceAttributeTests.cs" />
     <Compile Include="Attributes\ValidPreviousNodeSequenceAttributeTests.cs" />
+    <Compile Include="Extensions\EnumerableExtensionsTests.cs" />
     <Compile Include="Extensions\StringExtensionsTests.cs" />
     <Compile Include="Implementation\Evaluators\BlockquoteEvaluatorTests.cs" />
     <Compile Include="Implementation\Evaluators\CodeBlockIndentedEvaluatorTests.cs" />

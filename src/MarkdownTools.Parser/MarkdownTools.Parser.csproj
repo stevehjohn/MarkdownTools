@@ -52,6 +52,7 @@
     <Compile Include="Attributes\PrecedenceAttribute.cs" />
     <Compile Include="Attributes\ValidChildNodesAttribute.cs" />
     <Compile Include="Attributes\ValidPreviousNodeSequenceAttribute.cs" />
+    <Compile Include="Extensions\EnumerableExtensions.cs" />
     <Compile Include="Extensions\StringExtensions.cs" />
     <Compile Include="Implementation\Evaluators\BlockquoteEvaluator.cs" />
     <Compile Include="Implementation\Evaluators\CodeBlockIndentedEvaluator.cs" />

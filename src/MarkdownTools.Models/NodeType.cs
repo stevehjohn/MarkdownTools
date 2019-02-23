@@ -13,6 +13,7 @@
         Newline,
         OrderedList,
         OrderedListItem,
+        Paragraph,
         RawHtml,
         Root,
         Strikethrough,

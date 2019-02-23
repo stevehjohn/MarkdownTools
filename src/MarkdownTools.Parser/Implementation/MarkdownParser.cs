@@ -1,5 +1,6 @@
 ﻿using MarkdownTools.Models;
 using MarkdownTools.Parser.Attributes;
+using MarkdownTools.Parser.Extensions;
 using MarkdownTools.Parser.Implementation.Evaluators.Base;
 using System;
 using System.Collections.Generic;
@@ -33,6 +34,8 @@ namespace MarkdownTools.Parser.Implementation
                        };
 
             Parse(root, markdown);
+
+            //PostProcessTree(root);
             
             return root;
         }
@@ -78,15 +81,62 @@ namespace MarkdownTools.Parser.Implementation
             }
         }
 
+        private static void PostProcessTree(Node node)
+        {
+            var nodes = node.Children;
+
+            while (true)
+            {
+                var first = nodes.IndexOf(n => n.Type == NodeType.Text);
+
+                if (first == -1)
+                {
+                    break;
+                }
+
+                var length = 1;
+
+                while (first + length < nodes.Count 
+                       && (nodes[first + length].Type == NodeType.Text || nodes[first + length].Type == NodeType.Whitespace))
+                {
+                    length++;
+                }
+
+                var paragraph = new Node
+                                {
+                                    Type = NodeType.Paragraph,
+                                    Children = nodes.GetRange(first, length).ToList()
+                                };
+
+                nodes = nodes.RemoveRange(first, length).ToList();
+
+                nodes.Insert(first, paragraph);
+
+                node.Children = nodes;
+            }
+        }
+
         private IEnumerable<IEvaluator> GetValidEvaluators(Node parent)
         {
+            if (parent.Type == NodeType.Root)
+            {
+                return _evaluators;
+            }
+
+            var parentEvaluator = _evaluators.Single(e => e.IsEvaluatorFor == parent.Type);
+
+            var attribute = Attribute.GetCustomAttribute(parentEvaluator.GetType(), typeof(ValidChildNodesAttribute)) as ValidChildNodesAttribute;
+
+            if (attribute == null)
+            {
+                return _evaluators;
+            }
+
             var evaluators = new List<IEvaluator>();
 
             foreach (var evaluator in _evaluators)
             {
-                var attribute = Attribute.GetCustomAttribute(evaluator.GetType(), typeof(ValidChildNodesAttribute)) as ValidChildNodesAttribute;
-
-                if (attribute == null || attribute.ValidChildNodes.Contains(evaluator.IsEvaluatorFor))
+                if (attribute.ValidChildNodes.Contains(evaluator.IsEvaluatorFor))
                 {
                     evaluators.Add(evaluator);
                 }
