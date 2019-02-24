@@ -1,10 +1,12 @@
 ﻿using MarkdownTools.Models;
+using MarkdownTools.Parser.Attributes;
 using MarkdownTools.Parser.Extensions;
 using MarkdownTools.Parser.Implementation.Evaluators.Base;
 using System;
 
 namespace MarkdownTools.Parser.Implementation.Evaluators
 {
+    [InlineElement]
     public class NewlineEvaluator : IEvaluator
     {
         public NodeType IsEvaluatorFor => NodeType.Newline;

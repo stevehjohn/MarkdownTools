@@ -1,9 +1,11 @@
 ﻿using MarkdownTools.Models;
+using MarkdownTools.Parser.Attributes;
 using MarkdownTools.Parser.Extensions;
 using MarkdownTools.Parser.Implementation.Evaluators.Base;
 
 namespace MarkdownTools.Parser.Implementation.Evaluators
 {
+    [InlineElement]
     public class LineBreakEvaluator : IEvaluator
     {
         public NodeType IsEvaluatorFor => NodeType.LineBreak;

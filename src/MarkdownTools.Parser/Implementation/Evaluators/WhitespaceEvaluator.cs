@@ -6,6 +6,7 @@ using System.Collections.Generic;
 
 namespace MarkdownTools.Parser.Implementation.Evaluators
 {
+    [InlineElement]
     [Precedence(int.MaxValue - 1)]
     public class WhitespaceEvaluator : IEvaluator
     {

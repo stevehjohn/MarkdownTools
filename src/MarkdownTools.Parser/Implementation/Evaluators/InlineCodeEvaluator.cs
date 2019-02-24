@@ -5,6 +5,7 @@ using MarkdownTools.Parser.Implementation.Evaluators.Base;
 
 namespace MarkdownTools.Parser.Implementation.Evaluators
 {
+    [InlineElement]
     [DoNotParseForParagraphs]
     public class InlineCodeEvaluator : IEvaluator
     {
