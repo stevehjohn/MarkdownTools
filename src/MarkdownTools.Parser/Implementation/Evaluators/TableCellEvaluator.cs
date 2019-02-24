@@ -1,4 +1,5 @@
-﻿using MarkdownTools.Models;
+﻿using JetBrains.Annotations;
+using MarkdownTools.Models;
 using MarkdownTools.Parser.Attributes;
 using MarkdownTools.Parser.Implementation.Evaluators.Base;
 
@@ -6,6 +7,7 @@ namespace MarkdownTools.Parser.Implementation.Evaluators
 {
     [ParseContent]
     [ParseChildren]
+    [UsedImplicitly]
     [DoNotParseForParagraphs]
     [ValidChildNodes(NodeType.Image, NodeType.InlineCode, NodeType.Italic, NodeType.LineBreak, NodeType.Link, NodeType.Strikethrough, NodeType.Strong, NodeType.Text, NodeType.Whitespace)]
     public class TableCellEvaluator : IEvaluator
