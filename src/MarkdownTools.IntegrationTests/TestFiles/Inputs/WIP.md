@@ -6,6 +6,8 @@ I will add types of markdown as each evaluator is implemented.
 
 This line has `Some inline code`.
 
+This line has ~~strikethrough~~.
+
 ```CSharp
 private void Main(string[] args)
 {

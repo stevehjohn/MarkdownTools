@@ -67,6 +67,7 @@
     <Compile Include="Implementation\Evaluators\InlineCodeEvaluator.cs" />
     <Compile Include="Implementation\Evaluators\LineBreakEvaluator.cs" />
     <Compile Include="Implementation\Evaluators\NewlineEvaluator.cs" />
+    <Compile Include="Implementation\Evaluators\StrikethroughEvaluator.cs" />
     <Compile Include="Implementation\Evaluators\TableCellEvaluator.cs" />
     <Compile Include="Implementation\Evaluators\TableCellHeadEvaluator.cs" />
     <Compile Include="Implementation\Evaluators\TableEvaluator.cs" />

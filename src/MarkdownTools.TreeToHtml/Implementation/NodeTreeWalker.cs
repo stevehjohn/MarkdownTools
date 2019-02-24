@@ -95,6 +95,15 @@ namespace MarkdownTools.TreeToHtml.Implementation
                     case NodeType.LineBreak:
                         ProcessLineBreakNode(builder, level);
                         break;
+                    case NodeType.Newline:
+                        ProcessNewlineNode(builder);
+                        break;
+                    case NodeType.Paragraph:
+                        ProcessParagraphNode(node, builder, level);
+                        break;
+                    case NodeType.Strikethrough:
+                        ProcessStrikethroughNode(node, builder);
+                        break;
                     case NodeType.Table:
                         ProcessTableNode(node, builder, level);
                         break;
@@ -106,12 +115,6 @@ namespace MarkdownTools.TreeToHtml.Implementation
                         break;
                     case NodeType.TableRow:
                         ProcessTableRowNode(node, builder, level);
-                        break;
-                    case NodeType.Newline:
-                        ProcessNewlineNode(builder);
-                        break;
-                    case NodeType.Paragraph:
-                        ProcessParagraphNode(node, builder, level);
                         break;
                     case NodeType.Whitespace:
                         ProcessWhitespaceNode(builder);
@@ -166,6 +169,23 @@ namespace MarkdownTools.TreeToHtml.Implementation
             builder.AppendLine($"{new string(' ', level * Indentation)}<br>");
         }
 
+        private static void ProcessNewlineNode(StringBuilder builder)
+        {
+            builder.AppendLine();
+        }
+
+        private void ProcessParagraphNode(Node node, StringBuilder builder, int level)
+        {
+            builder.AppendLine($"{new string(' ', level * Indentation)}<p>");
+            ProcessNodes(node.Children, builder, level + 1);
+            builder.AppendLine($"{Environment.NewLine}{new string(' ', level * Indentation)}</p>");
+        }
+
+        private void ProcessStrikethroughNode(Node node, StringBuilder builder)
+        {
+            builder.Append($"<del>{node.Content}</del>");
+        }
+
         private void ProcessTableNode(Node node, StringBuilder builder, int level)
         {
             builder.AppendLine($"{new string(' ', level * Indentation)}<table>");
@@ -206,18 +226,6 @@ namespace MarkdownTools.TreeToHtml.Implementation
             builder.AppendLine($"{new string(' ', level * Indentation)}<tr>");
             ProcessNodes(node.Children, builder, level + 1);
             builder.AppendLine($"{Environment.NewLine}{new string(' ', level * Indentation)}</tr>");
-        }
-
-        private static void ProcessNewlineNode(StringBuilder builder)
-        {
-            builder.AppendLine();
-        }
-
-        private void ProcessParagraphNode(Node node, StringBuilder builder, int level)
-        {
-            builder.AppendLine($"{new string(' ', level * Indentation)}<p>");
-            ProcessNodes(node.Children, builder, level + 1);
-            builder.AppendLine($"{Environment.NewLine}{new string(' ', level * Indentation)}</p>");
         }
 
         private static void ProcessTextNode(Node node, StringBuilder builder)

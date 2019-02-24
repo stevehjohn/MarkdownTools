@@ -79,6 +79,7 @@
     <Compile Include="Implementation\Evaluators\WhitespaceEvaluatorTests.cs" />
     <Compile Include="Implementation\MarkdownParserBuilderTests.cs" />
     <Compile Include="Implementation\MarkdownParserTests.cs" />
+    <Compile Include="Implementation\Evaluators\StrikethroughEvaluatorTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
