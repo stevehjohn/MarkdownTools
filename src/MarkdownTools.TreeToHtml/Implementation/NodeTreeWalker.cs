@@ -158,7 +158,7 @@ namespace MarkdownTools.TreeToHtml.Implementation
 
         private void ProcessInlineCodeNode(Node node, StringBuilder builder)
         {
-            builder.Append($"<code>{node.Content}</code>");
+            builder.Append($"<code class=\"inline\">{node.Content}</code>");
         }
 
         private static void ProcessLineBreakNode(StringBuilder builder, int level)

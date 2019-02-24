@@ -142,7 +142,7 @@ namespace MarkdownTools.Parser.Implementation
                 var length = 1;
 
                 while (first + length < nodes.Count
-                       && (nodes[first + length].Type == NodeType.Text || nodes[first + length].Type == NodeType.Whitespace || nodes[first + length].Type == NodeType.Newline))
+                       && (nodes[first + length].Type == NodeType.Text || nodes[first + length].Type == NodeType.Whitespace || nodes[first + length].Type == NodeType.Newline || nodes[first + length].Type == NodeType.InlineCode))
                 {
                     length++;
                 }
