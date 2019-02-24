@@ -19,6 +19,7 @@ namespace MarkdownTools.Parser.Tests.Implementation.Evaluators
         [TestCase("`inline code`", "inline code")]
         [TestCase("`", null)]
         [TestCase("`Hello", null)]
+        [TestCase("``Hello", null)]
         public void Identifies_inline_code(string input, string expected)
         {
             if (expected == null)
