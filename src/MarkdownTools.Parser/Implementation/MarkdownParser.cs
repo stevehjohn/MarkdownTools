@@ -141,10 +141,19 @@ namespace MarkdownTools.Parser.Implementation
 
                 var length = 1;
 
-                while (first + length < nodes.Count
-                       && (nodes[first + length].Type == NodeType.Text || nodes[first + length].Type == NodeType.Whitespace || nodes[first + length].Type == NodeType.Newline || nodes[first + length].Type == NodeType.InlineCode))
+                while (first + length < nodes.Count)
                 {
-                    length++;
+                    var evaluator = _evaluators.Single(e => e.IsEvaluatorFor == nodes[first + length].Type);
+
+                    if (Attribute.GetCustomAttribute(evaluator.GetType(), typeof(InlineElementAttribute)) != null)
+                    {
+                        length++;
+
+                    }
+                    else
+                    {
+                        break;
+                    }
                 }
 
                 var paragraphs = new List<Node>();
