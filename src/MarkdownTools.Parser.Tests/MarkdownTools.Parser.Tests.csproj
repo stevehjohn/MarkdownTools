@@ -71,6 +71,7 @@
     <Compile Include="Implementation\Evaluators\CodeBlockEvaluatorTests.cs" />
     <Compile Include="Implementation\Evaluators\HeadingEvaluatorTests.cs" />
     <Compile Include="Implementation\Evaluators\HorizontalRuleEvaluatorTests.cs" />
+    <Compile Include="Implementation\Evaluators\InlineCodeEvaluatorTests.cs" />
     <Compile Include="Implementation\Evaluators\LineBreakEvaluatorTests.cs" />
     <Compile Include="Implementation\Evaluators\NewlineEvaluatorTests.cs" />
     <Compile Include="Implementation\Evaluators\TableEvaluatorTests.cs" />
