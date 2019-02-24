@@ -34,7 +34,7 @@ During the period since initial setup, the SNS monitoring Lambdas will have been
 
 Service selects `MAX(EndSequenceNo)` from `SynchronizationHistory` which will be 0 at this point. Service then selects all `RestaurantId`s from `SynchronizationQueue` where `SequenceNo` > 0. Calls API for each of those restaurants to get the latest state of the data and populates `Restaurants` accordingly.
 
-Service updates D365 with restaturants who's `SequenceNo` > 0 AND <= 4. Then logs to `SynchronizationHistory`.
+Service updates D365 with restaurants who's `SequenceNo` > 0 AND <= 4. Then logs to `SynchronizationHistory`.
 
 > Restaurants
 

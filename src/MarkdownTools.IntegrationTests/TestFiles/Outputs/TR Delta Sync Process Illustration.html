@@ -1,8 +1,714 @@
-{
-  "Type": 12,
-  "MetaData": {},
-  "Content": null,
-  "PreviousNode": null,
-  "NextNode": null,
-  "FirstChild": null
-}
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <link href="https://fonts.googleapis.com/css?family=Google+Sans:100,300,400,500,700,900,100i,300i,400i,500i,700i,900i" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet">
+    <title>TR Delta Sync</title>
+    <style>
+        body {
+            font-family: 'Google Sans', 'Segoe UI', sans-serif;
+            color: #bebebe;
+            background-color: #1e1e1e;
+            padding-top: 5px;
+            padding-left: 20px;
+        }
+        h1, h2, h3 {
+            color: #dedede;
+        }
+        h1 {
+            border-bottom: 1px solid #474747;
+        }
+        hr {
+            border-color: #474747;
+        }
+        code.inline {
+            display: inline;
+        }
+        code {
+            color: #d7ba7d;
+            font-family: 'Source Code Pro', 'Consolas', 'Menlo', monospace;
+            border-radius: 3px;
+            background-color: #282828;
+            padding: 0 4px;
+            white-space: pre;
+            display: block;
+            margin: 16px 0;
+        }
+        blockquote code {
+            margin: 0;
+            padding: 0;
+        }
+        table {
+            border-spacing: 0;
+        }
+        th {
+            font-weight: bold;
+            color: #dedede;
+            border-bottom: 1px solid #bebebe;
+            margin-right: 20px;
+            padding: 4px 10px 4px 10px;
+        }
+        td {
+            padding-right: 10px;
+            border-bottom: 1px solid #474747;
+            margin-right: 20px;
+            padding: 4px 10px 4px 10px;
+        }
+        blockquote {
+            border-left: 5px solid #14517a;
+            background-color: #282828;
+            margin: 16px 0;
+            padding: 3px 10px 3px 10px;
+            border-radius: 3px;
+        }    </style>
+</head>
+<body>
+    <h1>TR Delta Sync</h1>
+
+    <h2>Overview</h2>
+
+    <p>
+This document is an overview of the database state during the synchronization process.  
+    </p>
+    <p>
+
+    </p>
+    <h3>Initial State</h3>
+
+<code class="inline">Restaurants</code>     <p>
+table contains a snapshot of core at a particular point in time. Sequence number should be set to 0. All other tables are empty.  
+    </p>
+    <p>
+
+    </p>
+    <blockquote>
+ Restaurants
+    </blockquote>
+
+    <table>
+        <tr>
+            <th>
+SequenceNo
+            </th>
+            <th>
+Id
+            </th>
+            <th>
+...
+            </th>
+
+        </tr>
+        <tr>
+            <td>
+0
+            </td>
+            <td>
+456
+            </td>
+            <td>
+
+            </td>
+
+        </tr>
+        <tr>
+            <td>
+0
+            </td>
+            <td>
+945
+            </td>
+            <td>
+
+            </td>
+
+        </tr>
+        <tr>
+            <td>
+0
+            </td>
+            <td>
+674
+            </td>
+            <td>
+
+            </td>
+
+        </tr>
+        <tr>
+            <td>
+0
+            </td>
+            <td>
+125
+            </td>
+            <td>
+
+            </td>
+
+        </tr>
+
+    </table>
+
+    <h3>Pre-Synchronization</h3>
+
+    <p>
+During the period since initial setup, the SNS monitoring Lambdas will have been populating the <code class="inline">SynchronizationQueue</code> table.  
+    </p>
+    <p>
+
+    </p>
+    <blockquote>
+ SynchronizationQueue
+    </blockquote>
+
+    <table>
+        <tr>
+            <th>
+SequenceNo
+            </th>
+            <th>
+RestaurantId
+            </th>
+
+        </tr>
+        <tr>
+            <td>
+1
+            </td>
+            <td>
+828
+            </td>
+
+        </tr>
+        <tr>
+            <td>
+2
+            </td>
+            <td>
+834
+            </td>
+
+        </tr>
+        <tr>
+            <td>
+3
+            </td>
+            <td>
+383
+            </td>
+
+        </tr>
+        <tr>
+            <td>
+4
+            </td>
+            <td>
+674
+            </td>
+
+        </tr>
+
+    </table>
+
+    <h3>Syncronization Start</h3>
+
+    <p>
+Service selects <code class="inline">MAX(EndSequenceNo)</code> from <code class="inline">SynchronizationHistory</code> which will be 0 at this point. Service then selects all <code class="inline">RestaurantId</code>s from <code class="inline">SynchronizationQueue</code> where <code class="inline">SequenceNo</code> > 0. Calls API for each of those restaurants to get the latest state of the data and populates <code class="inline">Restaurants</code> accordingly.  
+    </p>
+    <p>
+Service updates D365 with restaurants who's <code class="inline">SequenceNo</code> > 0 AND <= 4. Then logs to <code class="inline">SynchronizationHistory</code>.  
+    </p>
+    <p>
+
+    </p>
+    <blockquote>
+ Restaurants
+    </blockquote>
+
+    <table>
+        <tr>
+            <th>
+SequenceNo
+            </th>
+            <th>
+Id
+            </th>
+            <th>
+...
+            </th>
+
+        </tr>
+        <tr>
+            <td>
+0
+            </td>
+            <td>
+456
+            </td>
+            <td>
+
+            </td>
+
+        </tr>
+        <tr>
+            <td>
+0
+            </td>
+            <td>
+945
+            </td>
+            <td>
+
+            </td>
+
+        </tr>
+        <tr>
+            <td>
+0
+            </td>
+            <td>
+674
+            </td>
+            <td>
+
+            </td>
+
+        </tr>
+        <tr>
+            <td>
+0
+            </td>
+            <td>
+125
+            </td>
+            <td>
+
+            </td>
+
+        </tr>
+        <tr>
+            <td>
+1
+            </td>
+            <td>
+828
+            </td>
+            <td>
+
+            </td>
+
+        </tr>
+        <tr>
+            <td>
+2
+            </td>
+            <td>
+834
+            </td>
+            <td>
+
+            </td>
+
+        </tr>
+        <tr>
+            <td>
+3
+            </td>
+            <td>
+383
+            </td>
+            <td>
+
+            </td>
+
+        </tr>
+        <tr>
+            <td>
+4
+            </td>
+            <td>
+674
+            </td>
+            <td>
+
+            </td>
+
+        </tr>
+
+    </table>
+
+
+    <blockquote>
+ SynchronizationHistory
+    </blockquote>
+
+    <table>
+        <tr>
+            <th>
+Id
+            </th>
+            <th>
+StartSequenceNo
+            </th>
+            <th>
+EndSequenceNo
+            </th>
+
+        </tr>
+        <tr>
+            <td>
+1
+            </td>
+            <td>
+1
+            </td>
+            <td>
+4
+            </td>
+
+        </tr>
+
+    </table>
+
+    <h3>After Syncronization</h3>
+
+<code class="inline">SynchronizationQueue</code>     <p>
+is continually populated by messages from SNS.  
+    </p>
+    <p>
+
+    </p>
+    <blockquote>
+ SynchronizationQueue
+    </blockquote>
+
+    <table>
+        <tr>
+            <th>
+SequenceNo
+            </th>
+            <th>
+RestaurantId
+            </th>
+
+        </tr>
+        <tr>
+            <td>
+1
+            </td>
+            <td>
+828
+            </td>
+
+        </tr>
+        <tr>
+            <td>
+2
+            </td>
+            <td>
+834
+            </td>
+
+        </tr>
+        <tr>
+            <td>
+3
+            </td>
+            <td>
+383
+            </td>
+
+        </tr>
+        <tr>
+            <td>
+4
+            </td>
+            <td>
+674
+            </td>
+
+        </tr>
+        <tr>
+            <td>
+5
+            </td>
+            <td>
+896
+            </td>
+
+        </tr>
+        <tr>
+            <td>
+6
+            </td>
+            <td>
+235
+            </td>
+
+        </tr>
+        <tr>
+            <td>
+7
+            </td>
+            <td>
+856
+            </td>
+
+        </tr>
+        <tr>
+            <td>
+8
+            </td>
+            <td>
+591
+            </td>
+
+        </tr>
+        <tr>
+            <td>
+9
+            </td>
+            <td>
+859
+            </td>
+
+        </tr>
+
+    </table>
+
+    <h3>Next Synchronization</h3>
+
+    <p>
+Service selects <code class="inline">MAX(EndSequenceNo)</code> from <code class="inline">SynchronizationHistory</code>, which is 4. Service then selects all <code class="inline">RestaurantId</code>s from <code class="inline">SynchronizationQueue</code> where <code class="inline">SequenceNo</code> > 4. Calls API for each of those restaurants to get the latest state of the data and populates <code class="inline">Restaurants</code> accordingly.  
+    </p>
+    <p>
+Service updates D365 with restaturants who's <code class="inline">SequenceNo</code> > 4 AND <= 9. Then logs to <code class="inline">SynchronizationHistory</code>.  
+    </p>
+    <p>
+
+    </p>
+    <blockquote>
+ Restaurants
+    </blockquote>
+
+    <table>
+        <tr>
+            <th>
+SequenceNo
+            </th>
+            <th>
+Id
+            </th>
+            <th>
+...
+            </th>
+
+        </tr>
+        <tr>
+            <td>
+0
+            </td>
+            <td>
+456
+            </td>
+            <td>
+
+            </td>
+
+        </tr>
+        <tr>
+            <td>
+0
+            </td>
+            <td>
+945
+            </td>
+            <td>
+
+            </td>
+
+        </tr>
+        <tr>
+            <td>
+0
+            </td>
+            <td>
+674
+            </td>
+            <td>
+
+            </td>
+
+        </tr>
+        <tr>
+            <td>
+0
+            </td>
+            <td>
+125
+            </td>
+            <td>
+
+            </td>
+
+        </tr>
+        <tr>
+            <td>
+1
+            </td>
+            <td>
+828
+            </td>
+            <td>
+
+            </td>
+
+        </tr>
+        <tr>
+            <td>
+2
+            </td>
+            <td>
+834
+            </td>
+            <td>
+
+            </td>
+
+        </tr>
+        <tr>
+            <td>
+3
+            </td>
+            <td>
+383
+            </td>
+            <td>
+
+            </td>
+
+        </tr>
+        <tr>
+            <td>
+4
+            </td>
+            <td>
+674
+            </td>
+            <td>
+
+            </td>
+
+        </tr>
+        <tr>
+            <td>
+5
+            </td>
+            <td>
+896
+            </td>
+            <td>
+
+            </td>
+
+        </tr>
+        <tr>
+            <td>
+6
+            </td>
+            <td>
+235
+            </td>
+            <td>
+
+            </td>
+
+        </tr>
+        <tr>
+            <td>
+7
+            </td>
+            <td>
+856
+            </td>
+            <td>
+
+            </td>
+
+        </tr>
+        <tr>
+            <td>
+8
+            </td>
+            <td>
+591
+            </td>
+            <td>
+
+            </td>
+
+        </tr>
+        <tr>
+            <td>
+9
+            </td>
+            <td>
+859
+            </td>
+            <td>
+
+            </td>
+
+        </tr>
+
+    </table>
+
+    <blockquote>
+ SynchronizationHistory
+    </blockquote>
+
+    <table>
+        <tr>
+            <th>
+Id
+            </th>
+            <th>
+StartSequenceNo
+            </th>
+            <th>
+EndSequenceNo
+            </th>
+
+        </tr>
+        <tr>
+            <td>
+1
+            </td>
+            <td>
+1
+            </td>
+            <td>
+4
+            </td>
+
+        </tr>
+        <tr>
+            <td>
+2
+            </td>
+            <td>
+5
+            </td>
+            <td>
+9
+            </td>
+
+        </tr>
+
+    </table>
+
+    <h3>And so on...</h3>
+
+</body>
+</html>
