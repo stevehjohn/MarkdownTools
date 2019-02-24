@@ -9,7 +9,6 @@ namespace MarkdownTools.IntegrationTests.Tests
     public class MarkDownToolsAndNodeTreeWalkerTests
     {
         [TestCase("WIP")]
-        [TestCase("TR Delta Sync Process Illustration")]
         public void Given_known_markdown_input_generates_desired_html(string filename)
         {
             var markdown = File.ReadAllText($"TestFiles\\Inputs\\{filename}.md");

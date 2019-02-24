@@ -132,7 +132,18 @@ namespace MarkdownTools.Parser.Implementation
 
             while (true)
             {
-                var first = nodes.IndexOf(n => n.Type == NodeType.Text);
+                // TODO: Look for anything decorated with InlineElementAttribute
+                var first = nodes.IndexOf(n =>
+                {
+                    var evaluator = _evaluators.FirstOrDefault(e => e.IsEvaluatorFor == n.Type);
+
+                    if (evaluator == null)
+                    {
+                        return false;
+                    }
+
+                    return Attribute.GetCustomAttribute(evaluator.GetType(), typeof(InlineElementAttribute)) != null;
+                });
 
                 if (first == -1)
                 {

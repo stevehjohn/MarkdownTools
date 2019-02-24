@@ -52,15 +52,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
-    <None Include="TestFiles\Inputs\TR Delta Sync Process Illustration.md">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
     <None Include="TestFiles\Inputs\WIP.md">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <Content Include="TestFiles\Outputs\TR Delta Sync Process Illustration.html">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
     <Content Include="TestFiles\Outputs\WIP.html">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

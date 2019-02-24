@@ -11,16 +11,16 @@
       "RawContent": " This is the WIP test file for markdown tools",
       "Children": [
         {
-          "Type": "Whitespace",
-          "MetaData": {
-            "Length": "1"
-          },
-          "Children": []
-        },
-        {
           "Type": "Paragraph",
           "MetaData": {},
           "Children": [
+            {
+              "Type": "Whitespace",
+              "MetaData": {
+                "Length": "1"
+              },
+              "Children": []
+            },
             {
               "Type": "Text",
               "MetaData": {},
@@ -136,9 +136,15 @@
       ]
     },
     {
-      "Type": "Newline",
+      "Type": "Paragraph",
       "MetaData": {},
-      "Children": []
+      "Children": [
+        {
+          "Type": "Whitespace",
+          "MetaData": {},
+          "Children": []
+        }
+      ]
     },
     {
       "Type": "HorizontalRule",
@@ -146,14 +152,20 @@
       "Children": []
     },
     {
-      "Type": "Newline",
+      "Type": "Paragraph",
       "MetaData": {},
-      "Children": []
-    },
-    {
-      "Type": "Newline",
-      "MetaData": {},
-      "Children": []
+      "Children": [
+        {
+          "Type": "Whitespace",
+          "MetaData": {},
+          "Children": []
+        },
+        {
+          "Type": "Whitespace",
+          "MetaData": {},
+          "Children": []
+        }
+      ]
     },
     {
       "Type": "Paragraph",
@@ -323,12 +335,23 @@
       "Children": []
     },
     {
-      "Type": "Newline",
+      "Type": "Paragraph",
       "MetaData": {},
-      "Children": []
+      "Children": [
+        {
+          "Type": "Whitespace",
+          "MetaData": {},
+          "Children": []
+        },
+        {
+          "Type": "Whitespace",
+          "MetaData": {},
+          "Children": []
+        }
+      ]
     },
     {
-      "Type": "Newline",
+      "Type": "Paragraph",
       "MetaData": {},
       "Children": []
     },
@@ -341,9 +364,15 @@
       "Children": []
     },
     {
-      "Type": "Newline",
+      "Type": "Paragraph",
       "MetaData": {},
-      "Children": []
+      "Children": [
+        {
+          "Type": "Whitespace",
+          "MetaData": {},
+          "Children": []
+        }
+      ]
     },
     {
       "Type": "Blockquote",
@@ -424,9 +453,15 @@
       ]
     },
     {
-      "Type": "Newline",
+      "Type": "Paragraph",
       "MetaData": {},
-      "Children": []
+      "Children": [
+        {
+          "Type": "Whitespace",
+          "MetaData": {},
+          "Children": []
+        }
+      ]
     },
     {
       "Type": "Blockquote",
@@ -483,9 +518,15 @@
       ]
     },
     {
-      "Type": "Newline",
+      "Type": "Paragraph",
       "MetaData": {},
-      "Children": []
+      "Children": [
+        {
+          "Type": "Whitespace",
+          "MetaData": {},
+          "Children": []
+        }
+      ]
     },
     {
       "Type": "Blockquote",
@@ -504,9 +545,15 @@
       ]
     },
     {
-      "Type": "Newline",
+      "Type": "Paragraph",
       "MetaData": {},
-      "Children": []
+      "Children": [
+        {
+          "Type": "Whitespace",
+          "MetaData": {},
+          "Children": []
+        }
+      ]
     },
     {
       "Type": "Heading",
@@ -517,16 +564,16 @@
       "RawContent": " Look - a table!",
       "Children": [
         {
-          "Type": "Whitespace",
-          "MetaData": {
-            "Length": "1"
-          },
-          "Children": []
-        },
-        {
           "Type": "Paragraph",
           "MetaData": {},
           "Children": [
+            {
+              "Type": "Whitespace",
+              "MetaData": {
+                "Length": "1"
+              },
+              "Children": []
+            },
             {
               "Type": "Text",
               "MetaData": {},
@@ -577,9 +624,15 @@
       ]
     },
     {
-      "Type": "Newline",
+      "Type": "Paragraph",
       "MetaData": {},
-      "Children": []
+      "Children": [
+        {
+          "Type": "Whitespace",
+          "MetaData": {},
+          "Children": []
+        }
+      ]
     },
     {
       "Type": "Table",
@@ -1064,9 +1117,15 @@
       ]
     },
     {
-      "Type": "Newline",
+      "Type": "Paragraph",
       "MetaData": {},
-      "Children": []
+      "Children": [
+        {
+          "Type": "Whitespace",
+          "MetaData": {},
+          "Children": []
+        }
+      ]
     },
     {
       "Type": "Table",
@@ -1158,9 +1217,15 @@
       ]
     },
     {
-      "Type": "Newline",
+      "Type": "Paragraph",
       "MetaData": {},
-      "Children": []
+      "Children": [
+        {
+          "Type": "Whitespace",
+          "MetaData": {},
+          "Children": []
+        }
+      ]
     },
     {
       "Type": "Table",
