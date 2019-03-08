@@ -43,3 +43,7 @@ This line should be separate.
 [A Link to Google](https://www.google.com)
 
 ![Spike the Gremlin](gremlin-spike.png)
+
+*This is italic*
+
+_So is this_

@@ -16,6 +16,7 @@ namespace MarkdownTools.TreeToHtml.Tests.Implementation
             _walker = new NodeTreeWalker();
         }
 
+        [TestCase(Theme.Raw)]
         [TestCase(Theme.Dark)]
         [TestCase(Theme.Light)]
         [TestCase(Theme.Custom, "TestFiles\\CustomTheme.html")]
