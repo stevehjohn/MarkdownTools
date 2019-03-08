@@ -65,6 +65,7 @@
     <Compile Include="Implementation\Evaluators\Base\IEvaluator.cs" />
     <Compile Include="Implementation\Evaluators\HorizontalRuleEvaluator.cs" />
     <Compile Include="Implementation\Evaluators\InlineCodeEvaluator.cs" />
+    <Compile Include="Implementation\Evaluators\StrongEvaluator.cs" />
     <Compile Include="Implementation\Evaluators\ItalicEvaluator.cs" />
     <Compile Include="Implementation\Evaluators\LineBreakEvaluator.cs" />
     <Compile Include="Implementation\Evaluators\ImageEvaluator.cs" />

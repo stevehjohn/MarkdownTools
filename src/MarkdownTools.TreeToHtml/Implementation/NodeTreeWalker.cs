@@ -180,7 +180,7 @@ namespace MarkdownTools.TreeToHtml.Implementation
 
         private static void ProcessItalicNode(Node node, StringBuilder builder)
         {
-            builder.Append($"<i>{node.Content}</i>");
+            builder.Append($"<em>{node.Content}</em>");
         }
 
         private static void ProcessLineBreakNode(StringBuilder builder, int level)

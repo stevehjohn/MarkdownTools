@@ -11,7 +11,7 @@ namespace MarkdownTools.Parser.Tests.Implementation
         {
             var parser = (MarkdownParser) MarkdownParserBuilder.GetParserWithAllEvaluators();
 
-            Assert.That(parser.Evaluators.Count, Is.EqualTo(17));
+            Assert.That(parser.Evaluators.Count, Is.EqualTo(18));
         }
     }
 }
