@@ -95,6 +95,9 @@ namespace MarkdownTools.TreeToHtml.Implementation
                     case NodeType.LineBreak:
                         ProcessLineBreakNode(builder, level);
                         break;
+                    case NodeType.Link:
+                        ProcessLinkNode(node, builder, level);
+                        break;
                     case NodeType.Newline:
                         ProcessNewlineNode(builder);
                         break;
@@ -167,6 +170,11 @@ namespace MarkdownTools.TreeToHtml.Implementation
         private static void ProcessLineBreakNode(StringBuilder builder, int level)
         {
             builder.AppendLine($"{new string(' ', level * Indentation)}<br>");
+        }
+
+        private static void ProcessLinkNode(Node node, StringBuilder builder, int level)
+        {
+            builder.AppendLine($"{new string(' ', level * Indentation)}<a href=\"{node.MetaData["Link"]}\">{node.Content}</a>");
         }
 
         private static void ProcessNewlineNode(StringBuilder builder)

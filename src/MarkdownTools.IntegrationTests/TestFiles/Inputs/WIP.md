@@ -39,3 +39,5 @@ This line should be separate.
 | Heading 1 | Heading 2 |
 |:---|---:|
 | Column 1 | Column 2 |
+
+[A Link to Google](https://www.google.com)
