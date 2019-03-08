@@ -36,7 +36,7 @@ namespace MarkdownTools.Parser.Implementation.Evaluators
                         Type = NodeType.Strong,
                         Content = line.Substring(2, end - 2)
                     }, 
-                    source.SafeSubstring(end + 1));
+                    source.SafeSubstring(end + 2));
             }
 
             return null;

@@ -47,3 +47,7 @@ This line should be separate.
 *This is italic*
 
 _So is this_
+
+**This is bold**
+
+__So is this__

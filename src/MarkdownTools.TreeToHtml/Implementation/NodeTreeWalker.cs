@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Reflection;
+using System.Runtime.Remoting.Channels;
 using System.Text;
 
 namespace MarkdownTools.TreeToHtml.Implementation
@@ -113,6 +114,9 @@ namespace MarkdownTools.TreeToHtml.Implementation
                     case NodeType.Strikethrough:
                         ProcessStrikethroughNode(node, builder);
                         break;
+                    case NodeType.Strong:
+                        ProcessStrongNode(node, builder);
+                        break;
                     case NodeType.Table:
                         ProcessTableNode(node, builder, level);
                         break;
@@ -208,6 +212,11 @@ namespace MarkdownTools.TreeToHtml.Implementation
         private void ProcessStrikethroughNode(Node node, StringBuilder builder)
         {
             builder.Append($"<del>{node.Content}</del>");
+        }
+
+        private static void ProcessStrongNode(Node node, StringBuilder builder)
+        {
+            builder.Append($"<strong>{node.Content}</strong>");
         }
 
         private void ProcessTableNode(Node node, StringBuilder builder, int level)
