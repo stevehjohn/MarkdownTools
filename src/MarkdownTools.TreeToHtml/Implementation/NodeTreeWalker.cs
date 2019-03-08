@@ -95,6 +95,9 @@ namespace MarkdownTools.TreeToHtml.Implementation
                     case NodeType.InlineCode:
                         ProcessInlineCodeNode(node, builder);
                         break;
+                    case NodeType.Italic:
+                        ProcessItalicNode(node, builder);
+                        break;
                     case NodeType.LineBreak:
                         ProcessLineBreakNode(builder, level);
                         break;
@@ -173,6 +176,11 @@ namespace MarkdownTools.TreeToHtml.Implementation
         private static void ProcessInlineCodeNode(Node node, StringBuilder builder)
         {
             builder.Append($"<code class=\"inline\">{node.Content}</code>");
+        }
+
+        private static void ProcessItalicNode(Node node, StringBuilder builder)
+        {
+            builder.Append($"<i>{node.Content}</i>");
         }
 
         private static void ProcessLineBreakNode(StringBuilder builder, int level)
