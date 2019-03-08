@@ -55,6 +55,7 @@
     <None Include="TestFiles\Inputs\WIP.md">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <Content Include="TestFiles\Outputs\gremlin-spike.png" />
     <Content Include="TestFiles\Outputs\WIP.html">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

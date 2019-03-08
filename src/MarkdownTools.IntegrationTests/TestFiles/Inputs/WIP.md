@@ -41,3 +41,5 @@ This line should be separate.
 | Column 1 | Column 2 |
 
 [A Link to Google](https://www.google.com)
+
+![Spike the Gremlin](gremlin-spike.png)

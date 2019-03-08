@@ -89,6 +89,9 @@ namespace MarkdownTools.TreeToHtml.Implementation
                     case NodeType.HorizontalRule:
                         ProcessHorizontalRuleNode(builder, level);
                         break;
+                    case NodeType.Image:
+                        ProcessImageNode(node, builder, level);
+                        break;
                     case NodeType.InlineCode:
                         ProcessInlineCodeNode(node, builder);
                         break;
@@ -162,7 +165,12 @@ namespace MarkdownTools.TreeToHtml.Implementation
             builder.AppendLine($"{new string(' ', level * Indentation)}<hr>");
         }
 
-        private void ProcessInlineCodeNode(Node node, StringBuilder builder)
+        private static void ProcessImageNode(Node node, StringBuilder builder, int level)
+        {
+            builder.AppendLine($"{new string(' ', level * Indentation)}<img src=\"{node.MetaData["Source"]}\" alt=\"{node.MetaData["AltText"]}\" />");
+        }
+
+        private static void ProcessInlineCodeNode(Node node, StringBuilder builder)
         {
             builder.Append($"<code class=\"inline\">{node.Content}</code>");
         }

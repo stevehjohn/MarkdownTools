@@ -9,17 +9,17 @@ namespace MarkdownTools.Parser.Implementation.Evaluators
 {
     [InlineElement]
     [ValidChildNodes]
-    public class LinkEvaluator : IEvaluator
+    public class ImageEvaluator : IEvaluator
     {
-        public NodeType IsEvaluatorFor => NodeType.Link;
+        public NodeType IsEvaluatorFor => NodeType.Image;
 
         public EvaluatorResult Evaluate(string source)
         {
-            if (source.StartsWith("["))
+            if (source.StartsWith("!["))
             {
                 var line = source.GetLine();
 
-                if (line.Length == 1)
+                if (line.Length == 2)
                 {
                     return null;
                 }
@@ -31,11 +31,11 @@ namespace MarkdownTools.Parser.Implementation.Evaluators
                     return null;
                 }
 
-                var content = line.SafeSubstring(1, end - 1);
+                var altText = line.SafeSubstring(2, end - 2);
 
-                var linkEnd = line.IndexOf(')', end + 2);
+                var imageEnd = line.IndexOf(')', end + 2);
 
-                if (linkEnd == -1)
+                if (imageEnd == -1)
                 {
                     return null;
                 }
@@ -43,14 +43,15 @@ namespace MarkdownTools.Parser.Implementation.Evaluators
                 return new EvaluatorResult(
                     new Node
                     {
-                        Type = NodeType.Link,
-                        Content = content,
+                        Type = NodeType.Image,
+                        Content = null,
                         MetaData = new Dictionary<string, string>
                                    {
-                                       { "Link", line.Substring(end + 2, linkEnd - end - 2) }
+                                       { "Source", line.Substring(end + 2, imageEnd - end - 2) },
+                                       { "AltText", altText }
                                    }
                     },
-                    source.SafeSubstring(linkEnd + 1));
+                    source.SafeSubstring(imageEnd + 1));
             }
 
             return null;
