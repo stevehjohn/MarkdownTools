@@ -12,7 +12,6 @@
         LineBreak,
         Link,
         Newline,
-        OrderedList,
         OrderedListItem,
         Paragraph,
         Root,
@@ -23,7 +22,6 @@
         TableCellHead,
         TableRow,
         Text,
-        UnorderedList,
         UnorderedListItem,
         Whitespace
     }

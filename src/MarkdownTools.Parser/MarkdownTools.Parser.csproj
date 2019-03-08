@@ -77,6 +77,7 @@
     <Compile Include="Implementation\Evaluators\TableEvaluator.cs" />
     <Compile Include="Implementation\Evaluators\TableRowEvaluator.cs" />
     <Compile Include="Implementation\Evaluators\TextEvaluator.cs" />
+    <Compile Include="Implementation\Evaluators\UnorderedListItemEvaluator.cs" />
     <Compile Include="Implementation\IMarkdownParser.cs" />
     <Compile Include="Implementation\MarkdownParserBuilder.cs" />
     <Compile Include="Implementation\EvaluatorResult.cs" />
