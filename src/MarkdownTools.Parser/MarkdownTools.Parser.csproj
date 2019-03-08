@@ -66,6 +66,7 @@
     <Compile Include="Implementation\Evaluators\HorizontalRuleEvaluator.cs" />
     <Compile Include="Implementation\Evaluators\InlineCodeEvaluator.cs" />
     <Compile Include="Implementation\Evaluators\LineBreakEvaluator.cs" />
+    <Compile Include="Implementation\Evaluators\LinkEvaluator.cs" />
     <Compile Include="Implementation\Evaluators\NewlineEvaluator.cs" />
     <Compile Include="Implementation\Evaluators\StrikethroughEvaluator.cs" />
     <Compile Include="Implementation\Evaluators\TableCellEvaluator.cs" />
