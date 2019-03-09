@@ -246,6 +246,14 @@ namespace MarkdownTools.Parser.Implementation
         private static bool CheckEvaluatorAttributes(Node parent, IEvaluator evaluator)
         {
             // ReSharper disable once UsePatternMatching
+            var validParentNodesAttributes = Attribute.GetCustomAttribute(evaluator.GetType(), typeof(ValidParentNodesAttribute)) as ValidParentNodesAttribute;
+
+            if (validParentNodesAttributes != null)
+            {
+                return validParentNodesAttributes.ValidParentNodes.Contains(parent.Type);
+            }
+
+            // ReSharper disable once UsePatternMatching
             var validPreviousNodeSequenceAttributes = Attribute.GetCustomAttributes(evaluator.GetType(), typeof(ValidPreviousNodeSequenceAttribute)) as ValidPreviousNodeSequenceAttribute[];
 
             if (validPreviousNodeSequenceAttributes != null && validPreviousNodeSequenceAttributes.Length > 0)

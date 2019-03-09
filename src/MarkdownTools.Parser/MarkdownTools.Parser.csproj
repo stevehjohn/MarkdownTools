@@ -57,6 +57,7 @@
     <Compile Include="Attributes\ParseContentAttribute.cs" />
     <Compile Include="Attributes\PrecedenceAttribute.cs" />
     <Compile Include="Attributes\ValidChildNodesAttribute.cs" />
+    <Compile Include="Attributes\ValidParentNodesAttribute.cs" />
     <Compile Include="Attributes\ValidPreviousNodeSequenceAttribute.cs" />
     <Compile Include="Extensions\EnumerableExtensions.cs" />
     <Compile Include="Extensions\StringExtensions.cs" />

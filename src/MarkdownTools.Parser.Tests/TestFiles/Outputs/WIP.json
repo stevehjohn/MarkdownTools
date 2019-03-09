@@ -586,14 +586,40 @@
                 "Length": "1"
               },
               "Children": []
+            },
+            {
+              "Type": "Text",
+              "MetaData": {},
+              "Content": "-",
+              "Children": []
+            },
+            {
+              "Type": "Whitespace",
+              "MetaData": {
+                "Length": "1"
+              },
+              "Children": []
+            },
+            {
+              "Type": "Text",
+              "MetaData": {},
+              "Content": "a",
+              "Children": []
+            },
+            {
+              "Type": "Whitespace",
+              "MetaData": {
+                "Length": "1"
+              },
+              "Children": []
+            },
+            {
+              "Type": "Text",
+              "MetaData": {},
+              "Content": "table!",
+              "Children": []
             }
           ]
-        },
-        {
-          "Type": "UnorderedListItem",
-          "MetaData": {},
-          "Content": "a table!",
-          "Children": []
         }
       ]
     },
@@ -1650,86 +1676,6 @@
       "Type": "Paragraph",
       "MetaData": {},
       "Children": [
-        {
-          "Type": "Text",
-          "MetaData": {},
-          "Content": "|",
-          "Children": []
-        },
-        {
-          "Type": "Whitespace",
-          "MetaData": {
-            "Length": "1"
-          },
-          "Children": []
-        },
-        {
-          "Type": "Text",
-          "MetaData": {},
-          "Content": "Not",
-          "Children": []
-        },
-        {
-          "Type": "Whitespace",
-          "MetaData": {
-            "Length": "1"
-          },
-          "Children": []
-        },
-        {
-          "Type": "Text",
-          "MetaData": {},
-          "Content": "a",
-          "Children": []
-        },
-        {
-          "Type": "Whitespace",
-          "MetaData": {
-            "Length": "1"
-          },
-          "Children": []
-        },
-        {
-          "Type": "Text",
-          "MetaData": {},
-          "Content": "table",
-          "Children": []
-        },
-        {
-          "Type": "Whitespace",
-          "MetaData": {},
-          "Children": []
-        },
-        {
-          "Type": "Text",
-          "MetaData": {},
-          "Content": "|",
-          "Children": []
-        },
-        {
-          "Type": "Whitespace",
-          "MetaData": {
-            "Length": "1"
-          },
-          "Children": []
-        }
-      ]
-    },
-    {
-      "Type": "UnorderedListItem",
-      "MetaData": {},
-      "Content": "|",
-      "Children": []
-    },
-    {
-      "Type": "Paragraph",
-      "MetaData": {},
-      "Children": [
-        {
-          "Type": "Whitespace",
-          "MetaData": {},
-          "Children": []
-        },
         {
           "Type": "Text",
           "MetaData": {},
