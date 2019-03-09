@@ -2,9 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Reflection;
-using System.Runtime.Remoting.Channels;
 using System.Text;
 
 namespace MarkdownTools.TreeToHtml.Implementation
@@ -141,18 +139,9 @@ namespace MarkdownTools.TreeToHtml.Implementation
 
         private void ProcessBlockquoteNode(Node node, StringBuilder builder, int level)
         {
-            if (node.Children.Any())
-            {
-                builder.AppendLine($"{new string(' ', level * Indentation)}<blockquote>");
-                ProcessNodes(node.Children, builder, level + 1);
-                builder.AppendLine($"{new string(' ', level * Indentation)}</blockquote>");
-            }
-            else
-            {
-                builder.AppendLine($"{new string(' ', level * Indentation)}<blockquote>");
-                builder.AppendLine($"{new string(' ', (level + 1) * Indentation)}{node.Content}");
-                builder.AppendLine($"{new string(' ', level * Indentation)}</blockquote>");
-            }
+            builder.AppendLine($"{new string(' ', level * Indentation)}<blockquote>");
+            ProcessNodes(node.Children, builder, level + 1);
+            builder.AppendLine($"{new string(' ', level * Indentation)}</blockquote>");
         }
 
         private static void ProcessCodeBlockNode(Node node, StringBuilder builder, int level)
