@@ -2135,27 +2135,29 @@
       "MetaData": {},
       "Children": [
         {
-          "Type": "Whitespace",
+          "Type": "UnorderedListItem",
           "MetaData": {},
+          "Content": "An unordered list item",
           "Children": []
-        }
-      ]
-    },
-    {
-      "Type": "Paragraph",
-      "MetaData": {},
-      "Children": [
+        },
+        {
+          "Type": "UnorderedListItem",
+          "MetaData": {},
+          "Content": "And another",
+          "Children": []
+        },
+        {
+          "Type": "UnorderedListItem",
+          "MetaData": {},
+          "Content": "Also another",
+          "Children": []
+        },
         {
           "Type": "Whitespace",
           "MetaData": {},
           "Children": []
         }
       ]
-    },
-    {
-      "Type": "Paragraph",
-      "MetaData": {},
-      "Children": []
     }
   ]
 }
