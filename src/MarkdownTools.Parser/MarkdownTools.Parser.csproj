@@ -63,7 +63,7 @@
     <Compile Include="Extensions\StringExtensions.cs" />
     <Compile Include="Implementation\Evaluators\BlockquoteEvaluator.cs" />
     <Compile Include="Implementation\Evaluators\CodeBlockEvaluator.cs" />
-    <Compile Include="Implementation\Evaluators\Base\IEvaluator.cs" />
+    <Compile Include="Implementation\Evaluators\Interface\IEvaluator.cs" />
     <Compile Include="Implementation\Evaluators\HorizontalRuleEvaluator.cs" />
     <Compile Include="Implementation\Evaluators\InlineCodeEvaluator.cs" />
     <Compile Include="Implementation\Evaluators\StrongEvaluator.cs" />
